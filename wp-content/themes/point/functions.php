@@ -354,18 +354,18 @@ function mts_pagination($pages = '', $range = 3) {
     if(1 != $pages) { 
         echo "<div class='pagination'><ul>";
         if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link(1)."'>&laquo; First</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link(1)."'>&laquo; Primero</a></li>";
         if($paged > 1 && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged - 1)."' class='inactive'>&lsaquo; Previous</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged - 1)."' class='inactive'>&lsaquo; Anterior</a></li>";
         for ($i=1; $i <= $pages; $i++){ 
             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) { 
                 echo ($paged == $i)? "<li class='current'><span class='currenttext'>".$i."</span></li>":"<li><a rel='nofollow' href='".get_pagenum_link($i)."' class='inactive'>".$i."</a></li>";
             } 
         } 
         if ($paged < $pages && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged + 1)."' class='inactive'>Next &rsaquo;</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged + 1)."' class='inactive'>Siguiente &rsaquo;</a></li>";
         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-            echo "<li><a rel='nofollow' class='inactive' href='".get_pagenum_link($pages)."'>Last &raquo;</a></li>";
+            echo "<li><a rel='nofollow' class='inactive' href='".get_pagenum_link($pages)."'>Último &raquo;</a></li>";
             echo "</ul></div>"; 
     }
 }

@@ -5,13 +5,13 @@
 		<div class="article">
 			<h1 class="postsby">
 				<?php if (is_category()) { ?>
-					<span><?php single_cat_title(); ?><?php _e(" Archive", "mythemeshop"); ?></span>
+					<span><?php single_cat_title(); ?><?php //_e(" Archive", "mythemeshop"); ?></span>
 				<?php } elseif (is_tag()) { ?> 
-					<span><?php single_tag_title(); ?><?php _e(" Archive", "mythemeshop"); ?></span>
+					<span><?php single_tag_title(); ?><?php //_e(" Archive", "mythemeshop"); ?></span>
 				<?php } elseif (is_search()) { ?> 
 					<span><?php _e("Search Results for:", "mythemeshop"); ?></span> <?php the_search_query(); ?>
 				<?php } elseif (is_author()) { ?>
-					<span><?php  $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); echo $curauth->nickname; _e(" Archive", "mythemeshop"); ?></span> 
+					<span><?php  $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); echo $curauth->nickname; //_e(" Archive", "mythemeshop"); ?></span>
 				<?php } elseif (is_day()) { ?>
 					<span><?php _e("Daily Archive:", "mythemeshop"); ?></span> <?php the_time('l, F j, Y'); ?>
 				<?php } elseif (is_month()) { ?>
