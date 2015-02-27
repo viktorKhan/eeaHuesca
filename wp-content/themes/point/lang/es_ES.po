@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Point WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-03 14:37+0530\n"
-"PO-Revision-Date: 2014-10-13 21:18+0100\n"
+"PO-Revision-Date: 2015-02-27 16:44+0100\n"
 "Last-Translator: Víctor Cañizares <victor.canizares.mata@gmail.com>\n"
 "Language-Team: MyThemeShop\n"
 "Language: en_US\n"
@@ -130,7 +130,7 @@ msgstr "Tu comentario está esperando ser moderado."
 
 #: header.php:21
 msgid "Now Trending"
-msgstr "Now Trending"
+msgstr "Actualidad"
 
 #: header.php:55
 msgid "Menu"
@@ -543,7 +543,7 @@ msgstr ""
 
 #: theme-options.php:304
 msgid "Author Box"
-msgstr "Cuando del autor"
+msgstr "Cuadro del autor"
 
 #: theme-options.php:306
 msgid ""
