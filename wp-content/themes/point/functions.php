@@ -5,42 +5,76 @@
 require_once( dirname( __FILE__ ) . '/theme-options.php' );
 
 if ( ! function_exists( 'mts_setup' ) ) :
-function mts_setup() {
+	function mts_setup() {
 
-if ( ! isset( $content_width ) ) $content_width = 960;
+		if ( ! isset( $content_width ) ) $content_width = 960;
 
-/*-----------------------------------------------------------------------------------*/
-/*  Load Translation Text Domain
-/*-----------------------------------------------------------------------------------*/
-load_theme_textdomain( 'mythemeshop', get_template_directory().'/lang' );
-add_theme_support('automatic-feed-links');
+		/*-----------------------------------------------------------------------------------*/
+		/*  Load Translation Text Domain
+		/*-----------------------------------------------------------------------------------*/
+		load_theme_textdomain( 'mythemeshop', get_template_directory().'/lang' );
+		add_theme_support('automatic-feed-links');
+		add_theme_support( 'title-tag' );
 
-/*-----------------------------------------------------------------------------------*/
-/*  Post Thumbnail Support
-/*-----------------------------------------------------------------------------------*/
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 220, 162, true );
-add_image_size( 'featured', 220, 162, true ); //Latest posts thumb
-add_image_size( 'carousel', 140, 130, true ); //Bottom featured thumb
-add_image_size( 'bigthumb', 620, 315, true ); //Big thumb for featured area
-add_image_size( 'mediumthumb', 300, 200, true ); //Medium thumb for featured area
-add_image_size( 'smallthumb', 140, 100, true ); //Small thumb for featured area
-add_image_size( 'widgetthumb', 60, 57, true ); //widget
+		/*-----------------------------------------------------------------------------------*/
+		/*  Site Title backwards compatibility
+		/*-----------------------------------------------------------------------------------*/
+		if ( ! function_exists( '_wp_render_title_tag' ) ) {
+		    function theme_slug_render_title() { ?>
+		       <title><?php wp_title( '|', true, 'right' ); ?></title>
+		   <?php }
+		    add_action( 'wp_head', 'theme_slug_render_title' );
+		}
 
-/*-----------------------------------------------------------------------------------*/
-/*  Custom Menu Support
-/*-----------------------------------------------------------------------------------*/
-add_theme_support( 'menus' );
-if ( function_exists( 'register_nav_menus' ) ) {
-    register_nav_menus(
-        array(
-          'primary-menu' => 'Primary Menu',
-		  'footer-menu' => 'Footer Menu'
-        )
-    );
-}
+		/*-----------------------------------------------------------------------------------*/
+		/*  Post Thumbnail Support
+		/*-----------------------------------------------------------------------------------*/
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 220, 162, true );
+		add_image_size( 'featured', 220, 162, true ); //Latest posts thumb
+		add_image_size( 'carousel', 140, 130, true ); //Bottom featured thumb
+		add_image_size( 'bigthumb', 620, 315, true ); //Big thumb for featured area
+		add_image_size( 'mediumthumb', 300, 200, true ); //Medium thumb for featured area
+		add_image_size( 'smallthumb', 140, 100, true ); //Small thumb for featured area
+		add_image_size( 'widgetthumb', 60, 57, true ); //widget
 
-}
+		/*-----------------------------------------------------------------------------------*/
+		/*  Custom Menu Support
+		/*-----------------------------------------------------------------------------------*/
+		add_theme_support( 'menus' );
+		if ( function_exists( 'register_nav_menus' ) ) {
+		    register_nav_menus(
+		        array(
+		          'primary-menu' => __('Primary Menu', 'mythemeshop'),
+				  'footer-menu' => __('Footer Menu', 'mythemeshop'),
+		        )
+		    );
+		}
+
+		/* Display a admin notice */
+
+		add_action('admin_notices', 'mts_admin_notice');
+		function mts_admin_notice() {
+			global $current_user ;
+		        $user_id = $current_user->ID;
+		        /* Check that the user hasn't already clicked to ignore the message */
+			if ( ! get_user_meta($user_id, 'mts_ignore_notice') ) {
+		        echo '<div class="updated notice-info point-notice" style="position:relative;"><p>'; 
+		        printf(__('Like Point theme? You will <strong>LOVE PointPro</strong>!','mythemeshop').__('<a href="https://mythemeshop.com/themes/pointpro/?utm_source=Point+Free&utm_medium=Notification+Link&utm_content=Point+Pro+LP&utm_campaign=WordPressOrg" target="_blank">&nbsp;').__('Click here for all the exciting features.','mythemeshop').__('</a><a href="%1$s" class="dashicons dashicons-dismiss dashicons-dismiss-icon" style="position: absolute; top: 8px; right: 8px; color: #222; opacity: 0.4; text-decoration: none !important;"></a>'), '?mts_notice_ignore=0');
+		        echo "</p></div>";
+			}
+		}
+
+		add_action('admin_init', 'mts_notice_ignore');
+		function mts_notice_ignore() {
+			global $current_user;
+		        $user_id = $current_user->ID;
+		        /* If user clicks to ignore the notice, add that to their user meta */
+		        if ( isset($_GET['mts_notice_ignore']) && '0' == $_GET['mts_notice_ignore'] ) {
+		            add_user_meta($user_id, 'mts_ignore_notice', 'true', true);
+			}
+		}
+	}
 endif;
 add_action( 'after_setup_theme', 'mts_setup' );
 
@@ -49,7 +83,7 @@ add_action( 'after_setup_theme', 'mts_setup' );
 /*-----------------------------------------------------------------------------------*/
 class mts_Walker extends Walker_Nav_Menu
 {
-	function start_el(&$output, $item, $depth, $args) {
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -79,6 +113,22 @@ class mts_Walker extends Walker_Nav_Menu
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*	RTL language support - also in mts_load_footer_scripts()
+/*-----------------------------------------------------------------------------------*/
+$mts_options = get_option('point');
+if(isset($mts_options['mts_rtl'])) { if($mts_options['mts_rtl'] == '1' && $mts_options['mts_rtl'] != '') {
+    function mts_rtl() {
+        global $wp_locale, $wp_styles;
+        $wp_locale->text_direction = 'rtl';
+    	if ( ! is_a( $wp_styles, 'WP_Styles' ) ) {
+    		$wp_styles = new WP_Styles();
+    		$wp_styles->text_direction = 'rtl';
+    	}
+    }
+    add_action( 'init', 'mts_rtl' );
+}}
+
+/*-----------------------------------------------------------------------------------*/
 /*	Javascsript
 /*-----------------------------------------------------------------------------------*/
 function mts_add_scripts() {
@@ -90,10 +140,8 @@ function mts_add_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	// Site wide js
-	wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js');
-	wp_enqueue_script('customscript', get_stylesheet_directory_uri() . '/js/customscript.js');
+
+	wp_enqueue_script('customscript', get_stylesheet_directory_uri() . '/js/customscript.js', array(), 'null', true);
 
 }
 add_action('wp_enqueue_scripts','mts_add_scripts');
@@ -105,15 +153,21 @@ function mts_enqueue_css() {
     $mts_options = get_option('point');
     global $data;
 	
-	wp_enqueue_style('stylesheet', get_stylesheet_directory_uri() . '/style.css', 'style');
+	wp_enqueue_style('stylesheet', get_stylesheet_directory_uri() . '/style.css','style');
 	
-	wp_enqueue_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1');
-    wp_enqueue_style( 'GoogleFonts2', 'http://fonts.googleapis.com/css?family=Open+Sans:regular,bold&v1');
+	wp_enqueue_style( 'GoogleFonts', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
+	wp_enqueue_style( 'GoogleFonts2', '//fonts.googleapis.com/css?family=Open+Sans:400,700');
 	
 	//Responsive
     if($mts_options['mts_responsive'] == '1') {
-        wp_enqueue_style('responsive', get_stylesheet_directory_uri() . '/css/responsive.css', 'style');
+        wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css', 'style');
     }
+
+    // RTL
+    if(isset($mts_options['mts_rtl'])) { if($mts_options['mts_rtl'] == '1' && $mts_options['mts_rtl'] != '') {
+		wp_register_style( 'mts_rtl', get_template_directory_uri() . '/css/rtl.css', 'style', true );
+		wp_enqueue_style( 'mts_rtl' );
+	}}
 	
 	$mts_sclayout = '';
 	$mts_bg = '';
@@ -129,9 +183,9 @@ function mts_enqueue_css() {
 	$custom_css = "
 		body {background-color:{$mts_options['mts_bg_color']}; }
 		body {background-image: url({$mts_bg});}
-		input#author:focus, input#email:focus, input#url:focus, #commentform textarea:focus { border-color:{$mts_options['mts_color_scheme']};}
+		input#author:focus, input#email:focus, input#url:focus, #commentform textarea:focus, .widget .wpt_widget_content #tags-tab-content ul li a { border-color:{$mts_options['mts_color_scheme']};}
 		a:hover, .menu .current-menu-item > a, .menu .current-menu-item, .current-menu-ancestor > a.sf-with-ul, .current-menu-ancestor, footer .textwidget a, .single_post a, #commentform a, .copyrights a:hover, a, footer .widget li a:hover, .menu > li:hover > a, .single_post .post-info a, .post-info a, .readMore a, .reply a, .fn a, .carousel a:hover, .single_post .related-posts a:hover, .sidebar.c-4-12 .textwidget a, footer .textwidget a, .sidebar.c-4-12 a:hover { color:{$mts_options['mts_color_scheme']}; }	
-		.nav-previous a, .nav-next a, .header-button, .sub-menu, #commentform input#submit, .tagcloud a, #tabber ul.tabs li a.selected, .featured-cat, .mts-subscribe input[type='submit'], .pagination a { background-color:{$mts_options['mts_color_scheme']}; color: #fff; }
+		.nav-previous a, .nav-next a, .header-button, .sub-menu, #commentform input#submit, .tagcloud a, #tabber ul.tabs li a.selected, .featured-cat, .mts-subscribe input[type='submit'], .pagination a, .widget .wpt_widget_content #tags-tab-content ul li a, .latestPost-review-wrapper { background-color:{$mts_options['mts_color_scheme']}; color: #fff; }
 		{$mts_sclayout}
 		{$mts_options['mts_custom_css']}
 			";
@@ -144,7 +198,8 @@ add_action('wp_enqueue_scripts', 'mts_enqueue_css', 99);
 /*-----------------------------------------------------------------------------------*/
 function mts_widgets_init() {
 	register_sidebar(array(
-		'name'=>'Sidebar',
+		'name'=> __('Sidebar', 'mythemeshop'),
+		'id' => 'sidebar',
 		'description'   => __( 'Appears on posts and pages', 'mythemeshop' ),
 		'before_widget' => '<li id="%1$s" class="widget widget-sidebar %2$s">',
 		'after_widget' => '</li>',
@@ -163,14 +218,8 @@ include("functions/widget-ad125.php");
 // Add the 300x250 Ad Block Custom Widget
 include("functions/widget-ad300.php");
 
-// Add the Tabbed Custom Widget
-include("functions/widget-tabs.php");
-
 // Add Facebook Like box Widget
 include("functions/widget-fblikebox.php");
-
-// Add Google Plus box Widget
-include("functions/widget-googleplus.php");
 
 // Add Subscribe Widget
 include("functions/widget-subscribe.php");
@@ -181,33 +230,11 @@ include("functions/widget-social.php");
 // Add Welcome message
 include("functions/welcome-message.php");
 
+// Recommended Plugin Activation
+include( "functions/plugin-activation.php" );
+
 // Theme Functions
 include("functions/theme-actions.php");
-
-/*-----------------------------------------------------------------------------------*/
-/*	Filters customize wp_title
-/*-----------------------------------------------------------------------------------*/
-function mts_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'mythemeshop' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'mts_wp_title', 10, 2 );
 
 /*-----------------------------------------------------------------------------------*/
 /*  Filters that allow shortcodes in Text Widgets
@@ -229,35 +256,50 @@ if( !function_exists( 'mts_custom_gravatar' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*	Remove more link from the_content and use custom read more
+/*-----------------------------------------------------------------------------------*/
+add_filter( 'the_content_more_link', 'mts_remove_more_link', 10, 2 );
+function mts_remove_more_link( $more_link, $more_link_text ) {
+	return '';
+}
+// shorthand function to check for more tag in post
+function mts_post_has_moretag() {
+    global $post;
+    return strpos( $post->post_content, '<!--more-->' );
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*	Custom Comments template
 /*-----------------------------------------------------------------------------------*/
-function mts_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-		<div id="comment-<?php comment_ID(); ?>" style="position:relative;">
-			<div class="comment-author vcard">
-				<?php echo get_avatar( $comment->comment_author_email, 70 ); ?>
-				<div class="comment-metadata">
-				<?php printf(__('<span class="fn">%s</span>', 'mythemeshop'), get_comment_author_link()) ?>
-				<time><?php comment_date(get_option( 'date_format' )); ?></time>
-				<span class="comment-meta">
-					<?php edit_comment_link(__('(Edit)', 'mythemeshop'),'  ','') ?>
-				</span>
-				<span class="reply">
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</span>
+if ( ! function_exists( 'mts_comments' ) ) {
+	function mts_comment($comment, $args, $depth) {
+		$GLOBALS['comment'] = $comment; ?>
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+			<div id="comment-<?php comment_ID(); ?>" style="position:relative;" itemscope itemtype="http://schema.org/UserComments">
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment->comment_author_email, 70 ); ?>
+					<div class="comment-metadata">
+					<?php printf(__('<span class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person">%s</span>', 'mythemeshop'), get_comment_author_link()) ?>
+					<time><?php comment_date(get_option( 'date_format' )); ?></time>
+					<span class="comment-meta">
+						<?php edit_comment_link(__('(Edit)', 'mythemeshop'),'  ','') ?>
+					</span>
+					<span class="reply">
+						<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					</span>
+					</div>
+				</div>
+				<?php if ($comment->comment_approved == '0') : ?>
+					<em><?php _e('Your comment is awaiting moderation.', 'mythemeshop') ?></em>
+					<br />
+				<?php endif; ?>
+				<div class="commentmetadata" itemprop="commentText">
+					<?php comment_text() ?>
 				</div>
 			</div>
-			<?php if ($comment->comment_approved == '0') : ?>
-				<em><?php _e('Your comment is awaiting moderation.', 'mythemeshop') ?></em>
-				<br />
-			<?php endif; ?>
-			<div class="commentmetadata">
-				<?php comment_text() ?>
-			</div>
-		</div>
-	</li>
-<?php }
+		</li>
+	<?php }
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	Short Post Title
@@ -354,18 +396,18 @@ function mts_pagination($pages = '', $range = 3) {
     if(1 != $pages) { 
         echo "<div class='pagination'><ul>";
         if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link(1)."'>&laquo; Primero</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link(1)."'>&laquo; First</a></li>";
         if($paged > 1 && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged - 1)."' class='inactive'>&lsaquo; Anterior</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged - 1)."' class='inactive'>&lsaquo; Previous</a></li>";
         for ($i=1; $i <= $pages; $i++){ 
             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) { 
                 echo ($paged == $i)? "<li class='current'><span class='currenttext'>".$i."</span></li>":"<li><a rel='nofollow' href='".get_pagenum_link($i)."' class='inactive'>".$i."</a></li>";
             } 
         } 
         if ($paged < $pages && $showitems < $pages) 
-            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged + 1)."' class='inactive'>Siguiente &rsaquo;</a></li>";
+            echo "<li><a rel='nofollow' href='".get_pagenum_link($paged + 1)."' class='inactive'>Next &rsaquo;</a></li>";
         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-            echo "<li><a rel='nofollow' class='inactive' href='".get_pagenum_link($pages)."'>Último &raquo;</a></li>";
+            echo "<li><a rel='nofollow' class='inactive' href='".get_pagenum_link($pages)."'>Last &raquo;</a></li>";
             echo "</ul></div>"; 
     }
 }
@@ -408,5 +450,50 @@ function mts_wysiwyg_editor($mce_buttons) {
    }
    return $mce_buttons;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*  WP Mega Menu Configuration
+/*-----------------------------------------------------------------------------------*/
+function megamenu_parent_element( $selector ) {
+    return '.main-header';
+}
+add_filter( 'wpmm_container_selector', 'megamenu_parent_element' );
+
+function menu_item_color( $item_output, $item_color, $item, $depth, $args ) {
+    $mts_options = get_option('point');
+    if (!empty($item_color))
+        return $item_output.'<style>.menu-item-'. $item->ID . '-megamenu .wpmm-posts p.wpmm-post-excerpt, .menu-item-'. $item->ID . '-megamenu .wpmm-posts .wpmm-entry-date, #wpmm-megamenu.menu-item-'. $item->ID . '-megamenu .wpmm-posts .wpmm-entry-title a, #wpmm-megamenu.menu-item-'. $item->ID . '-megamenu .wpmm-posts .wpmm-entry-author, #wpmm-megamenu.menu-item-'. $item->ID . '-megamenu .wpmm-posts .wpmm-entry-author a, #wpmm-megamenu.menu-item-'. $item->ID . '-megamenu .wpmm-subcategories a { color: #fff!important; }.menu-item-'. $item->ID . '-megamenu, .wpmm-megamenu-showing { background-color: ' . $mts_options['mts_color_scheme'] . ' !important; color: #fff; } #wpmm-megamenu.wpmm-light-scheme .wpmm-3-posts { border-left: 1px solid rgba(255, 255, 255, 0.24); } #wpmm-megamenu.menu-item-'. $item->ID . '-megamenu.wpmm-visible { border-top: 1px solid rgba(255, 255, 255, 0.24);} #wpmm-megamenu .review-total-only { background:' . $mts_options['mts_color_scheme'] . '; color: #fff; }</style>';
+    else
+        return $item_output;
+}
+add_filter( 'wpmm_color_output', 'menu_item_color', 10, 5 );
+
+function megamenu_exclude( $exclude, $args ) {
+    if ( $args['theme_location'] == 'footer-menu' )
+        $exclude = true;
+
+    return $exclude;
+}
+add_filter( 'wpmm_exclude_menu', 'megamenu_exclude', 10, 2 );
+
+/* Change image size */
+function megamenu_thumbnails( $thumbnail_html, $post_id ) {
+	$thumbnail_html = '<div class="wpmm-thumbnail">';
+	$thumbnail_html .= '<a title="'.get_the_title( $post_id ).'" href="'.get_permalink( $post_id ).'">';
+	if(has_post_thumbnail($post_id)):
+		$thumbnail_html .= get_the_post_thumbnail($post_id, 'featured', array('title' => ''));
+	else:
+		$thumbnail_html .= '<img src="'.get_template_directory().'/images/nothumb-widgetfull.png" alt="'.__('No Preview', 'wpmm').'"  class="wp-post-image" />';
+	endif;
+	$thumbnail_html .= '</a>';
+	
+	// WP Review
+	$thumbnail_html .= (function_exists('wp_review_show_total') ? wp_review_show_total(false) : '');
+	
+	$thumbnail_html .= '</div>';
+
+	return $thumbnail_html;
+}
+add_filter( 'wpmm_thumbnail_html', 'megamenu_thumbnails', 10, 2 );
 
 ?>

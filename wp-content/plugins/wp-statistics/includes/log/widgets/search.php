@@ -1,12 +1,25 @@
 <?php
 	function wp_statistics_generate_search_postbox($ISOCountryCode, $search_engines) {
 	
-		global $wpdb, $table_prefix, $WP_Statistics;
+		global $wpdb, $WP_Statistics;
+		
+		if( $WP_Statistics->get_option( 'visitors' ) ) {
 ?>
 				<div class="postbox">
 					<div class="handlediv" title="<?php _e('Click to toggle', 'wp_statistics'); ?>"><br /></div>
 					<h3 class="hndle"><span><?php _e('Search Engine Referrals', 'wp_statistics'); ?> <a href="?page=wps_searches_menu"><?php echo wp_statistics_icons('dashicons-visibility', 'visibility'); ?><?php _e('More', 'wp_statistics'); ?></a></span></h3>
 					<div class="inside">
+					<?php wp_statistics_generate_search_postbox_content($search_engines); ?>
+					</div>
+				</div>
+<?php		
+		}
+	}
+
+	function wp_statistics_generate_search_postbox_content($search_engines, $size = "300px", $days = 20) {
+	
+		global $wpdb, $WP_Statistics;
+?>
 						<script type="text/javascript">
 						var referral_chart;
 						jQuery(document).ready(function() {
@@ -18,7 +31,7 @@
 									
 									echo "var searches_data_line_" . $se['tag'] . " = [";
 									
-									for( $i=20; $i>=0; $i--) {
+									for( $i=$days; $i>=0; $i--) {
 										if( !array_key_exists( $i, $total_daily ) ) { $total_daily[$i] = 0; }
 										$stat = wp_statistics_searchengine($se['tag'], '-'.$i);
 										$total_daily[$i] += $stat;
@@ -33,7 +46,7 @@
 								if( $total_stats == 1 ) {
 									echo "var searches_data_line_total = [";
 
-									for( $i=20; $i>=0; $i--) {
+									for( $i=$days; $i>=0; $i--) {
 										echo "['" . $WP_Statistics->Current_Date('Y-m-d', '-'.$i) . "'," . $total_daily[$i] . "], ";
 									}
 									
@@ -43,14 +56,14 @@
 ?>
 							referral_chart = jQuery.jqplot('search-stats', [<?php foreach( $search_engines as $se ) { echo "searches_data_line_" . $se['tag'] . ", "; } if( $total_stats == 1 ) { echo 'searches_data_line_total'; }?>], {
 								title: {
-									text: '<b><?php echo __('Search engine referrals in the last', 'wp_statistics') . ' 20 ' . __('days', 'wp_statistics'); ?></b>',
+									text: '<b>' + <?php echo json_encode(__('Search engine referrals in the last', 'wp_statistics') . ' ' . $days . ' ' . __('days', 'wp_statistics')); ?> + '</b>',
 									fontSize: '12px',
 									fontFamily: 'Tahoma',
 									textColor: '#000000',
 									},
 								axes: {
 									xaxis: {
-											min: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '-20');?>',
+											min: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '-' . $days);?>',
 											max: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '');?>',
 											tickInterval: '1 day',
 											renderer:jQuery.jqplot.DateAxisRenderer,
@@ -64,7 +77,7 @@
 									yaxis: {
 											min: 0,
 											padMin: 1.0,
-											label: '<?php _e('Number of referrals', 'wp_statistics'); ?>',
+											label: <?php echo json_encode(__('Number of referrals', 'wp_statistics')); ?>,
 											labelRenderer: jQuery.jqplot.CanvasAxisLabelRenderer,
 											labelOptions: {
 												angle: -90,
@@ -78,7 +91,7 @@
 									show: true,
 									location: 's',
 									placement: 'outsideGrid',
-									labels: [<?php foreach( $search_engines as $se ) { echo "'" . __( $se['name'], 'wp_statistics' ) . "', "; } if( $total_stats == 1 ) { echo "'" . __('Total', 'wp_statistics') . "'"; }?>],
+									labels: [<?php foreach( $search_engines as $se ) { echo json_encode($se['translated']) . ", "; } if( $total_stats == 1 ) { echo "'" . json_encode(__('Total', 'wp_statistics')) . "'"; }?>],
 									renderer: jQuery.jqplot.EnhancedLegendRenderer,
 									rendererOptions:
 										{
@@ -92,6 +105,7 @@
 									bringSeriesToFront: true,
 									tooltipAxes: 'xy',
 									formatString: '%s:&nbsp;<b>%i</b>&nbsp;',
+									tooltipContentEditor: tooltipContentEditor,
 								},
 								grid: {
 								 drawGridlines: true,
@@ -102,6 +116,11 @@
 								},
 							} );
 						
+							function tooltipContentEditor(str, seriesIndex, pointIndex, plot) {
+								// display series_label, x-axis_tick, y-axis value
+								return plot.legend.labels[seriesIndex] + ", " + str;;
+							}
+							
 							jQuery(window).resize(function() {
 								JQPlotReferralChartLengendClickRedraw()
 							});
@@ -121,10 +140,8 @@
 
 						</script>
 						
-						<div id="search-stats" style="height:300px;"></div>
+						<div id="search-stats" style="height:<?php echo $size; ?>;"></div>
 						
-					</div>
-				</div>
 <?php		
 	}
 

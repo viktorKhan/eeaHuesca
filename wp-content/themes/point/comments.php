@@ -38,7 +38,7 @@ if ( post_password_required() ) { ?>
 			<?php global $aria_req; $comments_args = array(
 				'title_reply'=>'<h4><span>'.__('Add a Comment','mythemeshop').'</span></h4></h4>',
 				'comment_notes_after' => '',
-				'label_submit' => 'Add Comment',
+				'label_submit' => __('Add Comment','mythemeshop'),
 				'comment_field' => '<p class="comment-form-comment"><label for="comment">'.__('Comment:','mythemeshop').'<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="5" aria-required="true"></textarea></p>',
 				'fields' => apply_filters( 'comment_form_default_fields',
 					array(

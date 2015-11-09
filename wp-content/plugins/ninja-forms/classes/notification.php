@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Notification
  * 
@@ -61,7 +61,7 @@ class NF_Notification
 	public function edit_screen() {
 		$type = $this->type;
 		// Call our type edit screen.
-		Ninja_Forms()->notification_types->$type->edit_screen( $this->id );
+		Ninja_Forms()->notification_types[ $type ]->edit_screen( $this->id );
 	}
 
 	/**
@@ -126,7 +126,9 @@ class NF_Notification
 	 */
 	public function process() {
 		$type = $this->type;
-		Ninja_Forms()->notification_types->$type->process( $this->id );
+		if ( isset ( Ninja_Forms()->notification_types[ $type ] ) && is_object( Ninja_Forms()->notification_types[ $type ] ) ) {
+			Ninja_Forms()->notification_types[ $type ]->process( $this->id );			
+		}
 	}
 
 	/**
@@ -150,6 +152,19 @@ class NF_Notification
 	public function update_setting( $meta_key, $meta_value ) {
 		nf_update_object_meta( $this->id, $meta_key, $meta_value );
 		return true;
+	}
+
+	/**
+	 * Get our notification type name
+	 * 
+	 * @access public
+	 * @since 2.9
+	 * @return string $name
+	 */
+	public function type_name() {
+		$type = $this->type;
+		// Call our type edit screen.
+		return Ninja_Forms()->notification_types[ $type ]->name;
 	}
 
 }

@@ -582,10 +582,10 @@ class NHP_Options{
 				
 				echo '<div id="nhp-opts-header">';
 				
-				echo '<a href="http://mythemeshop.com" id="optionpanellogo" class="logo" target="_blank"><img src="'.$this->url.'img/optionpanellogo.png" /></a>';
+				echo '<a href="https://mythemeshop.com" id="optionpanellogo" class="logo" target="_blank"><img src="'.$this->url.'img/optionpanellogo.png" /></a>';
 echo '<span class="headtext">Welcome to your theme\'s mission control center.</span>';
 
-					echo '<a href="http://mythemeshop.com/support" class="docsupport" target="_blank"><img src="'.$this->url.'img/support.png" />Support</a>';
+					echo '<a href="https://community.mythemeshop.com/" class="docsupport" target="_blank"><img src="'.$this->url.'img/support.png" />Support</a>';
 					echo '<div class="clear"></div><!--clearfix-->';
 				echo '</div>';
 				
@@ -607,7 +607,7 @@ echo '<span class="headtext">Welcome to your theme\'s mission control center.</s
 				echo '<div id="nhp-opts-sidebar">';
 					echo '<ul id="nhp-opts-group-menu">';
 						foreach($this->sections as $k => $section){
-							$icon = (!isset($section['icon']))?'<img src="'.$this->url.'img/glyphicons/glyphicons_019_cogwheel.png" /> ':'<img src="'.$section['icon'].'" /> <br/>';
+							$icon = (!isset($section['icon']))?'<img src="'.$this->url.'img/glyphicons/glyphicons_019_cogwheel.png" /> ':'<img src="'.$section['icon'].'" />';
 							echo '<li id="'.$k.'_section_group_li" class="nhp-opts-group-tab-link-li">';
 								echo '<a href="javascript:void(0);" id="'.$k.'_section_group_li_a" class="nhp-opts-group-tab-link-a" data-rel="'.$k.'">'.$icon.$section['title'].'</a>';
 							echo '</li>';
@@ -621,7 +621,7 @@ echo '<span class="headtext">Welcome to your theme\'s mission control center.</s
 						
 						if(true === $this->args['show_import_export']){
 							echo '<li id="import_export_default_section_group_li" class="nhp-opts-group-tab-link-li">';
-									echo '<a href="javascript:void(0);" id="import_export_default_section_group_li_a" class="nhp-opts-group-tab-link-a" data-rel="import_export_default"><img src="'.$this->url.'img/glyphicons/download.png" /><br/> '.__('Import / Export', 'mythemeshop').'</a>';
+									echo '<a href="javascript:void(0);" id="import_export_default_section_group_li_a" class="nhp-opts-group-tab-link-a" data-rel="import_export_default"><img src="'.$this->url.'img/glyphicons/download.png" />'.__('Import / Export', 'mythemeshop').'</a>';
 							echo '</li>';
 							
 						}//if
@@ -650,7 +650,7 @@ echo '<span class="headtext">Welcome to your theme\'s mission control center.</s
 				echo '<div id="nhp-opts-main">';
 				
 					foreach($this->sections as $k => $section){
-						echo '<div id="'.$k.'_section_group'.'" class="nhp-opts-group-tab">';
+						echo '<div id="'.$k.'_section_group'.'" class="nhp-opts-group-tab section_group_'.$k.'">';
 							do_settings_sections($k.'_section_group');
 						echo '</div>';
 					}					

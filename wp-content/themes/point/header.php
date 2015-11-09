@@ -8,7 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php mts_meta(); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
@@ -32,15 +31,25 @@
 			<div id="header">
 				<?php if ($mts_options['mts_logo'] != '') { ?>
 					<?php if( is_front_page() || is_home() || is_404() ) { ?>
-						<h1 id="logo" class="image-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo $mts_options['mts_logo']; ?>" alt="<?php bloginfo( 'name' ); ?>"></a></h1>
+							<h1 id="logo" class="image-logo">
+                                <?php list($width, $height, $type, $attr) = getimagesize($mts_options['mts_logo']); ?>
+								<a href="<?php echo home_url(); ?>"><img src="<?php echo $mts_options['mts_logo']; ?>" alt="<?php bloginfo( 'name' ); ?>" <?php echo $attr; ?>></a>
+							</h1><!-- END #logo -->
 					<?php } else { ?>
-						<h2 id="logo" class="image-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo $mts_options['mts_logo']; ?>" alt="<?php bloginfo( 'name' ); ?>"></a></h2>
+						  <h2 id="logo" class="image-logo">
+								<?php list($width, $height, $type, $attr) = getimagesize($mts_options['mts_logo']); ?>
+								<a href="<?php echo home_url(); ?>"><img src="<?php echo $mts_options['mts_logo']; ?>" alt="<?php bloginfo( 'name' ); ?>" <?php echo $attr; ?>></a>
+							</h2><!-- END #logo -->
 					<?php } ?>
 				<?php } else { ?>
 					<?php if( is_front_page() || is_home() || is_404() ) { ?>
-						<h1 id="logo" class="text-logo"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+							<h1 id="logo" class="text-logo">
+								<a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+							</h1><!-- END #logo -->
 					<?php } else { ?>
-						<h2 id="logo" class="text-logo"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h2>
+						  <h2 id="logo" class="text-logo">
+								<a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+							</h2><!-- END #logo -->
 					<?php } ?>
 				<?php } ?>
 				<div class="secondary-navigation">
@@ -77,7 +86,13 @@
 		<?php if(isset($mts_options['mts_featured_slider'])) { if($mts_options['mts_featured_slider'] == '1' && $mts_options['mts_featured_slider'] != '') { ?>
 			<?php if(is_home() && !is_paged()) { ?>
 				<div class="featuredBox">
-					<?php $i = 1; $slider_cat = 1; if($mts_options['mts_featured_slider_cat'] != '') { $slider_cat = implode(",", $mts_options['mts_featured_slider_cat']); } $my_query = new WP_Query('cat='.$slider_cat.'&posts_per_page=4&ignore_sticky_posts=1'); 
+					<?php $i = 1;
+						// prevent implode error
+                        if (empty($mts_options['mts_featured_slider_cat']) || !is_array($mts_options['mts_featured_slider_cat'])) {
+                            $mts_options['mts_featured_slider_cat'] = array('0');
+                        }
+						$slider_cat = implode(",", $mts_options['mts_featured_slider_cat']);
+						$my_query = new WP_Query('cat='.$slider_cat.'&posts_per_page=4&ignore_sticky_posts=1'); 
 						while ($my_query->have_posts()) : $my_query->the_post(); ?>
 						<?php if($i == 1){ ?> 
 							<div class="firstpost excerpt">

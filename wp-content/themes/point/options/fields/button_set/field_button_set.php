@@ -28,14 +28,14 @@ class NHP_Options_button_set extends NHP_Options{
 	*/
 	function render(){
 		
-		$class = (isset($this->field['class']))?'class="'.$this->field['class'].'" ':'';
+		$class = (isset($this->field['class']))?$this->field['class'].' ':'';
 		
-		echo '<fieldset class="buttonset">';
+		echo '<fieldset class="'.$class.'buttonset">';
 			
 			foreach($this->field['options'] as $k => $v){
 				
-				echo '<input type="radio" id="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'" name="'.$this->args['opt_name'].'['.$this->field['id'].']" '.$class.' value="'.$k.'" '.checked($this->value, $k, false).'/>';
-				echo '<label for="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'">'.$v.'</label>';
+				echo '<input type="radio" id="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'" name="'.$this->args['opt_name'].'['.$this->field['id'].']" class="nhp-opts-button" value="'.$k.'" '.checked($this->value, $k, false).'/>';
+				echo '<label id="nhp-opts-button" for="'.$this->field['id'].'_'.array_search($k,array_keys($this->field['options'])).'">'.$v.'</label>';
 				
 			}//foreach
 			
@@ -55,9 +55,9 @@ class NHP_Options_button_set extends NHP_Options{
 	 * @since NHP_Options 1.0
 	*/
 	function enqueue(){
-		
-		wp_enqueue_style('nhp-opts-jquery-ui-css');
 
+		wp_enqueue_style('nhp-opts-jquery-ui-css');
+        
 		wp_enqueue_script(
 			'nhp-opts-field-button_set-js', 
 			NHP_OPTIONS_URL.'fields/button_set/field_button_set.js', 

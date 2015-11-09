@@ -52,18 +52,76 @@
 		wp_unschedule_event(wp_next_scheduled('wp_statistics_geoip_hook'), 'wp_statistics_geoip_hook'); 
 	}
 
-	// Add the GeoIP update schedule if it doesn't exist and it should be.
+	// Add the browscap update schedule if it doesn't exist and it should be.
+	if( !wp_next_scheduled('wp_statistics_browscap_hook') && $WP_Statistics->get_option('schedule_browscap') ) {
+	
+		wp_schedule_event(time(), 'weekly', 'wp_statistics_browscap_hook'); 
+	}
+
+	// Remove the browscap update schedule if it does exist and it should shouldn't.
+	if( wp_next_scheduled('wp_statistics_browscap_hook') && !$WP_Statistics->get_option('schedule_browscap') ) {
+	
+		wp_unschedule_event(wp_next_scheduled('wp_statistics_browscap_hook'), 'wp_statistics_browscap_hook'); 
+	}
+
+	// Add the referrerspam update schedule if it doesn't exist and it should be.
+	if( !wp_next_scheduled('wp_statistics_referrerspam_hook') && $WP_Statistics->get_option('schedule_referrerspam') ) {
+	
+		wp_schedule_event(time(), 'weekly', 'wp_statistics_referrerspam_hook'); 
+	}
+
+	// Remove the referrerspam update schedule if it does exist and it should shouldn't.
+	if( wp_next_scheduled('wp_statistics_referrerspam_hook') && !$WP_Statistics->get_option('schedule_referrerspam') ) {
+	
+		wp_unschedule_event(wp_next_scheduled('wp_statistics_referrerspam_hook'), 'wp_statistics_referrerspam_hook'); 
+	}
+
+	// Add the database maintenance schedule if it doesn't exist and it should be.
 	if( !wp_next_scheduled('wp_statistics_dbmaint_hook') && $WP_Statistics->get_option('schedule_dbmaint') ) {
 	
 		wp_schedule_event(time(), 'daily', 'wp_statistics_dbmaint_hook'); 
 	}
 
-	// Remove the GeoIP update schedule if it does exist and it should shouldn't.
+	// Remove the database maintenance schedule if it does exist and it shouldn't.
 	if( wp_next_scheduled('wp_statistics_dbmaint_hook') && (!$WP_Statistics->get_option('schedule_dbmaint') ) ) {
 	
 		wp_unschedule_event(wp_next_scheduled('wp_statistics_dbmaint_hook'), 'wp_statistics_dbmaint_hook'); 
 	}
 
+	// Add the visitor database maintenance schedule if it doesn't exist and it should be.
+	if( !wp_next_scheduled('wp_statistics_dbmaint_visitor_hook') && $WP_Statistics->get_option('schedule_dbmaint_visitor') ) {
+	
+		wp_schedule_event(time(), 'daily', 'wp_statistics_dbmaint_visitor_hook'); 
+	}
+
+	// Remove the visitor database maintenance schedule if it does exist and it shouldn't.
+	if( wp_next_scheduled('wp_statistics_dbmaint_visitor_hook') && (!$WP_Statistics->get_option('schedule_dbmaint_visitor') ) ) {
+	
+		wp_unschedule_event(wp_next_scheduled('wp_statistics_dbmaint_visitor_hook'), 'wp_statistics_dbmaint_visitor_hook'); 
+	}
+
+	// Remove the add visit row schedule if it does exist and it shouldn't.
+	if( wp_next_scheduled('wp_statistics_add_visit_hook') && (!$WP_Statistics->get_option('visits') ) ) {
+	
+		wp_unschedule_event(wp_next_scheduled('wp_statistics_add_visit_hook'), 'wp_statistics_add_visit_hook'); 
+	}
+
+	// Add the add visit table row schedule if it does exist and it should.
+	if( !wp_next_scheduled('wp_statistics_add_visit_hook') && $WP_Statistics->get_option('visits')) {
+
+		wp_schedule_event(time(), 'daily', 'wp_statistics_add_visit_hook'); 
+	}
+	
+	// This function adds a record for tomorrow to the visit table to avoid a race condition.
+	function wp_statistics_add_visit_event() {
+		GLOBAL $wpdb, $WP_Statistics;
+
+		$sqlstring = $wpdb->prepare( 'INSERT INTO ' . $wpdb->prefix . 'statistics_visit (last_visit, last_counter, visit) VALUES ( %s, %s, %d)', $WP_Statistics->Current_Date(null, '+1'), $WP_Statistics->Current_date('Y-m-d', '+1'), 0 );
+
+		$wpdb->query( $sqlstring );
+	}
+	add_action('wp_statistics_add_visit_hook', 'wp_statistics_add_visit_event');
+	
 	// This function updates the GeoIP database from MaxMind.
 	function wp_statistics_geoip_event() {
 	
@@ -91,28 +149,51 @@
 	}
 	add_action('wp_statistics_geoip_hook', 'wp_statistics_geoip_event');
 
+	// This function updates the browscap database.
+	function wp_statistics_browscap_event() {
+	
+		GLOBAL $WP_Statistics;
+	
+		// Check for a new browscap once a week
+		$WP_Statistics->update_option('update_browscap',TRUE);
+	}
+	add_action('wp_statistics_browscap_hook', 'wp_statistics_browscap_event');
+
+	// This function updates the browscap database.
+	function wp_statistics_referrerspam_event() {
+	
+		GLOBAL $WP_Statistics;
+	
+		// Check for a new referrerspam once a week
+		$WP_Statistics->update_option('update_referrerspam',TRUE);
+	}
+	add_action('wp_statistics_referrerspam_hook', 'wp_statistics_referrerspam_event');
 
 	// This function will purge old records on a schedule based on age.
 	function wp_statistics_dbmaint_event() {
 
 		global $wpdb, $WP_Statistics;
 		
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/functions/purge.php' );
+
 		$purge_days = intval( $WP_Statistics->get_option('schedule_dbmaint_days', FALSE) );
 		
-		// We always keep at least 30 days of stats, if the user has selected a lower interval, don't do anything.
-		if(  $purge_days > 30 ) {
-		
-			$table_name = $wpdb->prefix . 'statistics_visit';
-			$date_string = date( 'Y-m-d', strtotime( '-' . $purge_days . ' days')); 
-	 
-			$result = $wpdb->query('DELETE FROM ' . $table_name . ' WHERE `last_counter` < \'' . $date_string . '\'');
-			
-			$table_name = $wpdb->prefix . 'statistics_visitor';
-
-			$result = $wpdb->query('DELETE FROM ' . $table_name . ' WHERE `last_counter` < \'' . $date_string . '\'');
-		}
+		wp_statistics_purge_data( $purge_days );
 	}
 	add_action('wp_statistics_dbmaint_hook', 'wp_statistics_dbmaint_event');
+
+	// This function will purge visitors with more than a defined number of hits in a day.
+	function wp_statistics_dbmaint_visitor_event() {
+
+		global $wpdb, $WP_Statistics;
+		
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/functions/purge-hits.php' );
+
+		$purge_hits = intval( $WP_Statistics->get_option('schedule_dbmaint_visitor_hits', FALSE) );
+		
+		wp_statistics_purge_visitor_hits( $purge_hits );
+	}
+	add_action('wp_statistics_dbmaint_visitor_hook', 'wp_statistics_dbmaint_visitor_event');
 
 	// This function sends the statistics report to the selected users.
 	function wp_statistics_send_report() {
@@ -120,23 +201,9 @@
 		GLOBAL $WP_Statistics;
 		
 		// Retrieve the template from the options.
-		$string = $WP_Statistics->get_option('content_report');
+		$final_text_report = $WP_Statistics->get_option('content_report');
 		
-		// These are the variables we can replace in the template.  Should probably convert this to use the short codes format at some point.
-		$template_vars = array(
-			'user_online'		=>	wp_statistics_useronline(),
-			'today_visitor'		=>	wp_statistics_visitor('today'),
-			'today_visit'		=>	wp_statistics_visit('today'),
-			'yesterday_visitor'	=>	wp_statistics_visitor('yesterday'),
-			'yesterday_visit'	=>	wp_statistics_visit('yesterday'),
-			'total_visitor'		=>	wp_statistics_visitor('total'),
-			'total_visit'		=>	wp_statistics_visit('total')
-		);
-
-		// Replace the items in the template.
-		$final_text_report = preg_replace('/%(.*?)%/ime', "\$template_vars['$1']", $string);
-
-		// Process shortcodes in the template.
+		// Process shortcodes in the template.  Note that V8.0 upgrade script replaced the old %option% codes with the appropriate short codes.
 		$final_text_report = do_shortcode( $final_text_report );
 		
 		// Send the report through the selected transport agent.

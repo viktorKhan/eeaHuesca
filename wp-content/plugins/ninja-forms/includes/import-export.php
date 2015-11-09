@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit;
 
 /*
  * Import a serialized ninja form
@@ -16,15 +16,19 @@ function ninja_forms_import_form( $file ){
 	unset ( $form['notifications'] );
 
 	$form = apply_filters( 'ninja_forms_before_import_form', $form );
-	$form['data'] = serialize( $form['data'] );
+	// Remove our last_sub setting. This is our starting seq_num.
+	if ( isset ( $form['data']['last_sub'] ) )
+		unset( $form['data']['last_sub'] );
 
-	$wpdb->insert( NINJA_FORMS_TABLE_NAME, $form );
-	$form_id = $wpdb->insert_id;
+	// Create our form
+	$form_id = Ninja_Forms()->form()->create( $form['data'] );
+
 	$form['id'] = $form_id;
 
 	if(is_array($form_fields)){
 		for ($x=0; $x < count( $form_fields ); $x++) {
 			$form_fields[$x]['form_id'] = $form_id;
+			$form_fields[$x]['data'] = apply_filters( 'nf_before_import_field', $form_fields[$x]['data'], $form_fields[$x]['id'] );
 			$form_fields[$x]['data'] = serialize( $form_fields[$x]['data'] );
 			$old_field_id = $form_fields[$x]['id'];
 			$form_fields[$x]['id'] = NULL;
@@ -35,12 +39,17 @@ function ninja_forms_import_form( $file ){
 		}
 	}
 
+	$form['field'] = $form_fields;
+	$form['notifications'] = $notifications;	
+
 	// Insert any notifications we might have.
 	if ( is_array( $notifications ) ) {
 		foreach ( $notifications as $n ) {
 			$n_id = nf_insert_notification( $form_id );
+			$n = apply_filters( 'nf_import_notification_meta', $n, $n_id, $form );
+			unset( $n['conditions'] );
 			foreach ( $n as $meta_key => $meta_value ) {
-				foreach ( $form_fields as $field ) {						
+				foreach ( $form_fields as $field ) {
 					// We need to replace any references to old fields in our notification
 					if ( 'email_message' == $meta_key ) {
 						$meta_value = str_replace( '[ninja_forms_field id=' . $field['old_id'].']', '[ninja_forms_field id='.$field['id'].']', $meta_value );
@@ -54,9 +63,7 @@ function ninja_forms_import_form( $file ){
 		}
 	}
 
-	$form['data'] = unserialize( $form['data'] );
-	$form['field'] = $form_fields;
-	$form['notifications'] = $notifications;
+	
 	do_action( 'ninja_forms_after_import_form', $form );
 	return $form['id'];
 }

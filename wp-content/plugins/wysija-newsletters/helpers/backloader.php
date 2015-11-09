@@ -8,11 +8,10 @@ class WYSIJA_help_backloader extends WYSIJA_help{
 
 	var $jsVariables = '';
 
-	function WYSIJA_help_backloader(){
-
-		parent::WYSIJA_help();
-
+	function __construct() {
+		parent::__construct();
 	}
+
 	/**
 	 *
 	 * @param type $controller
@@ -118,7 +117,6 @@ class WYSIJA_help_backloader extends WYSIJA_help{
 				'admin-listing',
 				'admin-statistics-filter',
 				'admin-statistics',
-				'admin-subscribers-edit-manual',
 				'admin-subscribers-export',
 				'admin-subscribers-import',
 				'admin-subscribers-importmatch',

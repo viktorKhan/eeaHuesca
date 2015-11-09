@@ -1,22 +1,24 @@
 <script type="text/javascript">
 	jQuery(document).ready(function(){
-	postboxes.add_postbox_toggles(pagenow);
+		postboxes.add_postbox_toggles(pagenow);
 	});
 </script>
-<?php 
-	$search_engines = wp_statistics_searchengine_list();
-	
-	$search_result['All'] = wp_statistics_searchengine('all','total');
+<?php
+	$daysToDisplay = 20; 
+	if( array_key_exists('hitdays',$_GET) ) { $daysToDisplay = intval($_GET['hitdays']); }
 
-	foreach( $search_engines as $key => $se ) {
-		$search_result[$key] = wp_statistics_searchengine($key,'total');
-	}
+	if( array_key_exists('rangestart', $_GET ) ) { $rangestart = $_GET['rangestart']; } else { $rangestart = ''; }
+	if( array_key_exists('rangeend', $_GET ) ) { $rangeend = $_GET['rangeend']; } else { $rangeend = ''; }
 
-	include_once( dirname( __FILE__ ) . "/../functions/country-codes.php" ); 
+	list( $daysToDisplay, $rangestart_utime, $rangeend_utime ) = wp_statistics_date_range_calculator( $daysToDisplay, $rangestart, $rangeend );
+
 ?>
 <div class="wrap">
 	<?php screen_icon('options-general'); ?>
 	<h2><?php _e('Top Countries', 'wp_statistics'); ?></h2>
+
+	<?php wp_statistics_date_range_selector( 'wps_countries_menu', $daysToDisplay ); ?>
+
 	<div class="postbox-container" id="last-log" style="width: 100%;">
 		<div class="metabox-holder">
 			<div class="meta-box-sortables">
@@ -32,11 +34,16 @@
 								</tr>
 								
 								<?php
-									$result = $wpdb->get_results("SELECT DISTINCT `location` FROM `{$table_prefix}statistics_visitor`");
+									$ISOCountryCode = $WP_Statistics->get_country_codes();
+									
+									$result = $wpdb->get_results("SELECT DISTINCT `location` FROM `{$wpdb->prefix}statistics_visitor`");
+									
+									$rangestartdate = $WP_Statistics->real_current_date('Y-m-d', '-0', $rangestart_utime );
+									$rangeenddate = $WP_Statistics->real_current_date('Y-m-d', '-0', $rangeend_utime );
 									
 									foreach( $result as $item )
 										{
-										$Countries[$item->location] = $wpdb->get_var("SELECT count(location) FROM `{$table_prefix}statistics_visitor` WHERE location='" . $item->location . "'" );
+										$Countries[$item->location] = $wpdb->get_var("SELECT count(location) FROM `{$wpdb->prefix}statistics_visitor` WHERE location='{$item->location}' AND `last_counter` BETWEEN '{$rangestartdate}' AND '{$rangeenddate}'" );
 										}
 										
 									arsort($Countries);

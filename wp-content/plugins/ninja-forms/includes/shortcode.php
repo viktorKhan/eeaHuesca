@@ -1,7 +1,7 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) exit;
 
 function ninja_forms_shortcode( $atts ){
-	if ( is_admin() ) {
+	if ( is_admin() && ( !defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
 		$return = '[ninja_forms_display_form';
 		if ( is_array ( $atts ) ) {
 			foreach ( $atts as $key => $value ) {
@@ -16,6 +16,11 @@ function ninja_forms_shortcode( $atts ){
 	}
 }
 
+add_shortcode( 'ninja_forms', 'ninja_forms_shortcode' );
+add_shortcode( 'ninja_form', 'ninja_forms_shortcode' );
+/**
+ * Old Ninja Forms shortcode
+ */
 add_shortcode( 'ninja_forms_display_form', 'ninja_forms_shortcode' );
 
 function ninja_forms_field_shortcode( $atts ){
@@ -30,7 +35,7 @@ function ninja_forms_field_shortcode( $atts ){
 	} else {
 		$value = '';
 	}
-	return $value;
+	return nf_wp_kses_post_deep( $value );
 }
 add_shortcode( 'ninja_forms_field', 'ninja_forms_field_shortcode' );
 
@@ -76,6 +81,9 @@ function nf_parse_sub_seq_num_shortcode( $setting, $setting_name = '', $id = '' 
 		return $setting;
 
 	$sub_id = $ninja_forms_processing->get_form_setting( 'sub_id' );
+	if ( empty ( $sub_id ) )
+		return $setting;
+
 	$seq_num = Ninja_Forms()->sub( $sub_id )->get_seq_num();
 	
 	$setting = str_replace( '[nf_sub_seq_num]', $seq_num, $setting );
@@ -97,9 +105,14 @@ function nf_all_fields_shortcode( $atts, $content = '' ) {
 	if ( ! isset ( $ninja_forms_processing ) )
 		return false;
 
-	// Generate our "all fields" table for use as a JS var.
-	$all_fields_table = '<table><tbody>';
+	$html = isset ( $atts['html'] ) ? $atts['html'] : 1;
 
+	if ( 1 == $html ) {
+		// Generate our "all fields" table for use as a JS var.
+		$field_list = '<table><tbody>';
+	} else {
+		$field_list = '';
+	}
 	foreach ( $ninja_forms_processing->get_all_fields() as $field_id => $user_value ) {
 		if ( ! $user_value )
 			continue;
@@ -111,12 +124,19 @@ function nf_all_fields_shortcode( $atts, $content = '' ) {
 
 		$value = apply_filters( 'nf_all_fields_field_value', ninja_forms_field_shortcode( array( 'id' => $field_id ) ), $field_id );
 		$label = strip_tags( apply_filters( 'nf_all_fields_field_label', $field['data']['label'], $field_id ) );
-		$all_fields_table .= '<tr id="ninja_forms_field_' . $field_id . '"><td>' . $label .':</td><td>' . $value . '</td></tr>';
+
+		if ( 1 == $html ) {
+			$field_list .= '<tr id="ninja_forms_field_' . $field_id . '"><td>' . $label .':</td><td>' . $value . '</td></tr>';
+		} else {
+			$field_list .= $label . ' - ' . $value . "\r\n";
+		}
 	}
 
-	$all_fields_table .= '</tbody></table>';
+	if ( 1 == $html )
+		$field_list .= '</tbody></table>';
 
-	return apply_filters( 'nf_all_fields_table', $all_fields_table, $ninja_forms_processing->get_form_ID() );
+	return apply_filters( 'nf_all_fields_table', $field_list, $ninja_forms_processing->get_form_ID() );
+
 }
 
 add_shortcode( 'ninja_forms_all_fields', 'nf_all_fields_shortcode' );
@@ -133,6 +153,9 @@ function nf_parse_fields_shortcode( $content ) {
 	if ( ! isset ( $ninja_forms_processing ) )
 		return $content;
 
+	if ( is_array ( $content ) )
+		return $content;
+
 	$matches = array();
 	$pattern = '\[(\[?)(ninja_forms_field|ninja_forms_all_fields)(?![\w-])([^\]\/]*(?:\/(?!\])[^\]\/]*)*?)(?:(\/)\]|\](?:([^\[]*+(?:\[(?!\/\2\])[^\[]*+)*+)\[\/\2\])?)(\]?)';
 
@@ -145,7 +168,11 @@ function nf_parse_fields_shortcode( $content ) {
 				if ( isset ( $matches[3][ $key ] ) ) {
 					$atts = shortcode_parse_atts( $matches[3][ $key ] );
 					$id = $atts['id'];
-					$content = str_replace( $matches[0][ $key ], $ninja_forms_processing->get_field_value( $id ), $content );
+					$value = $ninja_forms_processing->get_field_value( $id );
+					if( is_array( $value ) ){
+						$value = implode( ',', $value );
+					}
+					$content = str_replace( $matches[0][ $key ], $value, $content );
 				}
 			} else if ( 'ninja_forms_all_fields' == $shortcode ) {
 				if ( isset ( $matches[3][ $key ] ) ) {
@@ -157,3 +184,61 @@ function nf_parse_fields_shortcode( $content ) {
 	}
 	return $content;
 }
+
+/**
+ * Shortcode for ninja_forms_all_fields
+ *
+ * @since 2.8
+ * @return string sub_limit_number
+ */
+function ninja_forms_display_sub_limit_number_shortcode( $atts ){
+  $form = Ninja_Forms()->form( $atts[ 'id' ] );
+  
+  if ( isset( $form->settings[ 'sub_limit_number' ] ) ) {
+    return $form->settings[ 'sub_limit_number' ];
+  }
+  else {
+    return null;
+  }
+}
+
+add_shortcode( 'ninja_forms_display_sub_limit_number', 'ninja_forms_display_sub_limit_number_shortcode' );
+
+/**
+ * Shortcode for ninja_forms_display_sub_number
+ *
+ * @since 2.8
+ * @return int nf_get_sub_count()
+ * @see nf_get_sub_count()
+ */
+function ninja_forms_display_sub_number_shortcode( $atts ){
+  $sub_count = nf_get_sub_count( $atts[ 'id' ] );
+  return $sub_count;
+}
+
+add_shortcode( 'ninja_forms_display_sub_number', 'ninja_forms_display_sub_number_shortcode' );
+
+/**
+ * Shortcode for ninja_forms_display_sub_number_remaining
+ *
+ * @since 2.8
+ * @return int
+ * @see nf_get_sub_count()
+ */
+function ninja_forms_display_sub_number_remaining_shortcode( $atts ){
+  $form = Ninja_Forms()->form($atts[ 'id' ]);
+  
+  if( isset( $form->settings[ 'sub_limit_number' ] ) ) {
+    $sub_count = nf_get_sub_count( $atts[ 'id' ] );
+    $sub_limit = (int) $form->settings[ 'sub_limit_number' ];
+    
+    if( $sub_count > $sub_limit )
+      return 0;
+    
+    return $sub_limit - $sub_count;
+  }
+  else {
+    return null;
+  }
+}
+add_shortcode( 'ninja_forms_display_sub_number_remaining', 'ninja_forms_display_sub_number_remaining_shortcode' );

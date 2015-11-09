@@ -2,9 +2,9 @@
 defined('WYSIJA') or die('Restricted access');
 class WYSIJA_control_back_config extends WYSIJA_control{
 
-    function WYSIJA_control_back_config(){
+    function __construct(){
         if(!WYSIJA::current_user_can('wysija_config'))  die("Action is forbidden.");
-        parent::WYSIJA_control();
+        parent::__construct();
     }
 
     function _displayErrors(){
@@ -376,7 +376,7 @@ class WYSIJA_control_back_config extends WYSIJA_control{
                     foreach($block['params'] as $key => $value) {
                         $value = base64_decode($value);
                         if(is_serialized($value) === true) {
-                            $value = unserialize($value);
+                            $value = (array) unserialize($value);
                         }
                         $params[$key] = $value;
                     }
@@ -458,5 +458,13 @@ class WYSIJA_control_back_config extends WYSIJA_control{
         }
 
         return array('result' => $result, 'save_message' => base64_encode($save_message), 'exports' => base64_encode($helper_form_engine->render_editor_export($form_id)));
+    }
+
+    function wysija_dismiss_update_notice() {
+        WYSIJA::update_option('wysija_dismiss_update_notice', true);
+    }
+
+    function wysija_dismiss_license_notice() {
+        WYSIJA::update_option('wysija_dismiss_license_notice', true);
     }
 }

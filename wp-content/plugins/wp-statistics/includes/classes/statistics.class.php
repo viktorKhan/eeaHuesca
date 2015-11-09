@@ -1,6 +1,6 @@
 <?php
 /*
-	This is the primary class for WP Statisticsrecording hits on the WordPress site.  It is extended by the Hits class and the GeoIPHits class.
+	This is the primary class for WP Statistics recording hits on the WordPress site.  It is extended by the Hits class and the GeoIPHits class.
 	
 	This class handles; visits, visitors and pages.
 */
@@ -10,14 +10,21 @@
 		// Setup our protected, private and public variables.		
 		protected $db;
 		protected $tb_prefix;
-		protected $ip;
+		protected $ip = false;
 		protected $ip_hash = false;
 		protected $agent;
 		
 		private $result;
+		private $historical;
+		private $user_options_loaded = false;
+		private $is_feed = false;
+		private $tz_offset = 0;
+		private $country_codes = false;
+		private $referrer = false;
 		
 		public $coefficient = 1;
 		public $plugin_dir = '';
+		public $plugin_url = '';
 		public $user_id = 0;
 		public $options = array();
 		public $user_options = array();
@@ -25,11 +32,18 @@
 		// Construction function.
 		public function __construct() {
 		
-			global $wpdb, $table_prefix;
+			global $wpdb;
+			
+			if( get_option('timezone_string') ) {
+				$this->tz_offset = timezone_offset_get( timezone_open( get_option('timezone_string') ), new DateTime() );
+			} else if( get_option('gmt_offset') ) {
+				$this->tz_offset = get_option('gmt_offset') * 60 * 60;
+			}
 			
 			$this->db = $wpdb;
-			$this->tb_prefix = $table_prefix;
+			$this->tb_prefix = $wpdb->prefix;
 			$this->agent = $this->get_UserAgent();
+			$this->historical = array();
 
 			// Load the options from the database
 			$this->options = get_option( 'wp_statistics' ); 
@@ -42,6 +56,7 @@
 			
 			// This is a bit of a hack, we strip off the "includes/classes" at the end of the current class file's path.
 			$this->plugin_dir = substr( dirname( __FILE__ ), 0, -17 );
+			$this->plugin_url = substr( plugin_dir_url( __FILE__ ), 0, -17 );
 			
 			$this->get_IP();
 			
@@ -62,11 +77,15 @@
 		}
 		
 		// This function loads the user options from WordPress.  It is NOT called during the class constructor.
-		public function load_user_options() {
+		public function load_user_options( $force = false) {
+			if( $this->user_options_loaded == true && $force != true ) { return; }
+			
 			$this->set_user_id();
 
 			// Not sure why, but get_user_meta() is returning an array or array's unless $single is set to true.
 			$this->user_options = get_user_meta( $this->user_id, 'wp_statistics', true );
+			
+			$this->user_options_loaded = true;
 		}
 		
 		// The function mimics WordPress's get_option() function but uses the array instead of individual options.
@@ -179,7 +198,7 @@
 					$this->tb_prefix . "statistics_useronline",
 					array(
 						'ip'		=>	$this->get_IP(),
-						'timestamp'	=>	date('U'),
+						'timestamp'	=>	$this->Current_Date('U'),
 						'date'		=>	$this->Current_Date(),
 						'referred'	=>	$this->get_Referred(),
 						'agent'		=>	$this->agent['browser'],
@@ -225,6 +244,9 @@
 		// This function returns the current IP address of the remote client.
 		public function get_IP() {
 		
+			// Check to see if we've already retrieved the IP address and if so return the last result.
+			if( $this->ip !== FALSE ) { return $this->ip; }
+		
 			// By default we use the remote address the server has.
 			$temp_ip = $_SERVER['REMOTE_ADDR'];
 		
@@ -257,6 +279,9 @@
 				// If the headers are invalid, use the server variable which should be good always.
 				$temp_ip = $_SERVER['REMOTE_ADDR'];
 			}
+
+			// If the ip address is blank, use 127.0.0.1 (aka localhost).
+			if( $temp_ip == '' ) { $temp_ip = '127.0.0.1'; }
 			
 			$this->ip = $temp_ip;
 			
@@ -267,49 +292,117 @@
 		public function get_UserAgent() {
 		
 			// Parse the agent stirng.
-			$agent = parse_user_agent();
+			try 
+				{
+				$agent = parse_user_agent();
+				}
+			catch( Exception $e )
+				{
+				$agent = array( 'browser' => 'Unknown', 'platform' => 'Unknown', 'version' => 'Unknown' );
+				}
 			
 			// null isn't a very good default, so set it to Unknown instead.
 			if( $agent['browser'] == null ) { $agent['browser'] = "Unknown"; }
 			if( $agent['platform'] == null ) { $agent['platform'] = "Unknown"; }
 			if( $agent['version'] == null ) { $agent['version'] = "Unknown"; }
 			
+			// Uncommon browsers often have some extra cruft, like brackets, http:// and other strings that we can strip out.
+			$strip_strings = array('"', "'", '(', ')', ';', ':', '/', '[', ']', '{', '}', 'http' );
+			foreach( $agent as $key => $value ) {
+				$agent[$key] = str_replace( $strip_strings, '', $agent[$key] );
+			}
+			
 			return $agent;
 		}
 		
 		// This function will return the referrer link for the current user.
-		public function get_Referred($default_referr = false) {
+		public function get_Referred($default_referrer = false) {
+			
+			if( $this->referrer !== false ) { return $this->referrer; }
+			
+			$this->referrer = '';
+			
+			if( isset($_SERVER['HTTP_REFERER']) ) { $this->referrer = $_SERVER['HTTP_REFERER']; }
+			if( $default_referrer ) { $this->referrer = $default_referrer; }
+			
+			$this->referrer = esc_sql(strip_tags($this->referrer) );
+			
+			if( !$this->referrer ) { $this->referrer = get_bloginfo('url'); }
+			
+			if( $this->get_option( 'addsearchwords', false ) ) {
+				// Check to see if this is a search engine referrer
+				$SEInfo = $this->Search_Engine_Info( $this->referrer );
+				
+				if( is_array( $SEInfo ) ) {
+					// If we're a known SE, check the query string
+					if( $SEInfo['tag'] != '' ) {
+						$result = $this->Search_Engine_QueryString( $this->referrer );
+						
+						// If there were no search words, let's add the page title
+						if( $result == '' || $result == 'No search query found!' ) {
+							$result = wp_title('', false);
+							if( $result != '' ) {
+								$this->referrer = esc_url( add_query_arg( $SEInfo['querykey'], urlencode( '~"' . $result . '"' ), $this->referrer ) );
+							}
+						}
+					}
+				}
+			}
+			
+			return $this->referrer;
+		}
 		
-			$referr = '';
-			
-			if( isset($_SERVER['HTTP_REFERER']) ) { $referr = $_SERVER['HTTP_REFERER']; }
-			if( $default_referr ) { $referr = $default_referr; }
-			
-			$referr = esc_sql(strip_tags($referr) );
-			
-			if( !$referr ) { $referr = get_bloginfo('url'); }
-			
-			return $referr;
+		// This function returns a date string in the desired format with a passed in timestamp.
+		public function Local_Date($format, $timestamp ) {
+			return date( $format, $timestamp + $this->tz_offset );
 		}
 		
 		// This function returns a date string in the desired format.
-		public function Current_Date($format = 'Y-m-d H:i:s', $strtotime = null) {
+		public function Current_Date($format = 'Y-m-d H:i:s', $strtotime = null, $relative = null) {
 		
 			if( $strtotime ) {
-				return date($format, strtotime("{$strtotime} day") ) ;
+				if( $relative ) {
+					return date($format, strtotime("{$strtotime} day", $relative) + $this->tz_offset );
+				}
+				else {
+					return date($format, strtotime("{$strtotime} day") + $this->tz_offset );
+				}
 			} else {
-				return date($format) ;
+				return date($format, time() + $this->tz_offset);
 			}
 		}
 		
+		// This function returns a date string in the desired format.
+		public function Real_Current_Date($format = 'Y-m-d H:i:s', $strtotime = null, $relative = null) {
+		
+			if( $strtotime ) {
+				if( $relative ) {
+					return date($format, strtotime("{$strtotime} day", $relative) );
+				}
+				else {
+					return date($format, strtotime("{$strtotime} day") );
+				}
+			} else {
+				return date($format, time());
+			}
+		}
+
 		// This function returns an internationalized date string in the desired format.
 		public function Current_Date_i18n($format = 'Y-m-d H:i:s', $strtotime = null, $day=' day') {
 		
 			if( $strtotime ) {
-				return date_i18n($format, strtotime("{$strtotime}{$day}") ) ;
+				return date_i18n($format, strtotime("{$strtotime}{$day}") + $this->tz_offset );
 			} else {
-				return date_i18n($format) ;
+				return date_i18n($format, time() + $this->tz_offset);
 			}
+		}
+		
+		public function strtotimetz( $timestring ) {
+			return strtotime( $timestring ) + $this->tz_offset;
+		}
+		
+		public function timetz() {
+			return time() + $this->tz_offset;
 		}
 
 		// This function checks to see if a search engine exists in the current list of search engines.
@@ -357,12 +450,32 @@
 			return array('name' => 'Unknown', 'tag' => '', 'sqlpattern' => '', 'regexpattern' => '', 'querykey' => 'q', 'image' => 'unknown.png' );
 		}
 		
+		// This function returns an array of information about a given search engine based on the url passed in.
+		// It is used in several places to get the SE icon or the sql query to select an individual SE from the database.
+		public function Search_Engine_Info_By_Engine($engine = false) {
+				
+			// If there is no URL and no referrer, always return false.
+			if($engine == false) {
+				return false;
+			}
+			
+			// Get the list of search engines we currently support.
+			$search_engines = wp_statistics_searchengine_list();
+
+			if( array_key_exists( $engine, $search_engines ) ) {
+				return $search_engines[$engine];
+			}
+			
+			// If no SE matched, return some defaults.
+			return array('name' => 'Unknown', 'tag' => '', 'sqlpattern' => '', 'regexpattern' => '', 'querykey' => 'q', 'image' => 'unknown.png' );
+		}
+		
 		// This function will parse a URL from a referrer and return the search query words used.
 		public function Search_Engine_QueryString($url = false) {
 		
 			// If no URL was passed in, get the current referrer for the session.
 			if(!$url) {
-				$url = isset($_SERVER['HTTP_REFERER']) ? $this->get_Referred() : false;
+				$url = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : false;
 			}
 			
 			// If there is no URL and no referrer, always return false.
@@ -396,7 +509,7 @@
 						$words = '';
 					}
 				
-					// If no words were found, return a pleasent default.
+					// If no words were found, return a pleasant default.
 					if( $words == '' ) { $words = 'No search query found!'; }
 					return $words;
 					}
@@ -405,5 +518,66 @@
 			// We should never actually get to this point, but let's make sure we return something
 			// just in case something goes terribly wrong.
 			return 'No search query found!';
+		}
+		
+		public function Get_Historical_Data($type, $id = '') {
+		
+			$count = 0;
+		
+			switch( $type ) {
+				case 'visitors':
+					if( array_key_exists( 'visitors', $this->historical ) ) {
+						return $this->historical['visitors'];
+					}
+					else {
+						$result = $this->db->get_var("SELECT value FROM {$this->tb_prefix}statistics_historical WHERE category = 'visitors'");
+						if( $result > $count ) { $count = $result; }
+						$this->historical['visitors'] = $count;
+					}
+				
+					break;
+				case 'visits':
+					if( array_key_exists( 'visits', $this->historical ) ) {
+						return $this->historical['visits'];
+					}
+					else {
+						$result = $this->db->get_var("SELECT value FROM {$this->tb_prefix}statistics_historical WHERE category = 'visits'");
+						if( $result > $count ) { $count = $result; }
+						$this->historical['visits'] = $count;
+					}
+				
+					break;
+				case 'uri':
+					if( array_key_exists( $id, $this->historical ) ) {
+						return $this->historical[$id];
+					}
+					else {
+						$result = $this->db->get_var($this->db->prepare("SELECT value FROM {$this->tb_prefix}statistics_historical WHERE category = 'uri' AND uri = %s", $id));
+						if( $result > $count ) { $count = $result; }
+						$this->historical[$id] = $count;
+					}
+					
+					break;
+				}
+		
+			return $count;
+		}
+		
+		public function feed_detected() {
+			$this->is_feed = true;
+		}
+
+		public function check_feed() {
+			return $this->is_feed;
+		}
+		
+		public function get_country_codes() {
+			if( $this->country_codes == false ) {
+				$ISOCountryCode = array();
+				include( $this->plugin_dir . "/includes/functions/country-codes.php");
+				$this->country_codes = $ISOCountryCode;
+			}
+			
+			return $this->country_codes;
 		}
 	}

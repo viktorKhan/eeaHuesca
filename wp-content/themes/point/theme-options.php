@@ -118,7 +118,7 @@ $args['page_position'] = 62;
 $args['help_tabs'][] = array(
 							'id' => 'nhp-opts-1',
 							'title' => __('Support', 'mythemeshop'),
-							'content' => __('<p>If you are facing any problem with our theme or theme option panel, head over to our <a href="http://mythemeshop.com/support">Knowledge Base</a></p>', 'mythemeshop')
+							'content' => __('<p>If you are facing any problem with our theme or theme option panel, head over to our <a href="https://community.mythemeshop.com">Support Forums</a></p>', 'mythemeshop')
 							);
 $args['help_tabs'][] = array(
 							'id' => 'nhp-opts-3',
@@ -128,7 +128,7 @@ $args['help_tabs'][] = array(
 $args['help_tabs'][] = array(
 							'id' => 'nhp-opts-2',
 							'title' => __('Earn Money', 'mythemeshop'),
-							'content' => __('<p>Earn 60% commision on every sale by refering your friends and readers. Join our <a href="http://mythemeshop.com/affiliate-program/">Affiliate Program</a>.</p>', 'mythemeshop')
+							'content' => __('<p>Earn <strong>70%</strong> commision on every sale by refering your friends and readers. Join our <a href="http://mythemeshop.com/affiliate-program/">Affiliate Program</a>.</p>', 'mythemeshop')
 							);
 
 //Set the Help Sidebar for the options page - no sidebar by default										
@@ -140,8 +140,8 @@ $sections = array();
 
 $sections[] = array(
 				'icon' => NHP_OPTIONS_URL.'img/glyphicons/gift.png',
-				'title' => __('More FREE Themes!', 'mythemeshop'),
-				'desc' => '<a href="http://mythemeshop.com/" target="_blank"><img src="'.NHP_OPTIONS_URL.'img/mts.png"></a>',
+				'title' => __('Get Point Pro', 'mythemeshop'),
+				'desc' => '<p><a href="https://mythemeshop.com/themes/pointpro/?utm_source=Point+Free&utm_medium=Link+CPC&utm_content=Point+Pro+LP&utm_campaign=WordPressOrg" target="_blank"><img src="'.NHP_OPTIONS_URL.'/img/pro.png"></a></p>',
 				);
 $sections[] = array(
 				'icon' => NHP_OPTIONS_URL.'img/glyphicons/generalsetting.png',
@@ -153,19 +153,19 @@ $sections[] = array(
 						'id' => 'mts_logo',
 						'type' => 'upload',
 						'title' => __('Logo Image', 'mythemeshop'), 
-						'sub_desc' => __('Upload your logo <strong>(Recommended size 152x60px)</strong> using the Upload Button or insert image URL.', 'mythemeshop')
+						'sub_desc' => __('Upload your logo <strong>(Recommended size 152x60px)</strong> using the Upload Button or insert image URL.', 'mythemeshop'),
 						),
 					array(
 						'id' => 'mts_footer_logo',
 						'type' => 'upload',
 						'title' => __('Footer Logo Image', 'mythemeshop'), 
-						'sub_desc' => __('Upload your footer logo <strong>(Recommended size 152x43px)</strong> using the Upload Button or insert image URL.', 'mythemeshop')
+						'sub_desc' => __('Upload your footer logo <strong>(Recommended size 152x43px)</strong> using the Upload Button or insert image URL.', 'mythemeshop'),
 						),
 					array(
 						'id' => 'mts_favicon',
 						'type' => 'upload',
 						'title' => __('Favicon', 'mythemeshop'), 
-						'sub_desc' => __('Upload a <strong>16 x 16 px</strong> image that will represent your website\'s favicon. You can refer to this link for more information on how to make it: <a href="http://www.favicon.cc/" target="blank" rel="nofollow">http://www.favicon.cc/</a>', 'mythemeshop')
+						'sub_desc' => __('Upload a <strong>16 x 16 px</strong> image that will represent your website\'s favicon. You can refer to this link for more information on how to make it: <a href="http://www.favicon.cc/" target="blank" rel="nofollow">http://www.favicon.cc/</a>', 'mythemeshop'),
 						),
 					array(
 						'id' => 'mts_header_code',
@@ -185,20 +185,22 @@ $sections[] = array(
 						'type' => 'checkbox_hide_below',
 						'title' => __('Trending', 'nhp-opts'), 
 						'sub_desc' => __('<strong>Enable or Disable</strong> a top trending section by using this check box. This slider will show 4 recent articles from the selected category.', 'nhp-opts'),
+						'std' => '1'
 						),
 						array(
 						'id' => 'mts_trending_articles_cat',
 						'type' => 'cats_select',
 						'title' => __('Trending Category', 'nhp-opts'), 
 						'sub_desc' => __('Select a category from the drop-down menu, latest four articles from this category will be shown in trending section.', 'nhp-opts'),
-						'args' => array('number' => '100')
+						'args' => array('number' => '100'),
+						'std' => '0'
 						),
 					array(
 						'id' => 'mts_featured_slider',
 						'type' => 'checkbox_hide_below',
 						'title' => __('Homepage Featured Section', 'mythemeshop'), 
 						'sub_desc' => __('<strong>Enable or Disable</strong> a homepage featured section by using this check box. This section will show 4 recent articles from the selected category.', 'mythemeshop'),
-						'std' => '0',
+						'std' => '1',
 						),
 						array(
 						'id' => 'mts_featured_slider_cat',
@@ -206,20 +208,22 @@ $sections[] = array(
 						'title' => __('Featured Category', 'mythemeshop'), 
 						'sub_desc' => __('Select a category from the menu, latest 4 articles from this category will be shown <strong>in featured section</strong>. Use ctrl key to select more than one category.', 'mythemeshop'),
 						'args' => array('number' => '100'),
+						'std' => '0'
 						),
 					array(
 						'id' => 'mts_featured_carousel',
 						'type' => 'checkbox_hide_below',
 						'title' => __('Footer Featured', 'mythemeshop'), 
 						'sub_desc' => __('<strong>Enable or Disable</strong> a Footer Featured section by using this check box. This section will show 6 recent articles from the selected category.', 'mythemeshop'),
-						'std' => '0',
+						'std' => '1',
 						),
 						array(
 						'id' => 'mts_featured_carousel_cat',
 						'type' => 'cats_select',
 						'title' => __('Carousel Category', 'mythemeshop'), 
 						'sub_desc' => __('Select a category from the menu, latest 6 articles from this category will be shown <strong>in footer featured section</strong>.', 'mythemeshop'),
-						'args' => array('number' => '100')
+						'args' => array('number' => '100'),
+						'std' => '0'
 						),
 					array(
 						'id' => 'mts_pagenavigation',
@@ -227,7 +231,15 @@ $sections[] = array(
 						'title' => __('Pagination', 'mythemeshop'),
 						'sub_desc' => __('Enable or disable paginated navigation, which replaces the <strong>"Older Posts"</strong> and <strong>"Newer Posts"</strong> links with helpful numbered page links.', 'mythemeshop'),
 						'std' => '1'
-						),				
+						),
+					array(
+						'id' => 'mts_rtl',
+						'type' => 'checkbox',
+						'title' => __('Right To Left Language Support', 'mythemeshop'), 
+						'options' => array('0' => 'Off','1' => 'On'),
+						'sub_desc' => __('Enable this option for right-to-left sites.', 'mythemeshop'),
+						'std' => '0'
+						),			
 					)
 				);
 $sections[] = array(
@@ -253,6 +265,15 @@ $sections[] = array(
 											),
 						'std' => 'cslayout'
 						),
+                    array(
+                        'id' => 'mts_full_posts',
+                        'type' => 'button_set',
+                        'title' => __('Posts on blog pages', 'mythemeshop'), 
+						'options' => array('0' => 'Excerpts','1' => 'Full posts'),
+						'sub_desc' => __('Show post excerpts or full posts on the homepage and other archive pages.', 'mythemeshop'),
+						'std' => '0',
+                        'class' => 'green'
+                        ),
 					array(
 						'id' => 'mts_bg_color',
 						'type' => 'color',

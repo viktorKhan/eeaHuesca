@@ -1,6 +1,13 @@
 <?php 
 $selist = wp_statistics_searchengine_list( true );
 
+$permalink = get_option( 'permalink_structure' );
+
+$disable_strip_uri_parameters = false;
+if( $permalink == '' || strpos( $permalink, '?' ) !== false ) {
+	$disable_strip_uri_parameters = true;
+}
+
 if( $wps_nonce_valid ) {
 	foreach( $selist as $se ) {
 		$se_post = 'wps_disable_se_' . $se['tag'];
@@ -10,10 +17,13 @@ if( $wps_nonce_valid ) {
 		$WP_Statistics->store_option($new_option, $value);
 	}
 
-	$wps_option_list = array("wps_useronline","wps_visits","wps_visitors","wps_pages","wps_track_all_pages","wps_disable_column","wps_check_online","wps_menu_bar","wps_coefficient","wps_stats_report","wps_time_report","wps_send_report","wps_content_report","wps_chart_totals","wps_store_ua","wps_hide_notices","wps_email_list","wps_delete_manual","wps_hash_ips" );
+	$wps_option_list = array('wps_useronline','wps_visits','wps_visitors','wps_pages','wps_track_all_pages','wps_disable_column','wps_check_online','wps_menu_bar','wps_coefficient','wps_chart_totals','wps_store_ua','wps_hide_notices','wps_delete_manual','wps_hash_ips', 'wps_all_online', 'wps_strip_uri_parameters', 'wps_override_language','wps_addsearchwords' );
 	
 	// If the IP hash's are enabled, disable storing the complete user agent.
 	if( array_key_exists( 'wps_hash_ips', $_POST ) ) { $_POST['wps_store_ua'] = ''; }
+	
+	// We need to check the permalink format for the strip_uri_parameters option, if the permalink is the default or contains uri parameters, we can't strip them.
+	if( $disable_strip_uri_parameters ) { $_POST['wps_strip_uri_parameters'] = ''; }
 	
 	foreach( $wps_option_list as $option ) {
 		if( array_key_exists( $option, $_POST ) ) { $value = $_POST[$option]; } else { $value = ''; }
@@ -64,7 +74,7 @@ if( $wps_nonce_valid ) {
 			<td>
 				<input id="hash_ips" type="checkbox" value="1" name="wps_hash_ips" <?php echo $WP_Statistics->get_option('hash_ips')==true? "checked='checked'":'';?>>
 				<label for="hash_ips"><?php _e('Active', 'wp_statistics'); ?></label>
-				<p class="description"><?php _e('BETA: This feature will not store IP addresses in the database but instead used a unique hash.  The "Store entire user agent string" setting will be disabled if this is selected.  You will not be able to recover the IP addresses in the future to recover location information if this is enabled.', 'wp_statistics'); ?></p>
+				<p class="description"><?php _e('This feature will not store IP addresses in the database but instead used a unique hash.  The "Store entire user agent string" setting will be disabled if this is selected.  You will not be able to recover the IP addresses in the future to recover location information if this is enabled.', 'wp_statistics'); ?></p>
 			</td>
 		</tr>
 
@@ -90,12 +100,24 @@ if( $wps_nonce_valid ) {
 			</th>
 			
 			<td>
-				<input type="text" class="small-text code" id="check_online" name="wps_check_online" value="<?php echo $WP_Statistics->get_option('check_online'); ?>"/>
+				<input type="text" class="small-text code" id="check_online" name="wps_check_online" value="<?php echo htmlentities($WP_Statistics->get_option('check_online'), ENT_QUOTES ); ?>"/>
 				<?php _e('Second', 'wp_statistics'); ?>
 				<p class="description"><?php echo sprintf(__('Time for the check accurate online user in the site. Now: %s Second', 'wp_statistics'), $WP_Statistics->get_option('check_online')); ?></p>
 			</td>
 		</tr>
 		
+		<tr valign="top">
+			<th scope="row">
+				<label for="useronline"><?php _e('Record all user', 'wp_statistics'); ?>:</label>
+			</th>
+			
+			<td>
+				<input id="allonline" type="checkbox" value="1" name="wps_all_online" <?php echo $WP_Statistics->get_option('all_online')==true? "checked='checked'":'';?>>
+				<label for="allonline"><?php _e('Active', 'wp_statistics'); ?></label>
+				<p class="description"><?php _e('Ignores the exclusion settings and records all users that are online (including self referrals and robots).  Should only be used for troubleshooting.', 'wp_statistics'); ?></p>
+			</td>
+		</tr>
+
 		<tr valign="top">
 			<th scope="row" colspan="2"><h3><?php _e('Visits', 'wp_statistics'); ?></h3></th>
 		</tr>
@@ -146,7 +168,7 @@ if( $wps_nonce_valid ) {
 			</th>
 			
 			<td>
-				<input type="text" class="small-text code" id="coefficient" name="wps_coefficient" value="<?php echo $WP_Statistics->get_option('coefficient'); ?>"/>
+				<input type="text" class="small-text code" id="coefficient" name="wps_coefficient" value="<?php echo htmlentities($WP_Statistics->get_option('coefficient'), ENT_QUOTES ); ?>"/>
 				<p class="description"><?php echo sprintf(__('For each visit to account for several hits. Currently %s.', 'wp_statistics'), $WP_Statistics->get_option('coefficient')); ?></p>
 			</td>
 		</tr>
@@ -179,6 +201,23 @@ if( $wps_nonce_valid ) {
 			</td>
 		</tr>
 
+<?php 
+	if( !$disable_strip_uri_parameters ) { 
+?>
+		<tr valign="top">
+			<th scope="row">
+				<label for="pages"><?php _e('Strip parameters from URI', 'wp_statistics'); ?>:</label>
+			</th>
+			
+			<td>
+				<input id="strip_uri_parameters" type="checkbox" value="1" name="wps_strip_uri_parameters" <?php echo $WP_Statistics->get_option('strip_uri_parameters')==true? "checked='checked'":'';?>>
+				<label for="strip_uri_parameters"><?php _e('Active', 'wp_statistics'); ?></label>
+				<p class="description"><?php _e('This will remove anything after the ? in a URL.', 'wp_statistics'); ?></p>
+			</td>
+		</tr>
+<?php
+	}
+?>
 		<tr valign="top">
 			<th scope="row">
 				<label for="pages"><?php _e('Disable hits column in post/pages list', 'wp_statistics'); ?>:</label>
@@ -234,9 +273,21 @@ if( $wps_nonce_valid ) {
 		</tr>
 
 		<tr valign="top">
-			<th scope="row" colspan="2"><h3><?php _e('Search Enginges', 'wp_statistics'); ?></h3></th>
+			<th scope="row" colspan="2"><h3><?php _e('Search Engines', 'wp_statistics'); ?></h3></th>
 		</tr>
 		
+		<tr valign="top">
+			<th scope="row">
+				<label for="hide_notices"><?php _e('Add page title to empty search words', 'wp_statistics'); ?>:</label>
+			</th>
+			
+			<td>
+				<input id="addsearchwords" type="checkbox" value="1" name="wps_addsearchwords" <?php echo $WP_Statistics->get_option('addsearchwords')==true? "checked='checked'":'';?>>
+				<label for="addsearchwords"><?php _e('Active', 'wp_statistics'); ?></label>
+				<p class="description"><?php _e('If a search engine is identified as the referrer but it does not include the search query this option will substitute the page title in quotes preceded by "~:" as the search query to help identify what the user may have been searching for.', 'wp_statistics'); ?></p>
+			</td>
+		</tr>
+
 		<tr valign="top">
 			<th scope="row" colspan="2">
 				<p class="description"><?php _e('Disabling all search engines is not allowed, doing so will result in all search engines being active.', 'wp_statistics');?></p>
@@ -277,104 +328,22 @@ if( $wps_nonce_valid ) {
 		</tr>
 		
 		<tr valign="top">
-			<th scope="row" colspan="2"><h3><?php _e('Statistical reporting', 'wp_statistics'); ?></h3></th>
+			<th scope="row" colspan="2"><h3><?php _e('Languages', 'wp_statistics'); ?></h3></th>
 		</tr>
-		
+
 		<tr valign="top">
 			<th scope="row">
-				<label for="stats-report"><?php _e('Statistical reporting', 'wp_statistics'); ?>:</label>
+				<label for="chart-totals"><?php _e('Force English', 'wp_statistics'); ?>:</label>
 			</th>
 			
 			<td>
-				<input id="stats-report" type="checkbox" value="1" name="wps_stats_report" <?php echo $WP_Statistics->get_option('stats_report')==true? "checked='checked'":'';?> onClick='ToggleStatOptions();'>
-				<label for="stats-report"><?php _e('Active', 'wp_statistics'); ?></label>
-				<p class="description"><?php _e('Enable or disable this feature', 'wp_statistics'); ?></p>
+				<input id="override-language" type="checkbox" value="1" name="wps_override_language" <?php echo $WP_Statistics->get_option('override_language')==true? "checked='checked'":'';?>>
+				<label for="override-language"><?php _e('Active', 'wp_statistics'); ?></label>
+				<p class="description"><?php _e('Do not use the translations and instead use the English defaults for WP Statistics (requires two page loads)', 'wp_statistics'); ?></p>
 			</td>
 		</tr>
 		
-		<?php if( $WP_Statistics->get_option('stats_report') ) { $hidden=""; } else { $hidden=" style='display: none;'"; }?>
-		<tr valign="top"<?php echo $hidden;?> id='wps_stats_report_option'>
-			<td scope="row" style="vertical-align: top;">
-				<label for="time-report"><?php _e('Schedule', 'wp_statistics'); ?>:</label>
-			</td>
-			
-			<td>
-				<select name="wps_time_report" id="time-report">
-					<option value="0" <?php selected($WP_Statistics->get_option('time_report'), '0'); ?>><?php _e('Please select', 'wp_statistics'); ?></option>
-<?php
-					function wp_statistics_schedule_sort( $a, $b ) {
-						if ($a['interval'] == $b['interval']) {
-							return 0;
-							}
-							
-						return ($a['interval'] < $b['interval']) ? -1 : 1;
-					}
-					
-					$schedules = wp_get_schedules();
-					
-					uasort( $schedules, 'wp_statistics_schedule_sort' );
-					
-					foreach( $schedules as $key => $value ) {
-						echo '					<option value="' . $key . '" ' . selected($WP_Statistics->get_option('time_report'), 'hourly') . '>' . $value['display'] . '</option>';
-					}
-?>					
-				</select>
-				<p class="description"><?php _e('Select when receiving statistics report.', 'wp_statistics'); ?></p>
-			</td>
-		</tr>
-		
-		<tr valign="top"<?php echo $hidden;?> id='wps_stats_report_option'>
-			<td scope="row" style="vertical-align: top;">
-				<label for="send-report"><?php _e('Send reports via', 'wp_statistics'); ?>:</label>
-			</td>
-			
-			<td>
-				<select name="wps_send_report" id="send-report">
-					<option value="0" <?php selected($WP_Statistics->get_option('send_report'), '0'); ?>><?php _e('Please select', 'wp_statistics'); ?></option>
-					<option value="mail" <?php selected($WP_Statistics->get_option('send_report'), 'mail'); ?>><?php _e('Email', 'wp_statistics'); ?></option>
-					<option value="sms" <?php selected($WP_Statistics->get_option('send_report'), 'sms'); ?>><?php _e('SMS', 'wp_statistics'); ?></option>
-				</select>
-				<p class="description"><?php _e('Type Select Get Status Report.', 'wp_statistics'); ?></p>
-				
-				<?php if( !is_plugin_active('wp-sms/wp-sms.php') ) { ?>
-					<p class="description note"><?php echo sprintf(__('Note: To send SMS text messages please install the <a href="%s" target="_blank">Wordpress SMS</a> plugin.', 'wp_statistics'), 'http://wordpress.org/extend/plugins/wp-sms/'); ?></p>
-				<?php } ?>
-			</td>
-		</tr>
-		
-		<tr valign="top"<?php echo $hidden;?> id='wps_stats_report_option'>
-			<td scope="row" style="vertical-align: top;">
-				<label for="email-report"><?php _e('E-mail addresses', 'wp_statistics'); ?>:</label>
-			</td>
-			
-			<td>
-				<input type="text" id="email_list" name="wps_email_list" size="30" value="<?php if( $WP_Statistics->get_option('email_list') == '' ) { $WP_Statistics->store_option('email_list', get_bloginfo('admin_email')); } echo $WP_Statistics->get_option('email_list'); ?>"/>
-				<p class="description"><?php _e('A comma separated list of e-mail addresses to send the reports to if e-mail is selected above.', 'wp_statistics'); ?></p>
-			</td>
-		</tr>
-
-		<tr valign="top"<?php echo $hidden;?> id='wps_stats_report_option'>
-			<td scope="row"  style="vertical-align: top;">
-				<label for="content-report"><?php _e('Report body', 'wp_statistics'); ?>:</label>
-			</td>
-			
-			<td>
-				<?php wp_editor( $WP_Statistics->get_option('content_report'), 'content-report', array('media_buttons' => false, 'textarea_name' => 'wps_content_report', 'textarea_rows' => 5) ); ?>
-				<p class="description"><?php _e('Enter the contents of the reports received.', 'wp_statistics'); ?></p>
-				<p class="description data">
-					<?php _e('Any shortcode supported by your installation of WordPress, include all shortcodes for WP Statistics (see the admin manual for a list of codes available) are supported in the body of the message.', 'wp_statistics'); ?>
-				</p>
-				<p class="description data">
-					<?php _e('Input data codes are now deprecated and will be removed in a future version of WP Statistics, please use the appropriate shortcodes, they are included here only for historical purposes:', 'wp_statistics'); ?>
-					<?php _e('User Online', 'wp_statistics'); ?>: <code>%user_online%</code>
-					<?php _e('Today Visitor', 'wp_statistics'); ?>: <code>%today_visitor%</code>
-					<?php _e('Today Visit', 'wp_statistics'); ?>: <code>%today_visit%</code>
-					<?php _e('Yesterday Visitor', 'wp_statistics'); ?>: <code>%yesterday_visitor%</code>
-					<?php _e('Yesterday Visit', 'wp_statistics'); ?>: <code>%yesterday_visit%</code>
-					<?php _e('Total Visitor', 'wp_statistics'); ?>: <code>%total_visitor%</code>
-					<?php _e('Total Visit', 'wp_statistics'); ?>: <code>%total_visit%</code>
-				</p>
-			</td>
-		</tr>
 	</tbody>
 </table>
+
+<?php submit_button(__('Update', 'wp_statistics'), 'primary', 'submit'); ?>

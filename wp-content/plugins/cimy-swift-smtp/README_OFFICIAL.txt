@@ -6,7 +6,7 @@ Uses Swift Mailer engine - http://swiftmailer.org/
 
 
 REQUIREMENTS:
-- PHP >= 5.0.0
+- PHP >= 5.3.0
   for SSL and TLS support you need to have PHP compiled with openSSL support
   http://www.php.net/openssl
 - WORDPRESS >= 3.0.x
@@ -61,6 +61,12 @@ A lot of times I cannot reproduce the problem and I need more details, so if you
 
 
 CHANGELOG:
+v2.6.1 - 11/05/2015
+- Updated Swift Mailer to 5.4.0
+
+v2.6.0 - 31/12/2014
+- Updated Swift Mailer to 5.3.1 (dropped support for PHP <=5.2.x)
+
 v2.5.2 - 03/10/2014
 - Updated Swift Mailer to 5.2.2
 
@@ -69,7 +75,7 @@ v2.5.1 - 26/06/2014
 - Updated Swift Mailer to 5.2.1 (Security Update)
 
 v2.5.0 - 12/05/2014
-- Added 'Sender' and 'Reply-To' header support, fixes imcompatibility with Visual Form Builder (thanks to supawiz6991)
+- Added 'Sender' and 'Reply-To' header support, fixes incompatibility with Visual Form Builder (thanks to supawiz6991)
 - Add 'autocomplete=off' to the form, however newer Chrome and Firefox browsers are ignoring it
 - Updated Swift Mailer to 5.2.0
 

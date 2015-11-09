@@ -1,12 +1,25 @@
 <?php
 	function wp_statistics_generate_browsers_postbox($ISOCountryCode, $search_engines) {
 	
-		global $wpdb, $table_prefix, $WP_Statistics;
+		global $wpdb, $WP_Statistics;
+		
+		if( $WP_Statistics->get_option( 'visitors' ) ) {
 ?>
 				<div class="postbox">
 					<div class="handlediv" title="<?php _e('Click to toggle', 'wp_statistics'); ?>"><br /></div>
 					<h3 class="hndle"><span><?php _e('Browsers', 'wp_statistics'); ?> <a href="?page=wps_browsers_menu"><?php echo wp_statistics_icons('dashicons-visibility', 'visibility'); ?><?php _e('More', 'wp_statistics'); ?></a></span></h3>
 					<div class="inside">
+					<?php wp_statistics_generate_browsers_postbox_content(); ?>
+					</div>
+				</div>
+<?php		
+		}
+	}
+
+	function wp_statistics_generate_browsers_postbox_content() {
+	
+		global $wpdb, $WP_Statistics;
+?>
 						<script type="text/javascript">
 						jQuery(function () {
 							var browser_chart;
@@ -35,14 +48,14 @@
 									if( $count > 9 ) { break; }
 								}
 
-								echo "['" . __('Other', 'wp_statistics') . " (" . number_format_i18n($total - $topten) . ")'," . ( $total - $topten ) . "], ";
+								echo "['" . json_encode(__('Other', 'wp_statistics')) . " (" . number_format_i18n($total - $topten) . ")'," . ( $total - $topten ) . "], ";
 
 								echo "];\n";
 ?>
 
 								browser_chart = jQuery.jqplot('browsers-log', [browser_data], { 
 									title: {
-										text: '<b><?php echo __('Top 10 Browsers', 'wp_statistics'); ?></b>',
+										text: '<b>' + <?php echo json_encode(__('Top 10 Browsers', 'wp_statistics')); ?> + '</b>',
 										fontSize: '12px',
 										fontFamily: 'Tahoma',
 										textColor: '#000000',
@@ -87,8 +100,6 @@
 						</script>
 								
 						<div id="browsers-log" style="height: <?php $height = ( count($Browsers) / 2 * 27 ) + 300; if( $height > 462 ) { $height = 462; } echo $height; ?>px;"></div>
-					</div>
-				</div>
 <?php		
 	}
 

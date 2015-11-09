@@ -8,12 +8,20 @@
 		echo "<div class='updated settings-error'><p><strong>" . __('Attention: Exclusion are not currently set to be recorded, the results below may not reflect current statistics!', 'wp_statistics') . "</strong></p></div>";
 	}
 
-	$daysToDisplay = 20; if( array_key_exists('hitdays',$_GET) ) { if( $_GET['hitdays'] > 0 ) { $daysToDisplay = $_GET['hitdays']; } }
+	$daysToDisplay = 20; 
+	if( array_key_exists('hitdays',$_GET) ) { $daysToDisplay = intval($_GET['hitdays']); }
+
+	if( array_key_exists('rangestart', $_GET ) ) { $rangestart = $_GET['rangestart']; } else { $rangestart = ''; }
+	if( array_key_exists('rangeend', $_GET ) ) { $rangeend = $_GET['rangeend']; } else { $rangeend = ''; }
+
+	list( $daysToDisplay, $rangestart_utime, $rangeend_utime ) = wp_statistics_date_range_calculator( $daysToDisplay, $rangestart, $rangeend );
 
 	$total_stats = $WP_Statistics->get_option( 'chart_totals' );
 	
-	$excluded_reasons = array('Robot','IP Match','Self Referral','Login Page','Admin Page','User Role');
-	$excluded_reason_tags = array('Robot' => 'robot','IP Match' => 'ipmatch','Self Referral' => 'selfreferral','Login Page' => 'loginpage','Admin Page' => 'adminpage','User Role' => 'userrole', 'Total' => 'total');
+	$excluded_reasons = array('Robot','Browscap','IP Match','Self Referral','Login Page','Admin Page','User Role','GeoIP','Hostname', 'Robot Threshold','Honey Pot','Feeds', 'Excluded URL', '404 Pages', 'Referrer Spam');
+	$excluded_reason_tags = array('Robot' => 'robot','Browscap' => 'browscap','IP Match' => 'ipmatch','Self Referral' => 'selfreferral','Login Page' => 'loginpage','Admin Page' => 'adminpage','User Role' => 'userrole','Total' => 'total','GeoIP' => 'geoip','Hostname' => 'hostname','Robot Threshold' => 'robot_threshold','Honey Pot' => 'honeypot','Feeds' => 'feed', 'Excluded URL' => 'excluded_url', '404 Pages' => 'excluded_404s', 'Referrer Spam' => 'referrer_spam' );
+	$excluded_reason_db   = array('Robot' => 'robot','Browscap' => 'browscap','IP Match' => 'ip match','Self Referral' => 'self referral','Login Page' => 'login page','Admin Page' => 'admin page','User Role' => 'user role','Total' => 'total','GeoIP' => 'geoip','Hostname' => 'hostname','Robot Threshold' => 'robot_threshold','Honey Pot' => 'honeypot','Feeds' => 'feed', 'Excluded URL' => 'excluded url', '404 Pages' => '404', 'Referrer Spam' => 'referrer_spam');
+	$excluded_reason_translate = array( 'Robot' => json_encode(__('Robot', 'wp_statistics')), 'Browscap' => json_encode(__('Browscap', 'wp_statistics')), 'IP Match' => json_encode(__('IP Match', 'wp_statistics')), 'Self Referral' => json_encode(__('Self Referral', 'wp_statistics')), 'Login Page' => json_encode(__('Login Page', 'wp_statistics')), 'Admin Page' => json_encode(__('Admin Page', 'wp_statistics')), 'User Role' => json_encode(__('User Role', 'wp_statistics')), 'Total' => json_encode(__('Total', 'wp_statistics')), 'GeoIP' => json_encode(__('GeoIP', 'wp_statistics')), 'Hostname' => json_encode(__('Hostname', 'wp_statistics')), 'Robot Threshold' => json_encode(__('Robot Threshold', 'wp_statistics')), 'Honey Pot' => json_encode(__('Honey Pot', 'wp_statistics')), 'Feeds' => json_encode(__('Feeds', 'wp_statistics') ), 'Excluded URL' => json_encode(__('Excluded URL', 'wp_statistics') ),'404 Pages' => json_encode(__('404 Pages', 'wp_statistics') ), 'Referrer Spam' => json_encode(__('Referrer Spam', 'wp_statistics') ) );
 	$excluded_results = array('Total' => array() );
 	$excluded_total = 0;
 	
@@ -21,16 +29,16 @@
 	
 		// The reasons array above is used both for display and internal purposes.  Internally the values are all lower case but the array
 		// is created with mixed case so it looks nice to the user.  Therefore we have to convert it to lower case here.
-		$thisreason = strtolower( $reason );
+		$thisreason = $excluded_reason_db[$reason];
 		
 		for( $i=$daysToDisplay; $i>=0; $i--) {
 		
 			// We're looping through the days backwards, so let's fine out what date we want to look at.
-			$thisdate = date('Y-m-d', strtotime('-'.$i." day") );
+			$thisdate = $WP_Statistics->real_current_date('Y-m-d', '-'.$i, $rangeend_utime );
 		
 			// Create the SQL query string to get the data.
 			$query = "SELECT count FROM {$wpdb->prefix}statistics_exclusions WHERE reason = '{$thisreason}' AND date = '{$thisdate}'";
-			
+
 			// Execute the query.
 			$excluded_results[$reason][$i] = $wpdb->get_var( $query );
 			
@@ -46,6 +54,8 @@
 		}
 	}
 	
+	$excuded_all_time = $wpdb->get_var( "SELECT SUM(count) FROM {$wpdb->prefix}statistics_exclusions" );
+	
 	// If the chart totals is enabled, cheat a little and just add another reason category to the list so it get's generated later.
 	if( $total_stats == 1 ) { $excluded_reasons[] = 'Total'; }
 ?>
@@ -53,20 +63,8 @@
 	<?php screen_icon('options-general'); ?>
 	<h2><?php _e('Exclusions Statistics', 'wp_statistics'); ?></h2>
 
-	<ul class="subsubsub">
-		<li class="all"><a <?php if($daysToDisplay == 10) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=10"><?php _e('10 Days', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 20) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=20"><?php _e('20 Days', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 30) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=30"><?php _e('30 Days', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 60) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=60"><?php _e('2 Months', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 90) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=90"><?php _e('3 Months', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 180) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=180"><?php _e('6 Months', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 270) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=270"><?php _e('9 Months', 'wp_statistics'); ?></a></li>
-		| <li class="all"><a <?php if($daysToDisplay == 365) { echo 'class="current"'; } ?>href="?page=wps_exclusions_menu&hitdays=365"><?php _e('1 Year', 'wp_statistics'); ?></a></li>
-	</ul>
+	<?php wp_statistics_date_range_selector( 'wps_exclusions_menu', $daysToDisplay ); ?>
 
-	<br><br>
-	<h3><?php echo sprintf(__('Total Exclusions: %s', 'wp_statistics'), $excluded_total); ?></h3>
-	
 	<div class="postbox-container" style="width: 100%; float: left; margin-right:20px">
 		<div class="metabox-holder">
 			<div class="meta-box-sortables">
@@ -83,7 +81,7 @@
 									echo "var excluded_data_line_" . $excluded_reason_tags[$reason] . " = [";
 
 									for( $i=$daysToDisplay; $i>=0; $i--) {
-										echo "['" . $WP_Statistics->Current_Date('Y-m-d', '-'.$i) . "'," . $excluded_results[$reason][$i] . "], ";
+										echo "['" . $WP_Statistics->Real_Current_Date('Y-m-d', '-'.$i, $rangeend_utime) . "'," . $excluded_results[$reason][$i] . "], ";
 										}
 
 									echo "];\n";
@@ -94,15 +92,15 @@
 ?>
 							visit_chart = jQuery.jqplot('exclusion-stats', [<?php foreach( $excluded_reasons as $reason ) { echo "excluded_data_line_" . $excluded_reason_tags[$reason] . ", "; } ?>], {
 								title: {
-									text: '<b><?php echo __('Excluded hits in the last', 'wp_statistics') . ' ' . $daysToDisplay . ' ' . __('days', 'wp_statistics'); ?></b>',
+									text: '<b>' + <?php echo json_encode(__('Excluded hits in the last', 'wp_statistics') . ' ' . $daysToDisplay . ' ' . __('days', 'wp_statistics')); ?> + '</b>',
 									fontSize: '12px',
 									fontFamily: 'Tahoma',
 									textColor: '#000000',
 									},
 								axes: {
 									xaxis: {
-											min: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '-'.$daysToDisplay);?>',
-											max: '<?php echo $WP_Statistics->Current_Date('Y-m-d', '');?>',
+											min: '<?php echo $WP_Statistics->Real_Current_Date('Y-m-d', '-'.$daysToDisplay, $rangeend_utime);?>',
+											max: '<?php echo $WP_Statistics->Real_Current_Date('Y-m-d', '-0', $rangeend_utime);?>',
 											tickInterval: '<?php echo $tickInterval?> day',
 											renderer:jQuery.jqplot.DateAxisRenderer,
 											tickRenderer: jQuery.jqplot.CanvasAxisTickRenderer,
@@ -115,7 +113,7 @@
 									yaxis: {
 											min: 0,
 											padMin: 1.0,
-											label: '<?php _e('Number of excluded hits', 'wp_statistics'); ?>',
+											label: <?php echo json_encode(__('Number of excluded hits', 'wp_statistics')); ?>,
 											labelRenderer: jQuery.jqplot.CanvasAxisLabelRenderer,
 											labelOptions: {
 												angle: -90,
@@ -129,7 +127,7 @@
 									show: true,
 									location: 's',
 									placement: 'outsideGrid',
-									labels: [<?php foreach( $excluded_reasons as $reason ) { echo "'" . __( $reason, 'wp_statistics' ) . "', "; } ?>],
+									labels: [<?php foreach( $excluded_reasons as $reason ) { echo $excluded_reason_translate[$reason] . ", "; } ?>],
 									renderer: jQuery.jqplot.EnhancedLegendRenderer,
 									rendererOptions:
 										{
@@ -143,6 +141,7 @@
 									bringSeriesToFront: true,
 									tooltipAxes: 'xy',
 									formatString: '%s:&nbsp;<b>%i</b>&nbsp;',
+									tooltipContentEditor: tooltipContentEditor,
 								},
 								grid: {
 								 drawGridlines: true,
@@ -153,6 +152,11 @@
 								},
 							} );
 
+							function tooltipContentEditor(str, seriesIndex, pointIndex, plot) {
+								// display series_label, x-axis_tick, y-axis value
+								return plot.legend.labels[seriesIndex] + ", " + str;;
+							}
+							
 							jQuery(window).resize(function() {
 								JQPlotExclusionChartLengendClickRedraw()
 							});
@@ -178,4 +182,36 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="postbox-container" style="width: 100%; float: left; margin-right:20px">
+		<div class="metabox-holder">
+			<div class="meta-box-sortables">
+				<div class="postbox">
+					<div class="handlediv" title="<?php _e('Click to toggle', 'wp_statistics'); ?>"><br /></div>
+					<h3 class="hndle"><span><?php _e('Hits Statistics Summary', 'wp_statistics'); ?></span></h3>
+					<div class="inside">
+						<table width="auto" class="widefat table-stats" id="summary-stats">
+							<tbody>
+								<tr>
+									<th></th>
+									<th class="th-center"><?php _e('Exclusions', 'wp_statistics'); ?></th>
+								</tr>
+								
+								<tr>
+									<th><?php _e('Chart Total', 'wp_statistics'); ?>:</th>
+									<th class="th-center"><span><?php echo number_format_i18n($excluded_total); ?></span></th>
+								</tr>
+								
+								<tr>
+									<th><?php _e('All Time Total', 'wp_statistics'); ?>:</th>
+									<th class="th-center"><span><?php echo number_format_i18n($excuded_all_time); ?></span></th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>

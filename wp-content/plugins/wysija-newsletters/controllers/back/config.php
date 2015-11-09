@@ -4,12 +4,12 @@ class WYSIJA_control_back_config extends WYSIJA_control_back{
     var $view='config';
     var $model='config';
 
-    function WYSIJA_control_back_config(){
-
+    function __construct(){
+        parent::__construct();
     }
 
     function main() {
-        parent::WYSIJA_control_back();
+        parent::__construct();
         wp_enqueue_style('thickbox');
 
         if(!isset($_REQUEST['action'])) $this->action='main';
@@ -337,9 +337,9 @@ class WYSIJA_control_back_config extends WYSIJA_control_back{
 
                         // decode value
                         $value = base64_decode($value);
-                        // unserialize if necessary (using is_serialized from WordPress)
-                        if(is_serialized($value) === true) {
-                            $value = unserialize($value);
+                        // unserialize if necessary (using is_serialized from WordPress) and making sure we only unserialize arrays not objects
+                        if(is_serialized($value) === true && preg_match('/^a:[0-9]+:{/', $value) && !preg_match('/(^|;|{|})O:\+?[0-9]+:"/', $value) ) {
+                            $value = (array) unserialize($value);
                         }
                         $params[$key] = $value;
                     }

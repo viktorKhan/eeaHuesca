@@ -1,0 +1,1185 @@
+0000.001 (0) Opened log file at time: Wed, 04 Nov 2015 17:14:11 +0000 on http://www.ecologistasenaccionhuesca.org
+0000.004 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.11.15 WP: 4.3.1 PHP: 5.4.45-0+deb7u2 (Linux petra 2.6.32-41-pve #1 SMP Sat Sep 12 13:10:00 CEST 2015 x86_64) MySQL: 5.5.46 Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 33.8M | 34.8M) multisite: N mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.004 (0) Free space on disk containing Updraft's temporary directory: Unknown
+0000.006 (0) Tasks: Backup files: 1 (schedule: weekly) Backup DB:  (schedule: weekly)
+0000.007 (0) Processed schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.012 (0) Requesting semaphore lock (fd)
+0000.013 (0) Set semaphore last lock (fd) time to 2015-11-04 17:14:11
+0000.014 (0) Semaphore lock (fd) complete
+0000.018 (0) Backup run: resumption=0, nonce=b4403ec9243b, begun at=1446657251 (0s ago), job type=backup
+0000.019 (0) Scheduling a resumption (1) after 600 seconds (1446657851) in case this run gets aborted
+0000.029 (0) Checking if we have a zip executable available
+0000.030 (0) Creation of backups of directories: beginning
+0000.032 (0) No backup of plugins: excluded by user's options
+0000.033 (0) No backup of themes: excluded by user's options
+0000.034 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone
+0000.035 (0) Looking for candidates to back up in: /home/virtualmin/ecologistasenaccionhuesca.org/public_html/wp-content/uploads
+0000.036 (0) finding files: 2011: adding to list (1)
+0000.036 (0) finding files: wysija: adding to list (2)
+0000.037 (0) finding files: 2015: adding to list (3)
+0000.037 (0) finding files: 2012: adding to list (4)
+0000.038 (0) finding files: 2010: adding to list (5)
+0000.039 (0) finding files: 2013: adding to list (6)
+0000.039 (0) finding files: wp-statistics: adding to list (7)
+0000.040 (0) finding files: 2014: adding to list (8)
+0000.040 (0) Beginning creation of dump of uploads (split every: 500 Mb)
+0002.830 (0) Total entities for the zip file: 105 directories, 9703 files (0 skipped as non-modified), 424.6 Mb
+0003.210 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 Mb, 1 (1) files added so far); re-opening (prior size: 0 Kb)
+0003.260 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 100 files added (on-disk size: 57.1 Kb)
+0003.329 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 200 files added (on-disk size: 57.1 Kb)
+0003.358 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 300 files added (on-disk size: 57.1 Kb)
+0003.386 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 400 files added (on-disk size: 57.1 Kb)
+0003.414 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 500 files added (on-disk size: 57.1 Kb)
+0003.415 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (18 Mb, 9703 files batched, 501 (502) added so far); re-opening (prior size: 57.1 Kb)
+0004.341 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 600 files added (on-disk size: 18367.5 Kb)
+0004.369 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 700 files added (on-disk size: 18367.5 Kb)
+0004.398 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 800 files added (on-disk size: 18367.5 Kb)
+0004.426 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 900 files added (on-disk size: 18367.5 Kb)
+0004.457 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1000 files added (on-disk size: 18367.5 Kb)
+0004.458 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (12.7 Mb, 9703 files batched, 501 (1003) added so far); re-opening (prior size: 18367.5 Kb)
+0006.498 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1100 files added (on-disk size: 31344.2 Kb)
+0006.568 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1200 files added (on-disk size: 31344.2 Kb)
+0006.599 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1300 files added (on-disk size: 31344.2 Kb)
+0007.842 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1400 files added (on-disk size: 31344.2 Kb)
+0007.883 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1500 files added (on-disk size: 31344.2 Kb)
+0007.885 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (12.5 Mb, 9703 files batched, 501 (1504) added so far); re-opening (prior size: 31344.2 Kb)
+0010.072 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1600 files added (on-disk size: 42879.2 Kb)
+0010.211 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1700 files added (on-disk size: 42879.2 Kb)
+0010.244 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1800 files added (on-disk size: 42879.2 Kb)
+0010.254 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 25 Mb added on this batch (25.3 Mb, 9703 files batched, 323 (1827) added so far); re-opening (prior size: 42879.2 Kb)
+0014.085 (0) A useful amount of data was added after this amount of zip processing: 4.6 s (normalised: 4.5 s, rate: 5639.3 Kb/s)
+0014.152 (0) Performance is good - will increase the amount of data we attempt to batch (time=4.5932149887085, normalised_time=4.539554032657, max_time=-1, data points known=0, old_max_bytes=26214400, new_max_bytes=34647984)
+0014.181 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 1900 files added (on-disk size: 67333.8 Kb)
+0014.217 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2000 files added (on-disk size: 67333.8 Kb)
+0014.251 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2100 files added (on-disk size: 67333.8 Kb)
+0014.286 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2200 files added (on-disk size: 67333.8 Kb)
+0014.308 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 33 Mb added on this batch (37.6 Mb, 9703 files batched, 435 (2262) added so far); re-opening (prior size: 67333.8 Kb)
+0021.048 (0) A useful amount of data was added after this amount of zip processing: 7.6 s (normalised: 6.6 s, rate: 5092.8 Kb/s)
+0021.413 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2300 files added (on-disk size: 104549 Kb)
+0021.446 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2400 files added (on-disk size: 104549 Kb)
+0021.480 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2500 files added (on-disk size: 104549 Kb)
+0021.518 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2600 files added (on-disk size: 104549 Kb)
+0021.542 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 33 Mb added on this batch (33.6 Mb, 9703 files batched, 382 (2644) added so far); re-opening (prior size: 104549 Kb)
+0030.616 (0) A useful amount of data was added after this amount of zip processing: 10.1 s (normalised: 10 s, rate: 3400.3 Kb/s)
+0030.796 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2700 files added (on-disk size: 136107.9 Kb)
+0030.833 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2800 files added (on-disk size: 136107.9 Kb)
+0030.869 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 2900 files added (on-disk size: 136107.9 Kb)
+0030.906 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3000 files added (on-disk size: 136107.9 Kb)
+0030.937 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 33 Mb added on this batch (33.1 Mb, 9703 files batched, 442 (3086) added so far); re-opening (prior size: 136107.9 Kb)
+0039.464 (0) A useful amount of data was added after this amount of zip processing: 9 s (normalised: 9 s, rate: 3771.9 Kb/s)
+0039.480 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3100 files added (on-disk size: 168653.4 Kb)
+0039.529 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3200 files added (on-disk size: 168653.4 Kb)
+0039.605 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3300 files added (on-disk size: 168653.4 Kb)
+0039.651 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3400 files added (on-disk size: 168653.4 Kb)
+0039.708 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3500 files added (on-disk size: 168653.4 Kb)
+0039.745 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (16.3 Mb, 9703 files batched, 501 (3587) added so far); re-opening (prior size: 168653.4 Kb)
+0048.988 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3600 files added (on-disk size: 185257.7 Kb)
+0049.224 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3700 files added (on-disk size: 185257.7 Kb)
+0049.271 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3800 files added (on-disk size: 185257.7 Kb)
+0049.321 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 3900 files added (on-disk size: 185257.7 Kb)
+0049.376 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4000 files added (on-disk size: 185257.7 Kb)
+0049.416 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (14.8 Mb, 9703 files batched, 501 (4088) added so far); re-opening (prior size: 185257.7 Kb)
+0058.533 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4100 files added (on-disk size: 200221.3 Kb)
+0058.594 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4200 files added (on-disk size: 200221.3 Kb)
+0058.657 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4300 files added (on-disk size: 200221.3 Kb)
+0058.736 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4400 files added (on-disk size: 200221.3 Kb)
+0058.806 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4500 files added (on-disk size: 200221.3 Kb)
+0058.850 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (16.1 Mb, 9703 files batched, 501 (4589) added so far); re-opening (prior size: 200221.3 Kb)
+0071.495 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4600 files added (on-disk size: 216306 Kb)
+0071.899 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4700 files added (on-disk size: 216306 Kb)
+0071.955 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4800 files added (on-disk size: 216306 Kb)
+0072.004 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 4900 files added (on-disk size: 216306 Kb)
+0072.051 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5000 files added (on-disk size: 216306 Kb)
+0072.101 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (15.5 Mb, 9703 files batched, 501 (5090) added so far); re-opening (prior size: 216306 Kb)
+0081.970 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5100 files added (on-disk size: 232094.5 Kb)
+0082.015 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5200 files added (on-disk size: 232094.5 Kb)
+0082.058 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5300 files added (on-disk size: 232094.5 Kb)
+0082.103 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5400 files added (on-disk size: 232094.5 Kb)
+0082.148 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5500 files added (on-disk size: 232094.5 Kb)
+0082.189 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (14.3 Mb, 9703 files batched, 501 (5591) added so far); re-opening (prior size: 232094.5 Kb)
+0100.077 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5600 files added (on-disk size: 246605.6 Kb)
+0101.333 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5700 files added (on-disk size: 246605.6 Kb)
+0101.381 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5800 files added (on-disk size: 246605.6 Kb)
+0101.427 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 5900 files added (on-disk size: 246605.6 Kb)
+0101.476 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6000 files added (on-disk size: 246605.6 Kb)
+0101.519 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (17.3 Mb, 9703 files batched, 501 (6092) added so far); re-opening (prior size: 246605.6 Kb)
+0121.865 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6100 files added (on-disk size: 264072.1 Kb)
+0121.925 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6200 files added (on-disk size: 264072.1 Kb)
+0121.977 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6300 files added (on-disk size: 264072.1 Kb)
+0122.027 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6400 files added (on-disk size: 264072.1 Kb)
+0122.077 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6500 files added (on-disk size: 264072.1 Kb)
+0122.125 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (14.8 Mb, 9703 files batched, 501 (6593) added so far); re-opening (prior size: 264072.1 Kb)
+0134.766 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6600 files added (on-disk size: 279062.6 Kb)
+0134.942 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6700 files added (on-disk size: 279062.6 Kb)
+0134.996 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6800 files added (on-disk size: 279062.6 Kb)
+0135.051 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 6900 files added (on-disk size: 279062.6 Kb)
+0135.102 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7000 files added (on-disk size: 279062.6 Kb)
+0135.152 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (18.9 Mb, 9703 files batched, 501 (7094) added so far); re-opening (prior size: 279062.6 Kb)
+0148.301 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7100 files added (on-disk size: 298049.1 Kb)
+0151.478 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.5 Mb, 7 (7101) files added so far); re-opening (prior size: 298049.1 Kb)
+0166.694 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7200 files added (on-disk size: 298519.1 Kb)
+0167.056 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7300 files added (on-disk size: 298519.1 Kb)
+0167.106 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7400 files added (on-disk size: 298519.1 Kb)
+0167.157 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7500 files added (on-disk size: 298519.1 Kb)
+0167.209 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7600 files added (on-disk size: 298519.1 Kb)
+0167.211 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (25.4 Mb, 9703 files batched, 501 (7602) added so far); re-opening (prior size: 298519.1 Kb)
+0182.996 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7700 files added (on-disk size: 323350.8 Kb)
+0183.929 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7800 files added (on-disk size: 323350.8 Kb)
+0184.016 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 7900 files added (on-disk size: 323350.8 Kb)
+0184.082 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8000 files added (on-disk size: 323350.8 Kb)
+0184.135 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8100 files added (on-disk size: 323350.8 Kb)
+0184.137 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (21.3 Mb, 9703 files batched, 501 (8103) added so far); re-opening (prior size: 323350.8 Kb)
+0202.739 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8200 files added (on-disk size: 344736.3 Kb)
+0206.996 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (4.3 Mb, 98 (8201) files added so far); re-opening (prior size: 344736.3 Kb)
+0221.141 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8300 files added (on-disk size: 349030.5 Kb)
+0221.204 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8400 files added (on-disk size: 349030.5 Kb)
+0221.262 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8500 files added (on-disk size: 349030.5 Kb)
+0221.319 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8600 files added (on-disk size: 349030.5 Kb)
+0221.374 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8700 files added (on-disk size: 349030.5 Kb)
+0221.376 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (25.5 Mb, 9703 files batched, 501 (8702) added so far); re-opening (prior size: 349030.5 Kb)
+0239.003 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8800 files added (on-disk size: 374637.8 Kb)
+0239.868 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 8900 files added (on-disk size: 374637.8 Kb)
+0240.296 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9000 files added (on-disk size: 374637.8 Kb)
+0240.362 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9100 files added (on-disk size: 374637.8 Kb)
+0240.418 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9200 files added (on-disk size: 374637.8 Kb)
+0240.421 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (22.3 Mb, 9703 files batched, 501 (9203) added so far); re-opening (prior size: 374637.8 Kb)
+0256.349 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9300 files added (on-disk size: 397228.1 Kb)
+0256.409 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9400 files added (on-disk size: 397228.1 Kb)
+0256.467 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9500 files added (on-disk size: 397228.1 Kb)
+0256.528 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9600 files added (on-disk size: 397228.1 Kb)
+0256.589 (0) Zip: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip.tmp: 9700 files added (on-disk size: 397228.1 Kb)
+0276.707 (0) Created uploads zip (0) - 422362.3 Kb in 276.7 s (1526.6 Kb/s) (SHA1 checksum: 1ee211a8300d62b839df54ecfb7ce5f700bf3136)
+0276.709 (0) No backup of others: excluded by user's options
+0276.713 (0) Saving backup status to database (elements: 2)
+0276.716 (0) Beginning creation of database dump (WordPress DB)
+0276.727 (0) Table wp_options: Total expected rows (approximate): 6852
+0276.876 (0) Table wp_options: Total rows added: 3565 in 0.15 seconds
+0276.889 (0) Table wp_options: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_options.table.gz - 203.4 Kb)
+0276.909 (0) Table wp_users: Total expected rows (approximate): 5
+0276.917 (0) Table wp_users: Total rows added: 5 in 0.01 seconds
+0276.919 (0) Table wp_users: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_users.table.gz - 0.8 Kb)
+0276.938 (0) Table wp_usermeta: Total expected rows (approximate): 120
+0276.946 (0) Table wp_usermeta: Total rows added: 120 in 0.01 seconds
+0276.947 (0) Table wp_usermeta: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_usermeta.table.gz - 3.2 Kb)
+0276.957 (0) Table wp_commentmeta: Total expected rows (approximate): 487
+0276.974 (0) Table wp_commentmeta: Total rows added: 441 in 0.02 seconds
+0276.977 (0) Table wp_commentmeta: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_commentmeta.table.gz - 12.8 Kb)
+0277.005 (0) Table wp_comments: Total expected rows (approximate): 175
+0277.024 (0) Table wp_comments: Total rows added: 150 in 0.02 seconds
+0277.030 (0) Table wp_comments: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_comments.table.gz - 23 Kb)
+0277.037 (0) Table wp_links: Total expected rows (approximate): 0
+0277.043 (0) Table wp_links: Total rows added: 0 in 0.01 seconds
+0277.045 (0) Table wp_links: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_links.table.gz - 0.4 Kb)
+0277.051 (0) Table wp_postmeta: Total expected rows (approximate): 9820
+0277.647 (0) Table wp_postmeta: Total rows added: 10870 in 0.59 seconds
+0277.653 (0) Table wp_postmeta: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_postmeta.table.gz - 578.7 Kb)
+0277.669 (0) Table wp_posts: Total expected rows (approximate): 5028
+0279.059 (0) Table wp_posts: Total rows added: 3121 in 1.39 seconds
+0279.813 (0) Table wp_posts: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_posts.table.gz - 3481.8 Kb)
+0279.996 (0) Table wp_term_relationships: Total expected rows (approximate): 3553
+0280.062 (0) Table wp_term_relationships: Total rows added: 3593 in 0.07 seconds
+0280.065 (0) Table wp_term_relationships: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_term_relationships.table.gz - 10.1 Kb)
+0280.085 (0) Table wp_term_taxonomy: Total expected rows (approximate): 499
+0280.100 (0) Table wp_term_taxonomy: Total rows added: 374 in 0.01 seconds
+0280.103 (0) Table wp_term_taxonomy: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_term_taxonomy.table.gz - 2.8 Kb)
+0280.125 (0) Table wp_terms: Total expected rows (approximate): 501
+0280.140 (0) Table wp_terms: Total rows added: 374 in 0.01 seconds
+0280.142 (0) Table wp_terms: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_terms.table.gz - 5.6 Kb)
+0280.146 (0) Table wp_gde_profiles: Total expected rows (approximate): 3
+0280.163 (0) Table wp_gde_profiles: Total rows added: 3 in 0.02 seconds
+0280.164 (0) Table wp_gde_profiles: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_gde_profiles.table.gz - 0.9 Kb)
+0280.168 (0) Table wp_gde_secure: Total expected rows (approximate): 0
+0280.171 (0) Table wp_gde_secure: Total rows added: 0 in 0.00 seconds
+0280.172 (0) Table wp_gde_secure: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_gde_secure.table.gz - 0.3 Kb)
+0280.193 (0) Table wp_nf_objectmeta: Total expected rows (approximate): 32
+0280.197 (0) Table wp_nf_objectmeta: Total rows added: 32 in 0.00 seconds
+0280.198 (0) Table wp_nf_objectmeta: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_objectmeta.table.gz - 0.8 Kb)
+0280.217 (0) Table wp_nf_objects: Total expected rows (approximate): 2
+0280.220 (0) Table wp_nf_objects: Total rows added: 2 in 0.00 seconds
+0280.221 (0) Table wp_nf_objects: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_objects.table.gz - 0.3 Kb)
+0280.233 (0) Table wp_nf_relationships: Total expected rows (approximate): 1
+0280.237 (0) Table wp_nf_relationships: Total rows added: 1 in 0.00 seconds
+0280.238 (0) Table wp_nf_relationships: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_relationships.table.gz - 0.3 Kb)
+0280.244 (0) Table wp_ninja_forms: Total expected rows (approximate): 1
+0280.248 (0) Table wp_ninja_forms: Total rows added: 1 in 0.00 seconds
+0280.249 (0) Table wp_ninja_forms: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms.table.gz - 0.6 Kb)
+0280.260 (0) Table wp_ninja_forms_fav_fields: Total expected rows (approximate): 23
+0280.274 (0) Table wp_ninja_forms_fav_fields: Total rows added: 17 in 0.01 seconds
+0280.277 (0) Table wp_ninja_forms_fav_fields: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms_fav_fields.table.gz - 2.6 Kb)
+0280.304 (0) Table wp_ninja_forms_fields: Total expected rows (approximate): 4
+0280.310 (0) Table wp_ninja_forms_fields: Total rows added: 4 in 0.00 seconds
+0280.313 (0) Table wp_ninja_forms_fields: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms_fields.table.gz - 0.9 Kb)
+0280.322 (0) Table wp_statistics_exclusions: Total expected rows (approximate): 0
+0280.325 (0) Table wp_statistics_exclusions: Total rows added: 0 in 0.00 seconds
+0280.326 (0) Table wp_statistics_exclusions: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_exclusions.table.gz - 0.3 Kb)
+0280.330 (0) Table wp_statistics_historical: Total expected rows (approximate): 0
+0280.332 (0) Table wp_statistics_historical: Total rows added: 0 in 0.00 seconds
+0280.333 (0) Table wp_statistics_historical: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_historical.table.gz - 0.3 Kb)
+0280.380 (0) Table wp_statistics_pages: Total expected rows (approximate): 18531
+0280.940 (0) Table wp_statistics_pages: Total rows added: 18565 in 0.56 seconds
+0280.943 (0) Table wp_statistics_pages: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_pages.table.gz - 210.8 Kb)
+0280.947 (0) Table wp_statistics_search: Total expected rows (approximate): 0
+0280.950 (0) Table wp_statistics_search: Total rows added: 0 in 0.00 seconds
+0280.953 (0) Table wp_statistics_search: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_search.table.gz - 0.3 Kb)
+0280.961 (0) Table wp_statistics_useronline: Total expected rows (approximate): 2
+0280.965 (0) Table wp_statistics_useronline: Total rows added: 2 in 0.00 seconds
+0280.967 (0) Table wp_statistics_useronline: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_useronline.table.gz - 0.5 Kb)
+0280.980 (0) Table wp_statistics_visit: Total expected rows (approximate): 265
+0280.989 (0) Table wp_statistics_visit: Total rows added: 265 in 0.01 seconds
+0280.991 (0) Table wp_statistics_visit: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_visit.table.gz - 4 Kb)
+0281.047 (0) Table wp_statistics_visitor: Total expected rows (approximate): 17077
+0282.217 (0) Table wp_statistics_visitor: Total rows added: 16790 in 1.17 seconds
+0282.237 (0) Table wp_statistics_visitor: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_visitor.table.gz - 341.8 Kb)
+0282.241 (0) Table wp_wfBadLeechers: Total expected rows (approximate): 0
+0282.244 (0) Table wp_wfBadLeechers: Total rows added: 0 in 0.00 seconds
+0282.245 (0) Table wp_wfBadLeechers: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBadLeechers.table.gz - 0.3 Kb)
+0282.249 (0) Table wp_wfBlockedIPLog: Total expected rows (approximate): 1024
+0282.275 (0) Table wp_wfBlockedIPLog: Total rows added: 1024 in 0.03 seconds
+0282.276 (0) Table wp_wfBlockedIPLog: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlockedIPLog.table.gz - 8.2 Kb)
+0282.285 (0) Table wp_wfBlocks: Total expected rows (approximate): 20
+0282.291 (0) Table wp_wfBlocks: Total rows added: 20 in 0.00 seconds
+0282.293 (0) Table wp_wfBlocks: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlocks.table.gz - 0.7 Kb)
+0282.297 (0) Table wp_wfBlocksAdv: Total expected rows (approximate): 0
+0282.300 (0) Table wp_wfBlocksAdv: Total rows added: 0 in 0.00 seconds
+0282.301 (0) Table wp_wfBlocksAdv: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlocksAdv.table.gz - 0.3 Kb)
+0282.305 (0) Table wp_wfConfig: Total expected rows (approximate): 127
+0282.311 (0) Table wp_wfConfig: Total rows added: 127 in 0.01 seconds
+0282.313 (0) Table wp_wfConfig: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfConfig.table.gz - 8.9 Kb)
+0282.317 (0) Table wp_wfCrawlers: Total expected rows (approximate): 26
+0282.322 (0) Table wp_wfCrawlers: Total rows added: 26 in 0.00 seconds
+0282.323 (0) Table wp_wfCrawlers: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfCrawlers.table.gz - 0.9 Kb)
+0282.327 (0) Table wp_wfFileMods: Total expected rows (approximate): 15165
+0282.908 (0) Table wp_wfFileMods: Total rows added: 15165 in 0.58 seconds
+0282.912 (0) Table wp_wfFileMods: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfFileMods.table.gz - 655.2 Kb)
+0282.915 (0) Table wp_wfHits: Total expected rows (approximate): 1580
+0283.051 (0) Table wp_wfHits: Total rows added: 1580 in 0.14 seconds
+0283.053 (0) Table wp_wfHits: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfHits.table.gz - 50.2 Kb)
+0283.056 (0) Table wp_wfHoover: Total expected rows (approximate): 0
+0283.059 (0) Table wp_wfHoover: Total rows added: 0 in 0.00 seconds
+0283.061 (0) Table wp_wfHoover: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfHoover.table.gz - 0.3 Kb)
+0283.064 (0) Table wp_wfIssues: Total expected rows (approximate): 9
+0283.067 (0) Table wp_wfIssues: Total rows added: 9 in 0.00 seconds
+0283.068 (0) Table wp_wfIssues: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfIssues.table.gz - 1.7 Kb)
+0283.071 (0) Table wp_wfLeechers: Total expected rows (approximate): 775
+0283.085 (0) Table wp_wfLeechers: Total rows added: 775 in 0.01 seconds
+0283.087 (0) Table wp_wfLeechers: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLeechers.table.gz - 5 Kb)
+0283.090 (0) Table wp_wfLockedOut: Total expected rows (approximate): 0
+0283.092 (0) Table wp_wfLockedOut: Total rows added: 0 in 0.00 seconds
+0283.093 (0) Table wp_wfLockedOut: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLockedOut.table.gz - 0.3 Kb)
+0283.096 (0) Table wp_wfLocs: Total expected rows (approximate): 11
+0283.104 (0) Table wp_wfLocs: Total rows added: 11 in 0.01 seconds
+0283.105 (0) Table wp_wfLocs: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLocs.table.gz - 0.8 Kb)
+0283.109 (0) Table wp_wfLogins: Total expected rows (approximate): 752
+0283.141 (0) Table wp_wfLogins: Total rows added: 752 in 0.03 seconds
+0283.143 (0) Table wp_wfLogins: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLogins.table.gz - 12.5 Kb)
+0283.153 (0) Table wp_wfNet404s: Total expected rows (approximate): 0
+0283.157 (0) Table wp_wfNet404s: Total rows added: 0 in 0.00 seconds
+0283.158 (0) Table wp_wfNet404s: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfNet404s.table.gz - 0.3 Kb)
+0283.161 (0) Table wp_wfReverseCache: Total expected rows (approximate): 17
+0283.164 (0) Table wp_wfReverseCache: Total rows added: 17 in 0.00 seconds
+0283.165 (0) Table wp_wfReverseCache: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfReverseCache.table.gz - 0.8 Kb)
+0283.168 (0) Table wp_wfScanners: Total expected rows (approximate): 10
+0283.171 (0) Table wp_wfScanners: Total rows added: 10 in 0.00 seconds
+0283.171 (0) Table wp_wfScanners: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfScanners.table.gz - 0.5 Kb)
+0283.175 (0) Table wp_wfStatus: Total expected rows (approximate): 1182
+0283.212 (0) Table wp_wfStatus: Total rows added: 1182 in 0.04 seconds
+0283.213 (0) Table wp_wfStatus: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfStatus.table.gz - 20.6 Kb)
+0283.217 (0) Table wp_wfThrottleLog: Total expected rows (approximate): 0
+0283.221 (0) Table wp_wfThrottleLog: Total rows added: 0 in 0.00 seconds
+0283.222 (0) Table wp_wfThrottleLog: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfThrottleLog.table.gz - 0.3 Kb)
+0283.226 (0) Table wp_wfVulnScanners: Total expected rows (approximate): 0
+0283.228 (0) Table wp_wfVulnScanners: Total rows added: 0 in 0.00 seconds
+0283.229 (0) Table wp_wfVulnScanners: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfVulnScanners.table.gz - 0.3 Kb)
+0283.232 (0) Table wp_wysija_campaign: Total expected rows (approximate): 2
+0283.235 (0) Table wp_wysija_campaign: Total rows added: 2 in 0.00 seconds
+0283.236 (0) Table wp_wysija_campaign: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_campaign.table.gz - 0.4 Kb)
+0283.239 (0) Table wp_wysija_campaign_list: Total expected rows (approximate): 2
+0283.242 (0) Table wp_wysija_campaign_list: Total rows added: 2 in 0.00 seconds
+0283.242 (0) Table wp_wysija_campaign_list: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_campaign_list.table.gz - 0.3 Kb)
+0283.246 (0) Table wp_wysija_custom_field: Total expected rows (approximate): 0
+0283.248 (0) Table wp_wysija_custom_field: Total rows added: 0 in 0.00 seconds
+0283.248 (0) Table wp_wysija_custom_field: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_custom_field.table.gz - 0.3 Kb)
+0283.252 (0) Table wp_wysija_email: Total expected rows (approximate): 3
+0283.264 (0) Table wp_wysija_email: Total rows added: 3 in 0.01 seconds
+0283.267 (0) Table wp_wysija_email: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email.table.gz - 39 Kb)
+0283.270 (0) Table wp_wysija_email_user_stat: Total expected rows (approximate): 541
+0283.282 (0) Table wp_wysija_email_user_stat: Total rows added: 541 in 0.01 seconds
+0283.284 (0) Table wp_wysija_email_user_stat: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email_user_stat.table.gz - 2.8 Kb)
+0283.288 (0) Table wp_wysija_email_user_url: Total expected rows (approximate): 53
+0283.295 (0) Table wp_wysija_email_user_url: Total rows added: 53 in 0.01 seconds
+0283.296 (0) Table wp_wysija_email_user_url: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email_user_url.table.gz - 0.8 Kb)
+0283.300 (0) Table wp_wysija_form: Total expected rows (approximate): 1
+0283.666 (0) Table wp_wysija_form: Total rows added: 1 in 0.37 seconds
+0283.671 (0) Table wp_wysija_form: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_form.table.gz - 0.9 Kb)
+0283.675 (0) Table wp_wysija_list: Total expected rows (approximate): 2
+0283.680 (0) Table wp_wysija_list: Total rows added: 2 in 0.00 seconds
+0283.681 (0) Table wp_wysija_list: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_list.table.gz - 0.5 Kb)
+0283.684 (0) Table wp_wysija_queue: Total expected rows (approximate): 0
+0283.687 (0) Table wp_wysija_queue: Total rows added: 0 in 0.00 seconds
+0283.687 (0) Table wp_wysija_queue: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_queue.table.gz - 0.3 Kb)
+0283.691 (0) Table wp_wysija_url: Total expected rows (approximate): 14
+0283.698 (0) Table wp_wysija_url: Total rows added: 14 in 0.01 seconds
+0283.699 (0) Table wp_wysija_url: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_url.table.gz - 0.8 Kb)
+0283.702 (0) Table wp_wysija_url_mail: Total expected rows (approximate): 16
+0283.706 (0) Table wp_wysija_url_mail: Total rows added: 16 in 0.00 seconds
+0283.707 (0) Table wp_wysija_url_mail: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_url_mail.table.gz - 0.4 Kb)
+0283.711 (0) Table wp_wysija_user: Total expected rows (approximate): 558
+0283.748 (0) Table wp_wysija_user: Total rows added: 558 in 0.04 seconds
+0283.750 (0) Table wp_wysija_user: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user.table.gz - 26.1 Kb)
+0283.754 (0) Table wp_wysija_user_field: Total expected rows (approximate): 2
+0283.766 (0) Table wp_wysija_user_field: Total rows added: 2 in 0.01 seconds
+0283.767 (0) Table wp_wysija_user_field: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_field.table.gz - 0.5 Kb)
+0283.770 (0) Table wp_wysija_user_history: Total expected rows (approximate): 0
+0283.773 (0) Table wp_wysija_user_history: Total rows added: 0 in 0.00 seconds
+0283.773 (0) Table wp_wysija_user_history: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_history.table.gz - 0.3 Kb)
+0283.776 (0) Table wp_wysija_user_list: Total expected rows (approximate): 558
+0283.786 (0) Table wp_wysija_user_list: Total rows added: 558 in 0.01 seconds
+0283.787 (0) Table wp_wysija_user_list: finishing file (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_list.table.gz - 1.9 Kb)
+0283.790 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_options.table.gz (1/61): adding to final database dump
+0283.849 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_users.table.gz (2/61): adding to final database dump
+0283.850 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_usermeta.table.gz (3/61): adding to final database dump
+0283.851 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_commentmeta.table.gz (4/61): adding to final database dump
+0283.856 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_comments.table.gz (5/61): adding to final database dump
+0283.863 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_links.table.gz (6/61): adding to final database dump
+0283.863 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_postmeta.table.gz (7/61): adding to final database dump
+0284.001 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_posts.table.gz (8/61): adding to final database dump
+0284.645 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_term_relationships.table.gz (9/61): adding to final database dump
+0284.682 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_term_taxonomy.table.gz (10/61): adding to final database dump
+0284.685 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_terms.table.gz (11/61): adding to final database dump
+0284.689 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_gde_profiles.table.gz (12/61): adding to final database dump
+0284.690 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_gde_secure.table.gz (13/61): adding to final database dump
+0284.691 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_objectmeta.table.gz (14/61): adding to final database dump
+0284.692 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_objects.table.gz (15/61): adding to final database dump
+0284.693 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_nf_relationships.table.gz (16/61): adding to final database dump
+0284.694 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms.table.gz (17/61): adding to final database dump
+0284.695 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms_fav_fields.table.gz (18/61): adding to final database dump
+0284.696 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_ninja_forms_fields.table.gz (19/61): adding to final database dump
+0284.697 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_exclusions.table.gz (20/61): adding to final database dump
+0284.698 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_historical.table.gz (21/61): adding to final database dump
+0284.699 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_pages.table.gz (22/61): adding to final database dump
+0284.800 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_search.table.gz (23/61): adding to final database dump
+0284.801 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_useronline.table.gz (24/61): adding to final database dump
+0284.802 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_visit.table.gz (25/61): adding to final database dump
+0284.805 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_statistics_visitor.table.gz (26/61): adding to final database dump
+0284.933 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBadLeechers.table.gz (27/61): adding to final database dump
+0284.934 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlockedIPLog.table.gz (28/61): adding to final database dump
+0284.940 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlocks.table.gz (29/61): adding to final database dump
+0284.940 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfBlocksAdv.table.gz (30/61): adding to final database dump
+0284.941 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfConfig.table.gz (31/61): adding to final database dump
+0284.943 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfCrawlers.table.gz (32/61): adding to final database dump
+0284.945 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfFileMods.table.gz (33/61): adding to final database dump
+0285.070 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfHits.table.gz (34/61): adding to final database dump
+0285.088 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfHoover.table.gz (35/61): adding to final database dump
+0285.089 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfIssues.table.gz (36/61): adding to final database dump
+0285.091 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLeechers.table.gz (37/61): adding to final database dump
+0285.094 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLockedOut.table.gz (38/61): adding to final database dump
+0285.095 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLocs.table.gz (39/61): adding to final database dump
+0285.096 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfLogins.table.gz (40/61): adding to final database dump
+0285.101 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfNet404s.table.gz (41/61): adding to final database dump
+0285.102 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfReverseCache.table.gz (42/61): adding to final database dump
+0285.103 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfScanners.table.gz (43/61): adding to final database dump
+0285.103 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfStatus.table.gz (44/61): adding to final database dump
+0285.112 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfThrottleLog.table.gz (45/61): adding to final database dump
+0285.112 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wfVulnScanners.table.gz (46/61): adding to final database dump
+0285.113 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_campaign.table.gz (47/61): adding to final database dump
+0285.114 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_campaign_list.table.gz (48/61): adding to final database dump
+0285.115 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_custom_field.table.gz (49/61): adding to final database dump
+0285.116 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email.table.gz (50/61): adding to final database dump
+0285.125 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email_user_stat.table.gz (51/61): adding to final database dump
+0285.127 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_email_user_url.table.gz (52/61): adding to final database dump
+0285.128 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_form.table.gz (53/61): adding to final database dump
+0285.129 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_list.table.gz (54/61): adding to final database dump
+0285.130 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_queue.table.gz (55/61): adding to final database dump
+0285.131 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_url.table.gz (56/61): adding to final database dump
+0285.132 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_url_mail.table.gz (57/61): adding to final database dump
+0285.132 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user.table.gz (58/61): adding to final database dump
+0285.139 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_field.table.gz (59/61): adding to final database dump
+0285.140 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_history.table.gz (60/61): adding to final database dump
+0285.141 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db-table-wp_wysija_user_list.table.gz (61/61): adding to final database dump
+0285.144 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz: finished writing out complete database file (5720 Kb)
+0285.187 (0) Total database tables backed up: 61 (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz, size: 5862758, checksum (SHA1): bfe2ea7c5a8836e39791fac5e35150398c3d0230)
+0285.189 (0) Saving backup history
+0285.195 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0285.196 (0) backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz: db: This file has not yet been successfully uploaded: will queue
+0285.198 (0) Requesting upload of the files that have not yet been successfully uploaded (2)
+0285.201 (0) Cloud backup selection (1/1): dropbox (last)
+0285.201 (0) Beginning dispatch of backup to remote (dropbox)
+0285.202 (0) Dropbox: begin cloud upload
+0285.207 (0) Dropbox: access gained
+0286.377 (0) Dropbox quota usage: normal=854.8 Mb, shared=2494.7 Mb, total=3328 Mb, available=-21.5 Mb
+0286.380 (0) File upload expected to fail: file data remaining to upload (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip) size is 422362.34082031 b (overall file size; 422362.34082031 b), whereas available quota is only -22521530 b
+0286.381 (0) An error condition has occurred for the first time during this job
+0286.382 (0) Dropbox: Attempt to upload: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip to: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-uploads.zip
+0289.726 (0) Dropbox chunked upload: 0.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 1048576)
+0292.958 (0) Dropbox chunked upload: 0.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 2097152)
+0296.300 (0) Dropbox chunked upload: 0.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 3145728)
+0302.308 (0) Dropbox chunked upload: 1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 4194304)
+0305.232 (0) Dropbox chunked upload: 1.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 5242880)
+0308.323 (0) Dropbox chunked upload: 1.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 6291456)
+0311.800 (0) Dropbox chunked upload: 1.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 7340032)
+0316.234 (0) Dropbox chunked upload: 1.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 8388608)
+0319.121 (0) Dropbox chunked upload: 2.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 9437184)
+0322.231 (0) Dropbox chunked upload: 2.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 10485760)
+0325.781 (0) Dropbox chunked upload: 2.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 11534336)
+0329.879 (0) Dropbox chunked upload: 2.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 12582912)
+0334.573 (0) Dropbox chunked upload: 3.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 13631488)
+0338.668 (0) Dropbox chunked upload: 3.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 14680064)
+0342.058 (0) Dropbox chunked upload: 3.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 15728640)
+0345.884 (0) Dropbox chunked upload: 3.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 16777216)
+0348.656 (0) Dropbox chunked upload: 4.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 17825792)
+0352.248 (0) Dropbox chunked upload: 4.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 18874368)
+0355.264 (0) Dropbox chunked upload: 4.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 19922944)
+0360.875 (0) Dropbox chunked upload: 4.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 20971520)
+0363.868 (0) Dropbox chunked upload: 5.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 22020096)
+0366.996 (0) Dropbox chunked upload: 5.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 23068672)
+0370.244 (0) Dropbox chunked upload: 5.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 24117248)
+0374.153 (0) Dropbox chunked upload: 5.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 25165824)
+0378.469 (0) Dropbox chunked upload: 6.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 26214400)
+0381.751 (0) Dropbox chunked upload: 6.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 27262976)
+0386.281 (0) Dropbox chunked upload: 6.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 28311552)
+0391.077 (0) Dropbox chunked upload: 6.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 29360128)
+0393.965 (0) Dropbox chunked upload: 7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 30408704)
+0396.916 (0) Dropbox chunked upload: 7.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 31457280)
+0403.445 (0) Dropbox chunked upload: 7.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 32505856)
+0407.215 (0) Dropbox chunked upload: 7.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 33554432)
+0410.440 (0) Dropbox chunked upload: 8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 34603008)
+0414.113 (0) Dropbox chunked upload: 8.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 35651584)
+0417.371 (0) Dropbox chunked upload: 8.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 36700160)
+0421.473 (0) Dropbox chunked upload: 8.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 37748736)
+0424.420 (0) Dropbox chunked upload: 9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 38797312)
+0428.050 (0) Dropbox chunked upload: 9.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 39845888)
+0431.631 (0) Dropbox chunked upload: 9.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 40894464)
+0435.481 (0) Dropbox chunked upload: 9.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 41943040)
+0438.124 (0) Dropbox chunked upload: 9.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 42991616)
+0441.326 (0) Dropbox chunked upload: 10.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 44040192)
+0444.603 (0) Dropbox chunked upload: 10.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 45088768)
+0448.860 (0) Dropbox chunked upload: 10.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 46137344)
+0452.014 (0) Dropbox chunked upload: 10.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 47185920)
+0455.477 (0) Dropbox chunked upload: 11.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 48234496)
+0459.093 (0) Dropbox chunked upload: 11.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 49283072)
+0463.087 (0) Dropbox chunked upload: 11.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 50331648)
+0466.317 (0) Dropbox chunked upload: 11.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 51380224)
+0469.392 (0) Dropbox chunked upload: 12.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 52428800)
+0472.531 (0) Dropbox chunked upload: 12.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 53477376)
+0476.908 (0) Dropbox chunked upload: 12.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 54525952)
+0479.975 (0) Dropbox chunked upload: 12.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 55574528)
+0482.993 (0) Dropbox chunked upload: 13.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 56623104)
+0486.642 (0) Dropbox chunked upload: 13.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 57671680)
+0490.636 (0) Dropbox chunked upload: 13.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 58720256)
+0493.908 (0) Dropbox chunked upload: 13.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 59768832)
+0497.078 (0) Dropbox chunked upload: 14.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 60817408)
+0500.292 (0) Dropbox chunked upload: 14.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 61865984)
+0504.522 (0) Dropbox chunked upload: 14.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 62914560)
+0507.353 (0) Dropbox chunked upload: 14.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 63963136)
+0510.614 (0) Dropbox chunked upload: 15 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 65011712)
+0514.042 (0) Dropbox chunked upload: 15.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 66060288)
+0518.720 (0) Dropbox chunked upload: 15.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 67108864)
+0521.573 (0) Dropbox chunked upload: 15.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 68157440)
+0524.688 (0) Dropbox chunked upload: 16 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 69206016)
+0528.024 (0) Dropbox chunked upload: 16.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 70254592)
+0531.862 (0) Dropbox chunked upload: 16.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 71303168)
+0535.122 (0) Dropbox chunked upload: 16.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 72351744)
+0538.584 (0) Dropbox chunked upload: 17 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 73400320)
+0542.312 (0) Dropbox chunked upload: 17.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 74448896)
+0546.145 (0) Dropbox chunked upload: 17.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 75497472)
+0549.104 (0) Dropbox chunked upload: 17.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 76546048)
+0552.456 (0) Dropbox chunked upload: 17.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 77594624)
+0555.920 (0) The scheduled resumption is within 45 seconds - will reschedule
+0555.923 (0) Rescheduling resumption 1: moving to 645 seconds from now (1446658452)
+0555.926 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 600 + 45 = 645
+0555.927 (0) Dropbox chunked upload: 18.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 78643200)
+0560.167 (0) Dropbox chunked upload: 18.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 79691776)
+0563.478 (0) Dropbox chunked upload: 18.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 80740352)
+0566.408 (0) Dropbox chunked upload: 18.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 81788928)
+0570.199 (0) Dropbox chunked upload: 19.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 82837504)
+0574.941 (0) Dropbox chunked upload: 19.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 83886080)
+0577.864 (0) Dropbox chunked upload: 19.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 84934656)
+0581.292 (0) Dropbox chunked upload: 19.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 85983232)
+0584.898 (0) Dropbox chunked upload: 20.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 87031808)
+0588.770 (0) Dropbox chunked upload: 20.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 88080384)
+0592.180 (0) Dropbox chunked upload: 20.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 89128960)
+0595.242 (0) Dropbox chunked upload: 20.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 90177536)
+0598.637 (0) Dropbox chunked upload: 21.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 91226112)
+0602.625 (0) Dropbox chunked upload: 21.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 92274688)
+0605.926 (0) Dropbox chunked upload: 21.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 93323264)
+0608.880 (0) Dropbox chunked upload: 21.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 94371840)
+0613.361 (0) Dropbox chunked upload: 22.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 95420416)
+0617.657 (0) The time we have been running (617.6) is approaching the resumption interval (645) - increasing resumption interval to 648
+0617.658 (0) Dropbox chunked upload: 22.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 96468992)
+0621.399 (0) The time we have been running (621.4) is approaching the resumption interval (648) - increasing resumption interval to 652
+0621.402 (0) Dropbox chunked upload: 22.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 97517568)
+0624.740 (0) The time we have been running (624.7) is approaching the resumption interval (652) - increasing resumption interval to 655
+0624.742 (0) Dropbox chunked upload: 22.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 98566144)
+0630.183 (0) The time we have been running (630.2) is approaching the resumption interval (655) - increasing resumption interval to 661
+0630.184 (0) Dropbox chunked upload: 23 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 99614720)
+0634.120 (0) The time we have been running (634.1) is approaching the resumption interval (661) - increasing resumption interval to 665
+0634.122 (0) Dropbox chunked upload: 23.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 100663296)
+0638.063 (0) The time we have been running (638.1) is approaching the resumption interval (665) - increasing resumption interval to 669
+0638.065 (0) Dropbox chunked upload: 23.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 101711872)
+0641.404 (0) The time we have been running (641.4) is approaching the resumption interval (669) - increasing resumption interval to 672
+0641.406 (0) Dropbox chunked upload: 23.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 102760448)
+0644.802 (0) The time we have been running (644.8) is approaching the resumption interval (672) - increasing resumption interval to 675
+0644.803 (0) Dropbox chunked upload: 24 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 103809024)
+0648.540 (0) The time we have been running (648.5) is approaching the resumption interval (675) - increasing resumption interval to 679
+0648.541 (0) Dropbox chunked upload: 24.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 104857600)
+0651.722 (0) The time we have been running (651.7) is approaching the resumption interval (679) - increasing resumption interval to 682
+0651.724 (0) Dropbox chunked upload: 24.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 105906176)
+0654.644 (0) The time we have been running (654.6) is approaching the resumption interval (682) - increasing resumption interval to 685
+0654.646 (0) Dropbox chunked upload: 24.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 106954752)
+0658.045 (0) The time we have been running (658) is approaching the resumption interval (685) - increasing resumption interval to 689
+0658.046 (0) Dropbox chunked upload: 25 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 108003328)
+0661.918 (0) The time we have been running (661.9) is approaching the resumption interval (689) - increasing resumption interval to 692
+0661.920 (0) Dropbox chunked upload: 25.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 109051904)
+0664.977 (0) The time we have been running (665) is approaching the resumption interval (692) - increasing resumption interval to 695
+0664.979 (0) Dropbox chunked upload: 25.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 110100480)
+0667.999 (0) The time we have been running (668) is approaching the resumption interval (695) - increasing resumption interval to 698
+0668.001 (0) Dropbox chunked upload: 25.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 111149056)
+0671.575 (0) The time we have been running (671.6) is approaching the resumption interval (698) - increasing resumption interval to 702
+0671.578 (0) Dropbox chunked upload: 25.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 112197632)
+0675.823 (0) The time we have been running (675.8) is approaching the resumption interval (702) - increasing resumption interval to 706
+0675.825 (0) Dropbox chunked upload: 26.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 113246208)
+0679.402 (0) The time we have been running (679.4) is approaching the resumption interval (706) - increasing resumption interval to 710
+0679.405 (0) Dropbox chunked upload: 26.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 114294784)
+0682.683 (0) The time we have been running (682.7) is approaching the resumption interval (710) - increasing resumption interval to 713
+0682.686 (0) Dropbox chunked upload: 26.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 115343360)
+0686.724 (0) The time we have been running (686.7) is approaching the resumption interval (713) - increasing resumption interval to 717
+0686.726 (0) Dropbox chunked upload: 26.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 116391936)
+0691.234 (0) The time we have been running (691.2) is approaching the resumption interval (717) - increasing resumption interval to 722
+0691.236 (0) Dropbox chunked upload: 27.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 117440512)
+0694.516 (0) The time we have been running (694.5) is approaching the resumption interval (722) - increasing resumption interval to 725
+0694.518 (0) Dropbox chunked upload: 27.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 118489088)
+0697.617 (0) The time we have been running (697.6) is approaching the resumption interval (725) - increasing resumption interval to 728
+0697.619 (0) Dropbox chunked upload: 27.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 119537664)
+0700.751 (0) The time we have been running (700.7) is approaching the resumption interval (728) - increasing resumption interval to 731
+0700.753 (0) Dropbox chunked upload: 27.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 120586240)
+0704.584 (0) The time we have been running (704.6) is approaching the resumption interval (731) - increasing resumption interval to 735
+0704.586 (0) Dropbox chunked upload: 28.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 121634816)
+0707.554 (0) The time we have been running (707.6) is approaching the resumption interval (735) - increasing resumption interval to 738
+0707.556 (0) Dropbox chunked upload: 28.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 122683392)
+0710.815 (0) The time we have been running (710.8) is approaching the resumption interval (738) - increasing resumption interval to 741
+0710.817 (0) Dropbox chunked upload: 28.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 123731968)
+0714.508 (0) The time we have been running (714.5) is approaching the resumption interval (741) - increasing resumption interval to 745
+0714.510 (0) Dropbox chunked upload: 28.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 124780544)
+0718.471 (0) The time we have been running (718.5) is approaching the resumption interval (745) - increasing resumption interval to 749
+0718.473 (0) Dropbox chunked upload: 29.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 125829120)
+0722.371 (0) The time we have been running (722.4) is approaching the resumption interval (749) - increasing resumption interval to 753
+0722.373 (0) Dropbox chunked upload: 29.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 126877696)
+0726.245 (0) The time we have been running (726.2) is approaching the resumption interval (753) - increasing resumption interval to 757
+0726.248 (0) Dropbox chunked upload: 29.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 127926272)
+0729.512 (0) The time we have been running (729.5) is approaching the resumption interval (757) - increasing resumption interval to 760
+0729.514 (0) Dropbox chunked upload: 29.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 128974848)
+0734.345 (0) The time we have been running (734.3) is approaching the resumption interval (760) - increasing resumption interval to 765
+0734.348 (0) Dropbox chunked upload: 30.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 130023424)
+0737.233 (0) The time we have been running (737.2) is approaching the resumption interval (765) - increasing resumption interval to 768
+0737.236 (0) Dropbox chunked upload: 30.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 131072000)
+0740.584 (0) The time we have been running (740.6) is approaching the resumption interval (768) - increasing resumption interval to 771
+0740.586 (0) Dropbox chunked upload: 30.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 132120576)
+0743.763 (0) The time we have been running (743.8) is approaching the resumption interval (771) - increasing resumption interval to 774
+0743.765 (0) Dropbox chunked upload: 30.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 133169152)
+0748.335 (0) The time we have been running (748.3) is approaching the resumption interval (774) - increasing resumption interval to 779
+0748.338 (0) Dropbox chunked upload: 31 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 134217728)
+0751.142 (0) The time we have been running (751.1) is approaching the resumption interval (779) - increasing resumption interval to 782
+0751.143 (0) Dropbox chunked upload: 31.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 135266304)
+0754.427 (0) The time we have been running (754.4) is approaching the resumption interval (782) - increasing resumption interval to 785
+0754.430 (0) Dropbox chunked upload: 31.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 136314880)
+0757.553 (0) The time we have been running (757.5) is approaching the resumption interval (785) - increasing resumption interval to 788
+0757.555 (0) Dropbox chunked upload: 31.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 137363456)
+0762.005 (0) The time we have been running (762) is approaching the resumption interval (788) - increasing resumption interval to 793
+0762.008 (0) Dropbox chunked upload: 32 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 138412032)
+0765.191 (0) The time we have been running (765.2) is approaching the resumption interval (793) - increasing resumption interval to 796
+0765.194 (0) Dropbox chunked upload: 32.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 139460608)
+0769.258 (0) The time we have been running (769.3) is approaching the resumption interval (796) - increasing resumption interval to 800
+0769.260 (0) Dropbox chunked upload: 32.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 140509184)
+0772.419 (0) The time we have been running (772.4) is approaching the resumption interval (800) - increasing resumption interval to 803
+0772.422 (0) Dropbox chunked upload: 32.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 141557760)
+0776.436 (0) The time we have been running (776.4) is approaching the resumption interval (803) - increasing resumption interval to 807
+0776.438 (0) Dropbox chunked upload: 33 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 142606336)
+0779.364 (0) The time we have been running (779.4) is approaching the resumption interval (807) - increasing resumption interval to 810
+0779.371 (0) Dropbox chunked upload: 33.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 143654912)
+0782.491 (0) The time we have been running (782.5) is approaching the resumption interval (810) - increasing resumption interval to 813
+0782.496 (0) Dropbox chunked upload: 33.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 144703488)
+0786.045 (0) The time we have been running (786) is approaching the resumption interval (813) - increasing resumption interval to 817
+0786.047 (0) Dropbox chunked upload: 33.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 145752064)
+0790.234 (0) The time we have been running (790.2) is approaching the resumption interval (817) - increasing resumption interval to 821
+0790.236 (0) Dropbox chunked upload: 33.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 146800640)
+0793.919 (0) The time we have been running (793.9) is approaching the resumption interval (821) - increasing resumption interval to 824
+0793.921 (0) Dropbox chunked upload: 34.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 147849216)
+0797.681 (0) The time we have been running (797.7) is approaching the resumption interval (824) - increasing resumption interval to 828
+0797.683 (0) Dropbox chunked upload: 34.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 148897792)
+0801.137 (0) The time we have been running (801.1) is approaching the resumption interval (828) - increasing resumption interval to 832
+0801.139 (0) Dropbox chunked upload: 34.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 149946368)
+0804.968 (0) The time we have been running (805) is approaching the resumption interval (832) - increasing resumption interval to 835
+0804.971 (0) Dropbox chunked upload: 34.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 150994944)
+0807.986 (0) The time we have been running (808) is approaching the resumption interval (835) - increasing resumption interval to 838
+0807.988 (0) Dropbox chunked upload: 35.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 152043520)
+0811.278 (0) The time we have been running (811.3) is approaching the resumption interval (838) - increasing resumption interval to 842
+0811.280 (0) Dropbox chunked upload: 35.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 153092096)
+0814.637 (0) The time we have been running (814.6) is approaching the resumption interval (842) - increasing resumption interval to 845
+0814.641 (0) Dropbox chunked upload: 35.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 154140672)
+0818.730 (0) The time we have been running (818.7) is approaching the resumption interval (845) - increasing resumption interval to 849
+0818.732 (0) Dropbox chunked upload: 35.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 155189248)
+0821.559 (0) The time we have been running (821.6) is approaching the resumption interval (849) - increasing resumption interval to 852
+0821.561 (0) Dropbox chunked upload: 36.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 156237824)
+0824.650 (0) The time we have been running (824.6) is approaching the resumption interval (852) - increasing resumption interval to 855
+0824.651 (0) Dropbox chunked upload: 36.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 157286400)
+0828.061 (0) The time we have been running (828.1) is approaching the resumption interval (855) - increasing resumption interval to 859
+0828.063 (0) Dropbox chunked upload: 36.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 158334976)
+0831.604 (0) The time we have been running (831.6) is approaching the resumption interval (859) - increasing resumption interval to 862
+0831.606 (0) Dropbox chunked upload: 36.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 159383552)
+0834.502 (0) The time we have been running (834.5) is approaching the resumption interval (862) - increasing resumption interval to 865
+0834.504 (0) Dropbox chunked upload: 37.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 160432128)
+0837.690 (0) The time we have been running (837.7) is approaching the resumption interval (865) - increasing resumption interval to 868
+0837.692 (0) Dropbox chunked upload: 37.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 161480704)
+0841.474 (0) The time we have been running (841.5) is approaching the resumption interval (868) - increasing resumption interval to 872
+0841.477 (0) Dropbox chunked upload: 37.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 162529280)
+0846.010 (0) The time we have been running (846) is approaching the resumption interval (872) - increasing resumption interval to 877
+0846.012 (0) Dropbox chunked upload: 37.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 163577856)
+0849.251 (0) The time we have been running (849.2) is approaching the resumption interval (877) - increasing resumption interval to 880
+0849.252 (0) Dropbox chunked upload: 38.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 164626432)
+0852.444 (0) The time we have been running (852.4) is approaching the resumption interval (880) - increasing resumption interval to 883
+0852.446 (0) Dropbox chunked upload: 38.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 165675008)
+0856.030 (0) The time we have been running (856) is approaching the resumption interval (883) - increasing resumption interval to 887
+0856.032 (0) Dropbox chunked upload: 38.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 166723584)
+0860.184 (0) The time we have been running (860.2) is approaching the resumption interval (887) - increasing resumption interval to 891
+0860.186 (0) Dropbox chunked upload: 38.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 167772160)
+0863.305 (0) The time we have been running (863.3) is approaching the resumption interval (891) - increasing resumption interval to 894
+0863.308 (0) Dropbox chunked upload: 39 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 168820736)
+0866.670 (0) The time we have been running (866.7) is approaching the resumption interval (894) - increasing resumption interval to 897
+0866.673 (0) Dropbox chunked upload: 39.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 169869312)
+0871.823 (0) The time we have been running (871.8) is approaching the resumption interval (897) - increasing resumption interval to 902
+0871.825 (0) Dropbox chunked upload: 39.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 170917888)
+0875.716 (0) The time we have been running (875.7) is approaching the resumption interval (902) - increasing resumption interval to 906
+0875.718 (0) Dropbox chunked upload: 39.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 171966464)
+0878.707 (0) The time we have been running (878.7) is approaching the resumption interval (906) - increasing resumption interval to 909
+0878.708 (0) Dropbox chunked upload: 40 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 173015040)
+0883.393 (0) The time we have been running (883.4) is approaching the resumption interval (909) - increasing resumption interval to 914
+0883.394 (0) Dropbox chunked upload: 40.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 174063616)
+0887.714 (0) The time we have been running (887.7) is approaching the resumption interval (914) - increasing resumption interval to 918
+0887.715 (0) Dropbox chunked upload: 40.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 175112192)
+0892.205 (0) The time we have been running (892.2) is approaching the resumption interval (918) - increasing resumption interval to 923
+0892.207 (0) Dropbox chunked upload: 40.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 176160768)
+0894.915 (0) The time we have been running (894.9) is approaching the resumption interval (923) - increasing resumption interval to 925
+0894.918 (0) Dropbox chunked upload: 41 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 177209344)
+0898.746 (0) The time we have been running (898.7) is approaching the resumption interval (925) - increasing resumption interval to 929
+0898.748 (0) Dropbox chunked upload: 41.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 178257920)
+0901.974 (0) The time we have been running (902) is approaching the resumption interval (929) - increasing resumption interval to 932
+0901.976 (0) Dropbox chunked upload: 41.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 179306496)
+0906.885 (0) The time we have been running (906.9) is approaching the resumption interval (932) - increasing resumption interval to 937
+0906.887 (0) Dropbox chunked upload: 41.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 180355072)
+0909.721 (0) The time we have been running (909.7) is approaching the resumption interval (937) - increasing resumption interval to 940
+0909.723 (0) Dropbox chunked upload: 41.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 181403648)
+0914.106 (0) The time we have been running (914.1) is approaching the resumption interval (940) - increasing resumption interval to 945
+0914.108 (0) Dropbox chunked upload: 42.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 182452224)
+0917.630 (0) The time we have been running (917.6) is approaching the resumption interval (945) - increasing resumption interval to 948
+0917.632 (0) Dropbox chunked upload: 42.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 183500800)
+0921.315 (0) The time we have been running (921.3) is approaching the resumption interval (948) - increasing resumption interval to 952
+0921.317 (0) Dropbox chunked upload: 42.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 184549376)
+0924.453 (0) The time we have been running (924.4) is approaching the resumption interval (952) - increasing resumption interval to 955
+0924.454 (0) Dropbox chunked upload: 42.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 185597952)
+0928.125 (0) The time we have been running (928.1) is approaching the resumption interval (955) - increasing resumption interval to 959
+0928.127 (0) Dropbox chunked upload: 43.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 186646528)
+0931.351 (0) The time we have been running (931.3) is approaching the resumption interval (959) - increasing resumption interval to 962
+0931.353 (0) Dropbox chunked upload: 43.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 187695104)
+0935.767 (0) The time we have been running (935.8) is approaching the resumption interval (962) - increasing resumption interval to 966
+0935.769 (0) Dropbox chunked upload: 43.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 188743680)
+0939.173 (0) The time we have been running (939.2) is approaching the resumption interval (966) - increasing resumption interval to 970
+0939.176 (0) Dropbox chunked upload: 43.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 189792256)
+0942.408 (0) The time we have been running (942.4) is approaching the resumption interval (970) - increasing resumption interval to 973
+0942.411 (0) Dropbox chunked upload: 44.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 190840832)
+0946.207 (0) The time we have been running (946.2) is approaching the resumption interval (973) - increasing resumption interval to 977
+0946.210 (0) Dropbox chunked upload: 44.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 191889408)
+0950.186 (0) The time we have been running (950.2) is approaching the resumption interval (977) - increasing resumption interval to 981
+0950.188 (0) Dropbox chunked upload: 44.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 192937984)
+0955.348 (0) The time we have been running (955.3) is approaching the resumption interval (981) - increasing resumption interval to 986
+0955.350 (0) Dropbox chunked upload: 44.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 193986560)
+0958.740 (0) The time we have been running (958.7) is approaching the resumption interval (986) - increasing resumption interval to 989
+0958.745 (0) Dropbox chunked upload: 45.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 195035136)
+0962.302 (0) The time we have been running (962.3) is approaching the resumption interval (989) - increasing resumption interval to 993
+0962.305 (0) Dropbox chunked upload: 45.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 196083712)
+0967.262 (0) The time we have been running (967.3) is approaching the resumption interval (993) - increasing resumption interval to 998
+0967.264 (0) Dropbox chunked upload: 45.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 197132288)
+0971.554 (0) The time we have been running (971.5) is approaching the resumption interval (998) - increasing resumption interval to 1002
+0971.557 (0) Dropbox chunked upload: 45.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 198180864)
+0979.606 (0) The time we have been running (979.6) is approaching the resumption interval (1002) - increasing resumption interval to 1010
+0979.639 (0) Dropbox chunked upload: 46.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 199229440)
+0983.980 (0) The time we have been running (984) is approaching the resumption interval (1010) - increasing resumption interval to 1014
+0983.983 (0) Dropbox chunked upload: 46.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 200278016)
+0988.860 (0) The time we have been running (988.6) is approaching the resumption interval (1014) - increasing resumption interval to 1019
+0989.788 (0) Dropbox chunked upload: 46.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 201326592)
+0993.826 (0) The time we have been running (993.8) is approaching the resumption interval (1019) - increasing resumption interval to 1024
+0993.828 (0) Dropbox chunked upload: 46.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 202375168)
+0997.014 (0) The time we have been running (997) is approaching the resumption interval (1024) - increasing resumption interval to 1028
+0997.016 (0) Dropbox chunked upload: 47 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 203423744)
+1004.734 (0) The time we have been running (1004.1) is approaching the resumption interval (1028) - increasing resumption interval to 1035
+1004.736 (0) Dropbox chunked upload: 47.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 204472320)
+1008.600 (0) The time we have been running (1008.6) is approaching the resumption interval (1035) - increasing resumption interval to 1039
+1008.602 (0) Dropbox chunked upload: 47.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 205520896)
+1011.803 (0) The time we have been running (1011.8) is approaching the resumption interval (1039) - increasing resumption interval to 1042
+1011.805 (0) Dropbox chunked upload: 47.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 206569472)
+1016.237 (0) The time we have been running (1016.2) is approaching the resumption interval (1042) - increasing resumption interval to 1047
+1016.239 (0) Dropbox chunked upload: 48 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 207618048)
+1019.938 (0) The time we have been running (1019.9) is approaching the resumption interval (1047) - increasing resumption interval to 1050
+1019.940 (0) Dropbox chunked upload: 48.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 208666624)
+1023.992 (0) The time we have been running (1024) is approaching the resumption interval (1050) - increasing resumption interval to 1054
+1023.994 (0) Dropbox chunked upload: 48.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 209715200)
+1027.209 (0) The time we have been running (1027.2) is approaching the resumption interval (1054) - increasing resumption interval to 1058
+1027.211 (0) Dropbox chunked upload: 48.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 210763776)
+1030.177 (0) The time we have been running (1030.2) is approaching the resumption interval (1058) - increasing resumption interval to 1061
+1030.179 (0) Dropbox chunked upload: 49 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 211812352)
+1033.406 (0) The time we have been running (1033.4) is approaching the resumption interval (1061) - increasing resumption interval to 1064
+1033.408 (0) Dropbox chunked upload: 49.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 212860928)
+1037.152 (0) The time we have been running (1037.1) is approaching the resumption interval (1064) - increasing resumption interval to 1068
+1037.154 (0) Dropbox chunked upload: 49.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 213909504)
+1039.999 (0) The time we have been running (1040) is approaching the resumption interval (1068) - increasing resumption interval to 1070
+1040.002 (0) Dropbox chunked upload: 49.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 214958080)
+1043.368 (0) The time we have been running (1043.4) is approaching the resumption interval (1070) - increasing resumption interval to 1074
+1043.370 (0) Dropbox chunked upload: 49.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 216006656)
+1047.766 (0) The time we have been running (1047.8) is approaching the resumption interval (1074) - increasing resumption interval to 1078
+1047.768 (0) Dropbox chunked upload: 50.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 217055232)
+1052.358 (0) The time we have been running (1052.4) is approaching the resumption interval (1078) - increasing resumption interval to 1083
+1052.360 (0) Dropbox chunked upload: 50.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 218103808)
+1055.931 (0) The time we have been running (1055.9) is approaching the resumption interval (1083) - increasing resumption interval to 1086
+1055.932 (0) Dropbox chunked upload: 50.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 219152384)
+1062.877 (0) The time we have been running (1062.9) is approaching the resumption interval (1086) - increasing resumption interval to 1093
+1062.878 (0) Dropbox chunked upload: 50.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 220200960)
+1066.317 (0) The time we have been running (1066.3) is approaching the resumption interval (1093) - increasing resumption interval to 1097
+1066.322 (0) Dropbox chunked upload: 51.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 221249536)
+1070.179 (0) The time we have been running (1070.2) is approaching the resumption interval (1097) - increasing resumption interval to 1101
+1070.182 (0) Dropbox chunked upload: 51.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 222298112)
+1073.001 (0) The time we have been running (1073) is approaching the resumption interval (1101) - increasing resumption interval to 1103
+1073.003 (0) Dropbox chunked upload: 51.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 223346688)
+1076.291 (0) The time we have been running (1076.3) is approaching the resumption interval (1103) - increasing resumption interval to 1107
+1076.293 (0) Dropbox chunked upload: 51.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 224395264)
+1079.859 (0) The time we have been running (1079.9) is approaching the resumption interval (1107) - increasing resumption interval to 1110
+1079.860 (0) Dropbox chunked upload: 52.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 225443840)
+1085.343 (0) The time we have been running (1085.3) is approaching the resumption interval (1110) - increasing resumption interval to 1116
+1085.345 (0) Dropbox chunked upload: 52.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 226492416)
+1088.058 (0) The time we have been running (1088.1) is approaching the resumption interval (1116) - increasing resumption interval to 1119
+1088.060 (0) Dropbox chunked upload: 52.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 227540992)
+1091.441 (0) The time we have been running (1091.4) is approaching the resumption interval (1119) - increasing resumption interval to 1122
+1091.442 (0) Dropbox chunked upload: 52.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 228589568)
+1095.463 (0) The time we have been running (1095.5) is approaching the resumption interval (1122) - increasing resumption interval to 1126
+1095.465 (0) Dropbox chunked upload: 53.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 229638144)
+1099.198 (0) The time we have been running (1099.2) is approaching the resumption interval (1126) - increasing resumption interval to 1130
+1099.201 (0) Dropbox chunked upload: 53.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 230686720)
+1102.449 (0) The time we have been running (1102.4) is approaching the resumption interval (1130) - increasing resumption interval to 1133
+1102.451 (0) Dropbox chunked upload: 53.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 231735296)
+1105.402 (0) The time we have been running (1105.4) is approaching the resumption interval (1133) - increasing resumption interval to 1136
+1105.405 (0) Dropbox chunked upload: 53.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 232783872)
+1108.929 (0) The time we have been running (1108.9) is approaching the resumption interval (1136) - increasing resumption interval to 1139
+1108.932 (0) Dropbox chunked upload: 54.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 233832448)
+1113.796 (0) The time we have been running (1113.8) is approaching the resumption interval (1139) - increasing resumption interval to 1144
+1113.798 (0) Dropbox chunked upload: 54.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 234881024)
+1116.907 (0) The time we have been running (1116.9) is approaching the resumption interval (1144) - increasing resumption interval to 1147
+1116.910 (0) Dropbox chunked upload: 54.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 235929600)
+1120.092 (0) The time we have been running (1120.1) is approaching the resumption interval (1147) - increasing resumption interval to 1151
+1120.094 (0) Dropbox chunked upload: 54.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 236978176)
+1123.487 (0) The time we have been running (1123.5) is approaching the resumption interval (1151) - increasing resumption interval to 1154
+1123.489 (0) Dropbox chunked upload: 55 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 238026752)
+1127.623 (0) The time we have been running (1127.6) is approaching the resumption interval (1154) - increasing resumption interval to 1158
+1127.625 (0) Dropbox chunked upload: 55.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 239075328)
+1134.444 (0) The time we have been running (1134.4) is approaching the resumption interval (1158) - increasing resumption interval to 1165
+1134.445 (0) Dropbox chunked upload: 55.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 240123904)
+1137.829 (0) The time we have been running (1137.8) is approaching the resumption interval (1165) - increasing resumption interval to 1168
+1137.831 (0) Dropbox chunked upload: 55.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 241172480)
+1141.239 (0) The time we have been running (1141.2) is approaching the resumption interval (1168) - increasing resumption interval to 1172
+1141.241 (0) Dropbox chunked upload: 56 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 242221056)
+1147.676 (0) The time we have been running (1147.7) is approaching the resumption interval (1172) - increasing resumption interval to 1178
+1147.698 (0) Dropbox chunked upload: 56.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 243269632)
+1150.821 (0) The time we have been running (1150.8) is approaching the resumption interval (1178) - increasing resumption interval to 1181
+1150.823 (0) Dropbox chunked upload: 56.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 244318208)
+1154.059 (0) The time we have been running (1154.1) is approaching the resumption interval (1181) - increasing resumption interval to 1185
+1154.060 (0) Dropbox chunked upload: 56.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 245366784)
+1157.421 (0) The time we have been running (1157.4) is approaching the resumption interval (1185) - increasing resumption interval to 1188
+1157.424 (0) The scheduled resumption is within 45 seconds - will reschedule
+1157.427 (0) Rescheduling resumption 1: moving to 600 seconds from now (1446659008)
+1157.434 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 1188 + 45 = 1233
+1157.435 (0) Dropbox chunked upload: 57 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 246415360)
+1161.305 (0) Dropbox chunked upload: 57.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 247463936)
+1164.053 (0) Dropbox chunked upload: 57.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 248512512)
+1167.528 (0) Dropbox chunked upload: 57.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 249561088)
+1170.811 (0) Dropbox chunked upload: 57.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 250609664)
+1175.388 (0) Dropbox chunked upload: 58.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 251658240)
+1178.549 (0) Dropbox chunked upload: 58.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 252706816)
+1181.845 (0) Dropbox chunked upload: 58.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 253755392)
+1185.008 (0) Dropbox chunked upload: 58.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 254803968)
+1189.126 (0) Dropbox chunked upload: 59.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 255852544)
+1191.900 (0) Dropbox chunked upload: 59.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 256901120)
+1197.764 (0) Dropbox chunked upload: 59.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 257949696)
+1200.971 (0) Dropbox chunked upload: 59.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 258998272)
+1206.222 (0) The time we have been running (1206.2) is approaching the resumption interval (1233) - increasing resumption interval to 1237
+1206.224 (0) Dropbox chunked upload: 60.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 260046848)
+1209.439 (0) The time we have been running (1209.4) is approaching the resumption interval (1237) - increasing resumption interval to 1240
+1209.442 (0) Dropbox chunked upload: 60.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 261095424)
+1212.585 (0) The time we have been running (1212.6) is approaching the resumption interval (1240) - increasing resumption interval to 1243
+1212.587 (0) Dropbox chunked upload: 60.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 262144000)
+1215.996 (0) The time we have been running (1216) is approaching the resumption interval (1243) - increasing resumption interval to 1246
+1215.998 (0) Dropbox chunked upload: 60.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 263192576)
+1220.800 (0) The time we have been running (1220.8) is approaching the resumption interval (1246) - increasing resumption interval to 1251
+1220.802 (0) Dropbox chunked upload: 61.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 264241152)
+1223.802 (0) The time we have been running (1223.8) is approaching the resumption interval (1251) - increasing resumption interval to 1254
+1223.804 (0) Dropbox chunked upload: 61.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 265289728)
+1226.879 (0) The time we have been running (1226.9) is approaching the resumption interval (1254) - increasing resumption interval to 1257
+1226.881 (0) Dropbox chunked upload: 61.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 266338304)
+1230.997 (0) The time we have been running (1231) is approaching the resumption interval (1257) - increasing resumption interval to 1261
+1230.999 (0) Dropbox chunked upload: 61.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 267386880)
+1237.569 (0) The time we have been running (1237.6) is approaching the resumption interval (1261) - increasing resumption interval to 1268
+1237.571 (0) Dropbox chunked upload: 62.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 268435456)
+1240.630 (0) The time we have been running (1240.6) is approaching the resumption interval (1268) - increasing resumption interval to 1271
+1240.633 (0) Dropbox chunked upload: 62.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 269484032)
+1243.809 (0) The time we have been running (1243.8) is approaching the resumption interval (1271) - increasing resumption interval to 1274
+1243.811 (0) Dropbox chunked upload: 62.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 270532608)
+1248.318 (0) The time we have been running (1248.3) is approaching the resumption interval (1274) - increasing resumption interval to 1279
+1248.323 (0) Dropbox chunked upload: 62.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 271581184)
+1252.902 (0) The time we have been running (1252.9) is approaching the resumption interval (1279) - increasing resumption interval to 1283
+1252.905 (0) Dropbox chunked upload: 63 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 272629760)
+1255.789 (0) The time we have been running (1255.8) is approaching the resumption interval (1283) - increasing resumption interval to 1286
+1255.792 (0) Dropbox chunked upload: 63.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 273678336)
+1258.992 (0) The time we have been running (1259) is approaching the resumption interval (1286) - increasing resumption interval to 1289
+1258.994 (0) Dropbox chunked upload: 63.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 274726912)
+1262.757 (0) The time we have been running (1262.8) is approaching the resumption interval (1289) - increasing resumption interval to 1293
+1262.759 (0) Dropbox chunked upload: 63.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 275775488)
+1268.616 (0) The time we have been running (1268.6) is approaching the resumption interval (1293) - increasing resumption interval to 1299
+1268.618 (0) Dropbox chunked upload: 64 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 276824064)
+1271.658 (0) The time we have been running (1271.7) is approaching the resumption interval (1299) - increasing resumption interval to 1302
+1271.661 (0) Dropbox chunked upload: 64.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 277872640)
+1274.817 (0) The time we have been running (1274.8) is approaching the resumption interval (1302) - increasing resumption interval to 1305
+1274.819 (0) Dropbox chunked upload: 64.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 278921216)
+1278.653 (0) The time we have been running (1278.6) is approaching the resumption interval (1305) - increasing resumption interval to 1309
+1278.655 (0) Dropbox chunked upload: 64.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 279969792)
+1282.383 (0) The time we have been running (1282.4) is approaching the resumption interval (1309) - increasing resumption interval to 1313
+1282.385 (0) Dropbox chunked upload: 65 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 281018368)
+1285.408 (0) The time we have been running (1285.4) is approaching the resumption interval (1313) - increasing resumption interval to 1316
+1285.410 (0) Dropbox chunked upload: 65.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 282066944)
+1288.472 (0) The time we have been running (1288.5) is approaching the resumption interval (1316) - increasing resumption interval to 1319
+1288.474 (0) Dropbox chunked upload: 65.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 283115520)
+1291.764 (0) The time we have been running (1291.8) is approaching the resumption interval (1319) - increasing resumption interval to 1322
+1291.766 (0) Dropbox chunked upload: 65.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 284164096)
+1298.417 (0) The time we have been running (1297.4) is approaching the resumption interval (1322) - increasing resumption interval to 1328
+1298.419 (0) Dropbox chunked upload: 65.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 285212672)
+1301.384 (0) The time we have been running (1301.4) is approaching the resumption interval (1328) - increasing resumption interval to 1332
+1301.386 (0) Dropbox chunked upload: 66.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 286261248)
+1304.692 (0) The time we have been running (1304.7) is approaching the resumption interval (1332) - increasing resumption interval to 1335
+1304.694 (0) Dropbox chunked upload: 66.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 287309824)
+1308.528 (0) The time we have been running (1308.5) is approaching the resumption interval (1335) - increasing resumption interval to 1339
+1308.530 (0) Dropbox chunked upload: 66.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 288358400)
+1312.280 (0) The time we have been running (1312.3) is approaching the resumption interval (1339) - increasing resumption interval to 1343
+1312.282 (0) Dropbox chunked upload: 66.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 289406976)
+1315.326 (0) The time we have been running (1315.3) is approaching the resumption interval (1343) - increasing resumption interval to 1346
+1315.328 (0) Dropbox chunked upload: 67.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 290455552)
+1318.470 (0) The time we have been running (1318.5) is approaching the resumption interval (1346) - increasing resumption interval to 1349
+1318.473 (0) Dropbox chunked upload: 67.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 291504128)
+1321.912 (0) The time we have been running (1321.9) is approaching the resumption interval (1349) - increasing resumption interval to 1352
+1321.914 (0) Dropbox chunked upload: 67.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 292552704)
+1326.079 (0) The time we have been running (1326.1) is approaching the resumption interval (1352) - increasing resumption interval to 1357
+1326.081 (0) Dropbox chunked upload: 67.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 293601280)
+1329.593 (0) The time we have been running (1329.6) is approaching the resumption interval (1357) - increasing resumption interval to 1360
+1329.595 (0) Dropbox chunked upload: 68.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 294649856)
+1332.742 (0) The time we have been running (1332.7) is approaching the resumption interval (1360) - increasing resumption interval to 1363
+1332.744 (0) Dropbox chunked upload: 68.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 295698432)
+1336.461 (0) The time we have been running (1336.5) is approaching the resumption interval (1363) - increasing resumption interval to 1367
+1336.463 (0) Dropbox chunked upload: 68.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 296747008)
+1340.121 (0) The time we have been running (1340.1) is approaching the resumption interval (1367) - increasing resumption interval to 1371
+1340.123 (0) Dropbox chunked upload: 68.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 297795584)
+1342.723 (0) The time we have been running (1342.7) is approaching the resumption interval (1371) - increasing resumption interval to 1373
+1342.725 (0) Dropbox chunked upload: 69.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 298844160)
+1345.990 (0) The time we have been running (1346) is approaching the resumption interval (1373) - increasing resumption interval to 1376
+1345.992 (0) Dropbox chunked upload: 69.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 299892736)
+1349.683 (0) The time we have been running (1349.7) is approaching the resumption interval (1376) - increasing resumption interval to 1380
+1349.686 (0) Dropbox chunked upload: 69.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 300941312)
+1353.728 (0) The time we have been running (1353.7) is approaching the resumption interval (1380) - increasing resumption interval to 1384
+1353.731 (0) Dropbox chunked upload: 69.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 301989888)
+1356.669 (0) The time we have been running (1356.7) is approaching the resumption interval (1384) - increasing resumption interval to 1387
+1356.670 (0) Dropbox chunked upload: 70.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 303038464)
+1359.787 (0) The time we have been running (1359.8) is approaching the resumption interval (1387) - increasing resumption interval to 1390
+1359.790 (0) Dropbox chunked upload: 70.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 304087040)
+1363.475 (0) The time we have been running (1363.5) is approaching the resumption interval (1390) - increasing resumption interval to 1394
+1363.477 (0) Dropbox chunked upload: 70.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 305135616)
+1368.973 (0) The time we have been running (1369) is approaching the resumption interval (1394) - increasing resumption interval to 1399
+1368.975 (0) Dropbox chunked upload: 70.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 306184192)
+1371.990 (0) The time we have been running (1372) is approaching the resumption interval (1399) - increasing resumption interval to 1402
+1371.993 (0) Dropbox chunked upload: 71 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 307232768)
+1374.967 (0) The time we have been running (1375) is approaching the resumption interval (1402) - increasing resumption interval to 1405
+1374.970 (0) Dropbox chunked upload: 71.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 308281344)
+1378.232 (0) The time we have been running (1378.2) is approaching the resumption interval (1405) - increasing resumption interval to 1409
+1378.235 (0) Dropbox chunked upload: 71.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 309329920)
+1382.941 (0) The time we have been running (1382.9) is approaching the resumption interval (1409) - increasing resumption interval to 1413
+1382.944 (0) Dropbox chunked upload: 71.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 310378496)
+1385.812 (0) The time we have been running (1385.8) is approaching the resumption interval (1413) - increasing resumption interval to 1416
+1385.814 (0) Dropbox chunked upload: 72 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 311427072)
+1389.691 (0) The time we have been running (1389.7) is approaching the resumption interval (1416) - increasing resumption interval to 1420
+1389.693 (0) Dropbox chunked upload: 72.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 312475648)
+1399.707 (0) The time we have been running (1399.4) is approaching the resumption interval (1420) - increasing resumption interval to 1430
+1399.709 (0) Dropbox chunked upload: 72.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 313524224)
+1404.327 (0) The time we have been running (1404.3) is approaching the resumption interval (1430) - increasing resumption interval to 1435
+1404.329 (0) Dropbox chunked upload: 72.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 314572800)
+1407.643 (0) The time we have been running (1407.6) is approaching the resumption interval (1435) - increasing resumption interval to 1438
+1407.645 (0) Dropbox chunked upload: 73 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 315621376)
+1410.951 (0) The time we have been running (1410.9) is approaching the resumption interval (1438) - increasing resumption interval to 1441
+1410.953 (0) Dropbox chunked upload: 73.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 316669952)
+1415.609 (0) The time we have been running (1415.6) is approaching the resumption interval (1441) - increasing resumption interval to 1446
+1415.612 (0) Dropbox chunked upload: 73.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 317718528)
+1419.590 (0) The time we have been running (1419.6) is approaching the resumption interval (1446) - increasing resumption interval to 1450
+1419.593 (0) Dropbox chunked upload: 73.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 318767104)
+1426.389 (0) The time we have been running (1426.4) is approaching the resumption interval (1450) - increasing resumption interval to 1457
+1426.392 (0) Dropbox chunked upload: 73.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 319815680)
+1430.049 (0) The time we have been running (1430) is approaching the resumption interval (1457) - increasing resumption interval to 1461
+1430.050 (0) Dropbox chunked upload: 74.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 320864256)
+1435.192 (0) The time we have been running (1435.2) is approaching the resumption interval (1461) - increasing resumption interval to 1466
+1435.194 (0) Dropbox chunked upload: 74.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 321912832)
+1439.465 (0) The time we have been running (1439.5) is approaching the resumption interval (1466) - increasing resumption interval to 1470
+1439.467 (0) Dropbox chunked upload: 74.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 322961408)
+1442.850 (0) The time we have been running (1442.8) is approaching the resumption interval (1470) - increasing resumption interval to 1473
+1442.851 (0) Dropbox chunked upload: 74.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 324009984)
+1445.906 (0) The time we have been running (1445.9) is approaching the resumption interval (1473) - increasing resumption interval to 1476
+1445.908 (0) Dropbox chunked upload: 75.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 325058560)
+1449.334 (0) The time we have been running (1449.3) is approaching the resumption interval (1476) - increasing resumption interval to 1480
+1449.336 (0) Dropbox chunked upload: 75.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 326107136)
+1454.470 (0) The time we have been running (1454.5) is approaching the resumption interval (1480) - increasing resumption interval to 1485
+1454.472 (0) Dropbox chunked upload: 75.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 327155712)
+1457.852 (0) The time we have been running (1457.8) is approaching the resumption interval (1485) - increasing resumption interval to 1488
+1457.853 (0) Dropbox chunked upload: 75.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 328204288)
+1460.949 (0) The time we have been running (1460.9) is approaching the resumption interval (1488) - increasing resumption interval to 1491
+1460.951 (0) Dropbox chunked upload: 76.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 329252864)
+1465.094 (0) The time we have been running (1465.1) is approaching the resumption interval (1491) - increasing resumption interval to 1496
+1465.096 (0) Dropbox chunked upload: 76.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 330301440)
+1469.809 (0) The time we have been running (1469.8) is approaching the resumption interval (1496) - increasing resumption interval to 1500
+1469.811 (0) Dropbox chunked upload: 76.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 331350016)
+1472.904 (0) The time we have been running (1472.9) is approaching the resumption interval (1500) - increasing resumption interval to 1503
+1472.906 (0) Dropbox chunked upload: 76.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 332398592)
+1476.317 (0) The time we have been running (1476.3) is approaching the resumption interval (1503) - increasing resumption interval to 1507
+1476.319 (0) Dropbox chunked upload: 77.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 333447168)
+1479.955 (0) The time we have been running (1480) is approaching the resumption interval (1507) - increasing resumption interval to 1510
+1479.957 (0) Dropbox chunked upload: 77.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 334495744)
+1483.914 (0) The time we have been running (1483.9) is approaching the resumption interval (1510) - increasing resumption interval to 1514
+1483.916 (0) Dropbox chunked upload: 77.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 335544320)
+1487.055 (0) The time we have been running (1487.1) is approaching the resumption interval (1514) - increasing resumption interval to 1518
+1487.057 (0) Dropbox chunked upload: 77.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 336592896)
+1490.560 (0) The time we have been running (1490.6) is approaching the resumption interval (1518) - increasing resumption interval to 1521
+1490.563 (0) Dropbox chunked upload: 78.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 337641472)
+1493.536 (0) The time we have been running (1493.5) is approaching the resumption interval (1521) - increasing resumption interval to 1524
+1493.537 (0) Dropbox chunked upload: 78.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 338690048)
+1497.314 (0) The time we have been running (1497.3) is approaching the resumption interval (1524) - increasing resumption interval to 1528
+1497.315 (0) Dropbox chunked upload: 78.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 339738624)
+1500.480 (0) The time we have been running (1500.5) is approaching the resumption interval (1528) - increasing resumption interval to 1531
+1500.482 (0) Dropbox chunked upload: 78.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 340787200)
+1504.012 (0) The time we have been running (1504) is approaching the resumption interval (1531) - increasing resumption interval to 1535
+1504.014 (0) Dropbox chunked upload: 79 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 341835776)
+1507.684 (0) The time we have been running (1507.7) is approaching the resumption interval (1535) - increasing resumption interval to 1538
+1507.686 (0) Dropbox chunked upload: 79.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 342884352)
+1511.556 (0) The time we have been running (1511.6) is approaching the resumption interval (1538) - increasing resumption interval to 1542
+1511.558 (0) Dropbox chunked upload: 79.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 343932928)
+1514.494 (0) The time we have been running (1514.5) is approaching the resumption interval (1542) - increasing resumption interval to 1545
+1514.496 (0) Dropbox chunked upload: 79.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 344981504)
+1517.669 (0) The time we have been running (1517.7) is approaching the resumption interval (1545) - increasing resumption interval to 1548
+1517.671 (0) Dropbox chunked upload: 80 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 346030080)
+1520.959 (0) The time we have been running (1521) is approaching the resumption interval (1548) - increasing resumption interval to 1551
+1520.962 (0) Dropbox chunked upload: 80.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 347078656)
+1524.494 (0) The time we have been running (1524.5) is approaching the resumption interval (1551) - increasing resumption interval to 1555
+1524.496 (0) Dropbox chunked upload: 80.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 348127232)
+1527.636 (0) The time we have been running (1527.6) is approaching the resumption interval (1555) - increasing resumption interval to 1558
+1527.638 (0) Dropbox chunked upload: 80.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 349175808)
+1531.120 (0) The time we have been running (1531.1) is approaching the resumption interval (1558) - increasing resumption interval to 1562
+1531.121 (0) Dropbox chunked upload: 81 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 350224384)
+1534.407 (0) The time we have been running (1534.4) is approaching the resumption interval (1562) - increasing resumption interval to 1565
+1534.409 (0) Dropbox chunked upload: 81.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 351272960)
+1538.395 (0) The time we have been running (1538.4) is approaching the resumption interval (1565) - increasing resumption interval to 1569
+1538.397 (0) Dropbox chunked upload: 81.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 352321536)
+1541.127 (0) The time we have been running (1541.1) is approaching the resumption interval (1569) - increasing resumption interval to 1572
+1541.129 (0) Dropbox chunked upload: 81.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 353370112)
+1544.166 (0) The time we have been running (1544.2) is approaching the resumption interval (1572) - increasing resumption interval to 1575
+1544.168 (0) Dropbox chunked upload: 81.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 354418688)
+1547.382 (0) The time we have been running (1547.4) is approaching the resumption interval (1575) - increasing resumption interval to 1578
+1547.385 (0) Dropbox chunked upload: 82.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 355467264)
+1551.355 (0) The time we have been running (1551.4) is approaching the resumption interval (1578) - increasing resumption interval to 1582
+1551.358 (0) Dropbox chunked upload: 82.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 356515840)
+1554.176 (0) The time we have been running (1554.2) is approaching the resumption interval (1582) - increasing resumption interval to 1585
+1554.179 (0) Dropbox chunked upload: 82.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 357564416)
+1557.451 (0) The time we have been running (1557.4) is approaching the resumption interval (1585) - increasing resumption interval to 1588
+1557.453 (0) Dropbox chunked upload: 82.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 358612992)
+1560.868 (0) The time we have been running (1560.9) is approaching the resumption interval (1588) - increasing resumption interval to 1591
+1560.870 (0) Dropbox chunked upload: 83.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 359661568)
+1564.774 (0) The time we have been running (1564.8) is approaching the resumption interval (1591) - increasing resumption interval to 1595
+1564.776 (0) Dropbox chunked upload: 83.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 360710144)
+1567.878 (0) The time we have been running (1567.9) is approaching the resumption interval (1595) - increasing resumption interval to 1598
+1567.881 (0) Dropbox chunked upload: 83.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 361758720)
+1570.915 (0) The time we have been running (1570.9) is approaching the resumption interval (1598) - increasing resumption interval to 1601
+1570.918 (0) Dropbox chunked upload: 83.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 362807296)
+1574.626 (0) The time we have been running (1574.6) is approaching the resumption interval (1601) - increasing resumption interval to 1605
+1574.628 (0) Dropbox chunked upload: 84.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 363855872)
+1579.974 (0) The time we have been running (1579.9) is approaching the resumption interval (1605) - increasing resumption interval to 1610
+1579.979 (0) Dropbox chunked upload: 84.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 364904448)
+1583.554 (0) The time we have been running (1583.5) is approaching the resumption interval (1610) - increasing resumption interval to 1614
+1583.557 (0) Dropbox chunked upload: 84.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 365953024)
+1587.273 (0) The time we have been running (1587.3) is approaching the resumption interval (1614) - increasing resumption interval to 1618
+1587.275 (0) Dropbox chunked upload: 84.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 367001600)
+1591.284 (0) The time we have been running (1591.3) is approaching the resumption interval (1618) - increasing resumption interval to 1622
+1591.286 (0) Dropbox chunked upload: 85.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 368050176)
+1598.158 (0) The time we have been running (1597.4) is approaching the resumption interval (1622) - increasing resumption interval to 1628
+1598.160 (0) Dropbox chunked upload: 85.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 369098752)
+1601.136 (0) The time we have been running (1601.1) is approaching the resumption interval (1628) - increasing resumption interval to 1632
+1601.138 (0) Dropbox chunked upload: 85.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 370147328)
+1606.278 (0) The time we have been running (1604.8) is approaching the resumption interval (1632) - increasing resumption interval to 1635
+1606.281 (0) Dropbox chunked upload: 85.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 371195904)
+1609.800 (0) The time we have been running (1609.8) is approaching the resumption interval (1635) - increasing resumption interval to 1640
+1609.802 (0) Dropbox chunked upload: 86.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 372244480)
+1613.980 (0) The time we have been running (1614) is approaching the resumption interval (1640) - increasing resumption interval to 1644
+1613.982 (0) Dropbox chunked upload: 86.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 373293056)
+1616.970 (0) The time we have been running (1617) is approaching the resumption interval (1644) - increasing resumption interval to 1647
+1616.972 (0) Dropbox chunked upload: 86.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 374341632)
+1620.082 (0) The time we have been running (1620.1) is approaching the resumption interval (1647) - increasing resumption interval to 1651
+1620.084 (0) Dropbox chunked upload: 86.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 375390208)
+1623.332 (0) The time we have been running (1623.3) is approaching the resumption interval (1651) - increasing resumption interval to 1654
+1623.334 (0) Dropbox chunked upload: 87 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 376438784)
+1627.907 (0) The time we have been running (1627.9) is approaching the resumption interval (1654) - increasing resumption interval to 1658
+1627.909 (0) Dropbox chunked upload: 87.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 377487360)
+1630.781 (0) The time we have been running (1630.8) is approaching the resumption interval (1658) - increasing resumption interval to 1661
+1630.783 (0) Dropbox chunked upload: 87.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 378535936)
+1634.201 (0) The time we have been running (1634.2) is approaching the resumption interval (1661) - increasing resumption interval to 1665
+1634.203 (0) Dropbox chunked upload: 87.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 379584512)
+1638.128 (0) The time we have been running (1638.1) is approaching the resumption interval (1665) - increasing resumption interval to 1669
+1638.133 (0) Dropbox chunked upload: 88 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 380633088)
+1642.427 (0) The time we have been running (1642.4) is approaching the resumption interval (1669) - increasing resumption interval to 1673
+1642.429 (0) Dropbox chunked upload: 88.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 381681664)
+1646.041 (0) The time we have been running (1646) is approaching the resumption interval (1673) - increasing resumption interval to 1677
+1646.043 (0) Dropbox chunked upload: 88.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 382730240)
+1649.112 (0) The time we have been running (1649.1) is approaching the resumption interval (1677) - increasing resumption interval to 1680
+1649.114 (0) Dropbox chunked upload: 88.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 383778816)
+1652.581 (0) The time we have been running (1652.6) is approaching the resumption interval (1680) - increasing resumption interval to 1683
+1652.582 (0) Dropbox chunked upload: 89 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 384827392)
+1656.729 (0) The time we have been running (1656.7) is approaching the resumption interval (1683) - increasing resumption interval to 1687
+1656.731 (0) Dropbox chunked upload: 89.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 385875968)
+1660.773 (0) The time we have been running (1660.4) is approaching the resumption interval (1687) - increasing resumption interval to 1691
+1660.775 (0) Dropbox chunked upload: 89.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 386924544)
+1664.041 (0) The time we have been running (1664) is approaching the resumption interval (1691) - increasing resumption interval to 1695
+1664.044 (0) Dropbox chunked upload: 89.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 387973120)
+1667.590 (0) The time we have been running (1667.6) is approaching the resumption interval (1695) - increasing resumption interval to 1698
+1667.592 (0) Dropbox chunked upload: 89.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 389021696)
+1671.597 (0) The time we have been running (1671.6) is approaching the resumption interval (1698) - increasing resumption interval to 1702
+1671.599 (0) Dropbox chunked upload: 90.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 390070272)
+1674.341 (0) The time we have been running (1674.3) is approaching the resumption interval (1702) - increasing resumption interval to 1705
+1674.344 (0) Dropbox chunked upload: 90.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 391118848)
+1677.384 (0) The time we have been running (1677.4) is approaching the resumption interval (1705) - increasing resumption interval to 1708
+1677.386 (0) Dropbox chunked upload: 90.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 392167424)
+1680.597 (0) The time we have been running (1680.6) is approaching the resumption interval (1708) - increasing resumption interval to 1711
+1680.599 (0) Dropbox chunked upload: 90.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 393216000)
+1685.250 (0) The time we have been running (1685.2) is approaching the resumption interval (1711) - increasing resumption interval to 1716
+1685.253 (0) Dropbox chunked upload: 91.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 394264576)
+1688.295 (0) The time we have been running (1688.3) is approaching the resumption interval (1716) - increasing resumption interval to 1719
+1688.298 (0) Dropbox chunked upload: 91.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 395313152)
+1691.581 (0) The time we have been running (1691.6) is approaching the resumption interval (1719) - increasing resumption interval to 1722
+1691.583 (0) Dropbox chunked upload: 91.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 396361728)
+1695.280 (0) The time we have been running (1695.3) is approaching the resumption interval (1722) - increasing resumption interval to 1726
+1695.281 (0) Dropbox chunked upload: 91.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 397410304)
+1699.359 (0) The time we have been running (1699.4) is approaching the resumption interval (1726) - increasing resumption interval to 1730
+1699.361 (0) Dropbox chunked upload: 92.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 398458880)
+1704.145 (0) The time we have been running (1704.1) is approaching the resumption interval (1730) - increasing resumption interval to 1735
+1704.146 (0) Dropbox chunked upload: 92.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 399507456)
+1707.281 (0) The time we have been running (1707.3) is approaching the resumption interval (1735) - increasing resumption interval to 1738
+1707.284 (0) Dropbox chunked upload: 92.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 400556032)
+1711.290 (0) The time we have been running (1711.3) is approaching the resumption interval (1738) - increasing resumption interval to 1742
+1711.292 (0) Dropbox chunked upload: 92.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 401604608)
+1715.206 (0) The time we have been running (1715.2) is approaching the resumption interval (1742) - increasing resumption interval to 1746
+1715.207 (0) The scheduled resumption is within 45 seconds - will reschedule
+1715.210 (0) Rescheduling resumption 1: moving to 600 seconds from now (1446659566)
+1715.213 (0) To decrease the likelihood of overlaps, increasing resumption interval to: 1746 + 45 = 1791
+1715.213 (0) Dropbox chunked upload: 93.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 402653184)
+1718.483 (0) Dropbox chunked upload: 93.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 403701760)
+1721.572 (0) Dropbox chunked upload: 93.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 404750336)
+1724.984 (0) Dropbox chunked upload: 93.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 405798912)
+1728.934 (0) Dropbox chunked upload: 94.1 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 406847488)
+1731.685 (0) Dropbox chunked upload: 94.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 407896064)
+1735.593 (0) Dropbox chunked upload: 94.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 408944640)
+1738.690 (0) Dropbox chunked upload: 94.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 409993216)
+1742.544 (0) Dropbox chunked upload: 95 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 411041792)
+1745.831 (0) Dropbox chunked upload: 95.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 412090368)
+1748.847 (0) Dropbox chunked upload: 95.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 413138944)
+1752.052 (0) Dropbox chunked upload: 95.8 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 414187520)
+1755.617 (0) Dropbox chunked upload: 96 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 415236096)
+1758.802 (0) Dropbox chunked upload: 96.3 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 416284672)
+1761.985 (0) The time we have been running (1762) is approaching the resumption interval (1791) - increasing resumption interval to 1792
+1761.987 (0) Dropbox chunked upload: 96.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 417333248)
+1765.312 (0) The time we have been running (1765.3) is approaching the resumption interval (1792) - increasing resumption interval to 1796
+1765.314 (0) Dropbox chunked upload: 96.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 418381824)
+1769.171 (0) The time we have been running (1769.2) is approaching the resumption interval (1796) - increasing resumption interval to 1800
+1769.173 (0) Dropbox chunked upload: 97 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 419430400)
+1772.632 (0) The time we have been running (1772.6) is approaching the resumption interval (1800) - increasing resumption interval to 1803
+1772.635 (0) Dropbox chunked upload: 97.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 420478976)
+1775.685 (0) The time we have been running (1775.7) is approaching the resumption interval (1803) - increasing resumption interval to 1806
+1775.687 (0) Dropbox chunked upload: 97.5 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 421527552)
+1779.124 (0) The time we have been running (1779.1) is approaching the resumption interval (1806) - increasing resumption interval to 1810
+1779.126 (0) Dropbox chunked upload: 97.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 422576128)
+1783.814 (0) The time we have been running (1783.8) is approaching the resumption interval (1810) - increasing resumption interval to 1814
+1783.816 (0) Dropbox chunked upload: 97.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 423624704)
+1786.655 (0) The time we have been running (1786.7) is approaching the resumption interval (1814) - increasing resumption interval to 1817
+1786.656 (0) Dropbox chunked upload: 98.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 424673280)
+1790.150 (0) The time we have been running (1790.1) is approaching the resumption interval (1817) - increasing resumption interval to 1821
+1790.152 (0) Dropbox chunked upload: 98.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 425721856)
+1793.275 (0) The time we have been running (1793.3) is approaching the resumption interval (1821) - increasing resumption interval to 1824
+1793.277 (0) Dropbox chunked upload: 98.7 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 426770432)
+1797.438 (0) The time we have been running (1797.4) is approaching the resumption interval (1824) - increasing resumption interval to 1828
+1797.441 (0) Dropbox chunked upload: 98.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 427819008)
+1800.466 (0) The time we have been running (1800.5) is approaching the resumption interval (1828) - increasing resumption interval to 1831
+1800.467 (0) Dropbox chunked upload: 99.2 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 428867584)
+1803.521 (0) The time we have been running (1803.5) is approaching the resumption interval (1831) - increasing resumption interval to 1834
+1803.524 (0) Dropbox chunked upload: 99.4 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 429916160)
+1807.114 (0) The time we have been running (1807.1) is approaching the resumption interval (1834) - increasing resumption interval to 1838
+1807.116 (0) Dropbox chunked upload: 99.6 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 430964736)
+1811.067 (0) The time we have been running (1811.1) is approaching the resumption interval (1838) - increasing resumption interval to 1842
+1811.069 (0) Dropbox chunked upload: 99.9 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 432013312)
+1814.421 (0) The time we have been running (1814.4) is approaching the resumption interval (1842) - increasing resumption interval to 1845
+1814.422 (0) Dropbox chunked upload: 100 % uploaded (D9dZz-lf8vnKqavC6H7OkA, 432499037)
+1815.782 (0) Dropbox chunked upload exception (Dropbox_Exception): Dropbox was unable to complete this action because of a storage quota limit. (line: 177, file: /home/virtualmin/ecologistasenaccionhuesca.org/public_html/wp-content/plugins/updraftplus/includes/Dropbox/OAuth/Consumer/Curl.php)
+1815.783 (0) Dropbox error: Dropbox was unable to complete this action because of a storage quota limit.
+1816.841 (0) Dropbox quota usage: normal=854.8 Mb, shared=2494.7 Mb, total=3328 Mb, available=-21.5 Mb
+1816.850 (0) File upload expected to fail: file data remaining to upload (backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz) size is 5725.349609375 b (overall file size; 5725.349609375 b), whereas available quota is only -22521530 b
+1816.852 (0) Dropbox: Attempt to upload: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz to: backup_2015-11-04-1914_Ecologistas_en_Accin_Huesca_b4403ec9243b-db.gz
+1819.742 (0) The time we have been running (1819.7) is approaching the resumption interval (1845) - increasing resumption interval to 1850
+1819.744 (0) Dropbox chunked upload: 17.9 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 1048576)
+1822.773 (0) The time we have been running (1822.8) is approaching the resumption interval (1850) - increasing resumption interval to 1853
+1822.775 (0) Dropbox chunked upload: 35.8 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 2097152)
+1826.074 (0) The time we have been running (1826.1) is approaching the resumption interval (1853) - increasing resumption interval to 1857
+1826.076 (0) Dropbox chunked upload: 53.7 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 3145728)
+1831.306 (0) The time we have been running (1831.3) is approaching the resumption interval (1857) - increasing resumption interval to 1862
+1831.308 (0) Dropbox chunked upload: 71.5 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 4194304)
+1834.239 (0) The time we have been running (1834.2) is approaching the resumption interval (1862) - increasing resumption interval to 1865
+1834.241 (0) Dropbox chunked upload: 89.4 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 5242880)
+1836.742 (0) The time we have been running (1836.7) is approaching the resumption interval (1865) - increasing resumption interval to 1867
+1836.743 (0) Dropbox chunked upload: 100 % uploaded (__AAAAAAAAA0UxO3r8TwlgRg, 5862758)
+1838.184 (0) Dropbox chunked upload exception (Dropbox_Exception): Dropbox was unable to complete this action because of a storage quota limit. (line: 177, file: /home/virtualmin/ecologistasenaccionhuesca.org/public_html/wp-content/plugins/updraftplus/includes/Dropbox/OAuth/Consumer/Curl.php)
+1838.185 (0) Dropbox error: Dropbox was unable to complete this action because of a storage quota limit.
+1838.187 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+1838.188 (0) Number of backup sets in history: 5
+1838.190 (0) Examining backup set with datestamp: 1446657251 (Nov 04 2015 17:14:11)
+1838.191 (0) 1446657251: this backup set remains non-empty (1/1); will retain in history
+1838.191 (0) Examining backup set with datestamp: 1446052415 (Oct 28 2015 17:13:35)
+1838.192 (0) 1446052415: this backup set remains non-empty (1/1); will retain in history
+1838.193 (0) Examining backup set with datestamp: 1445447611 (Oct 21 2015 17:13:31)
+1838.193 (0) 1445447611: db: this set includes a database (backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-db.gz); db count is now 3
+1838.194 (0) 1445447611: db: over retain limit (2); will delete this database
+1838.195 (0) Delete file: backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-db.gz, service=dropbox
+1838.196 (0) Dropbox: request deletion: backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-db.gz
+1839.592 (0) Dropbox: delete succeeded
+1839.600 (0) The time we have been running (1839.6) is approaching the resumption interval (1867) - increasing resumption interval to 1870
+1839.601 (0) uploads: 1445447611: over retain limit (2); will delete this file (backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-uploads.zip)
+1839.602 (0) Delete file: backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-uploads.zip, service=dropbox
+1839.603 (0) Dropbox: request deletion: backup_2015-10-21-1913_Ecologistas_en_Accin_Huesca_a5388ac456dc-uploads.zip
+1841.158 (0) Dropbox: delete succeeded
+1841.162 (0) The time we have been running (1841.2) is approaching the resumption interval (1870) - increasing resumption interval to 1872
+1841.164 (0) 1445447611: this backup set is now empty; will remove from history
+1841.165 (0) 1445447611: deleting log file (log.a5388ac456dc.txt)
+1841.166 (0) Examining backup set with datestamp: 1434563265 (Jun 17 2015 17:47:45)
+1841.166 (0) 1434563265: this backup set remains non-empty (1/0); will retain in history
+1841.167 (0) Examining backup set with datestamp: 1433956968 (Jun 10 2015 17:22:48)
+1841.168 (0) 1433956968: this backup set remains non-empty (1/0); will retain in history
+1841.168 (0) Retain: saving new backup history (sets now: 4) and finishing retain operation
+1841.176 (0) Resume backup (b4403ec9243b, 0): finish run
+1841.178 (0) Decremented the semaphore (fd) by 1
+1841.179 (0) Semaphore (fd) unlocked
+1841.180 (0) There were errors in the uploads, so the 'resume' event is remaining scheduled
+1841.183 (0) Rescheduling resumption 1: moving to 120 seconds from now (1446659212)
+1841.185 (0) El respaldo no ha terminado; una reanudación está programada
+0000.000 (1) Opened log file at time: Wed, 04 Nov 2015 17:46:58 +0000 on http://www.ecologistasenaccionhuesca.org
+0000.001 (1) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.11.15 WP: 4.3.1 PHP: 5.4.45-0+deb7u2 (Linux petra 2.6.32-41-pve #1 SMP Sat Sep 12 13:10:00 CEST 2015 x86_64) MySQL: 5.5.46 Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 33.9M | 34.8M) multisite: N mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.001 (1) Free space on disk containing Updraft's temporary directory: Unknown
+0000.002 (1) This backup task is either complete or began over 2 days ago: ending (1446659218.5966, )

@@ -1,16 +1,28 @@
 <?php
 	function wp_statistics_generate_map_postbox($ISOCountryCode, $search_engines) {
 	
-		global $wpdb, $table_prefix, $WP_Statistics;
+		global $wpdb, $WP_Statistics;
 		
-		if($WP_Statistics->get_option('geoip') && !$WP_Statistics->get_option('disable_map') ) { ?>
+		if($WP_Statistics->get_option('geoip') && !$WP_Statistics->get_option('disable_map') && $WP_Statistics->get_option('visitors' ) ) { ?>
 			<div class="postbox">
 				<div class="handlediv" title="<?php _e('Click to toggle', 'wp_statistics'); ?>"><br /></div>
 				<h3 class="hndle"><span><?php _e('Today Visitors Map', 'wp_statistics'); ?></span></h3>
 				<div class="inside">
+				<?php wp_statistics_generate_map_postbox_content($ISOCountryCode); ?>
+				</div>
+			</div>
+<?php 
+		}
+	}
+	
+	function wp_statistics_generate_map_postbox_content($ISOCountryCode) {
+	
+		global $wpdb, $WP_Statistics;
+		
+		if($WP_Statistics->get_option('geoip') && !$WP_Statistics->get_option('disable_map') ) { ?>
 					<div id="map_canvas"></div>
 					
-					<?php $result = $wpdb->get_row("SELECT * FROM `{$table_prefix}statistics_visitor` WHERE last_counter = '{$WP_Statistics->Current_Date('Y-m-d')}'"); ?>
+					<?php $result = $wpdb->get_row("SELECT * FROM `{$wpdb->prefix}statistics_visitor` WHERE last_counter = '{$WP_Statistics->Current_Date('Y-m-d')}'"); ?>
 					<script type="text/javascript">
 						var country_pin = Array();
 						var country_color = Array();
@@ -18,7 +30,7 @@
 						jQuery(document).ready(function(){
 						
 							<?php
-								$result = $wpdb->get_results("SELECT * FROM `{$table_prefix}statistics_visitor` WHERE last_counter = '{$WP_Statistics->Current_Date('Y-m-d')}'");
+								$result = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}statistics_visitor` WHERE last_counter = '{$WP_Statistics->Current_Date('Y-m-d')}'");
 								$final_result = array();
 								$final_result['000'] = array();
 								
@@ -101,8 +113,6 @@
 						
 						});
 					</script>
-				</div>
-			</div>
 <?php 
 		}
 	}
